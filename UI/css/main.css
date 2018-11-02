@@ -134,7 +134,7 @@ input {
     border: 1px solid green;
 }
 
-#my-parcels:hover, #signin:hover {
+#my-parcels:hover, #signin:hover, #top-img:hover {
     box-shadow: 3px 5px 5px 5px gray;
 }
 
