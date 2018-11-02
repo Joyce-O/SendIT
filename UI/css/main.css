@@ -1,0 +1,710 @@
+html {
+    box-sizing: inherit;
+}
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+body {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+/* login page */
+.container {
+    flex-basis: 1 1 80%;
+    overflow: hidden;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.container header {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+}
+.container header > * {
+    flex: 1 1 100%;
+
+}
+#top-head {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background: antiquewhite;
+}
+/* All the descendants of top-head */
+.top-head > * {
+    flex: 1 1 100%;
+}
+
+#top-img {
+    height: 100px;
+    width: 100px;
+}
+#sub-head {
+    display: flex;
+    flex-direction: row;
+    flex: 1 1 auto; 
+    justify-content: space-between;
+    background: darkred;
+}
+
+.auth-btn {
+    margin-top: 30px;
+}
+.auth-btn input {
+    border-radius: 5px;
+    padding: 10px;
+    width: 150px;
+    background: green;
+    color: #fff;
+    border: none;
+    font-size: 17px;
+    font-family: sans-serif;
+    outline: none;
+    display: inline-block;
+    box-shadow: 1px 1px 1px 1px #fdfbfb;
+  }
+  
+.login {
+    margin-left: 20px;
+}
+  
+.auth-btn input:hover {
+    font-weight: bold;
+    box-shadow: 1px 3px 2px 1px #000;
+}
+/* font-family: 'Spicy Rice', cursive;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Mali', cursive;
+font-family: 'Indie Flower', cursive;
+font-family: 'Patrick Hand', cursive;
+font-family: 'Lobster', cursive;
+font-family: 'Inknut Antiqua', serif;
+ */
+.sign {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+    font-size: 32px;
+    font-weight: bolder;
+    color: white;
+}
+.plus {
+    display: inline;
+
+}
+.arrow {
+    font-size: 30px;
+    align-self: center;
+}
+
+input {
+    padding: 10px;
+    border: 0;
+}
+#my-parcels {
+    display: inline-block;
+    margin-top: 10px;
+    background: transparent;
+    padding: 10px;
+    color: brown;
+    max-height: fit-content;
+    font-size: 1.2em;
+    font-weight: bolder;
+    border: 1px solid green;
+}
+
+#my-parcels:hover {
+    box-shadow: 3px 5px 5px 5px gray;
+}
+
+#cart img {
+    width: 20px;
+    height: 22px;
+    transform: rotate(0deg);
+    padding-right: 5px;
+}
+
+#register {
+    margin-top: 10px;
+    background: green;
+    width: max-content;
+    padding: 5px;
+    cursor: pointer;
+    color: white;
+    border-radius: 3px;
+    text-align: center;
+    font-size: 1em;
+    font-weight: bolder;
+}
+
+#line {
+    padding-left: 10px;
+}
+
+#open {
+    display: flex;
+    /* border: 1px solid blue; */
+    justify-content: space-between;
+    align-items: stretch;
+    flex-basis: 100%;
+}
+li {
+    list-style: none;
+    padding-bottom: 5px;
+}
+#open li a {
+    flex: 1 1 100%;
+    text-decoration: none;
+    padding-right: 5px;
+    /* margin: 5px; */
+    font-size: 20px;
+    color: white;
+    margin-left: 60px;
+    list-style: none;
+}
+
+/* PARCEL-SUBMIT */
+ #search-header {
+    padding: 10px;
+    margin-right: 20px;
+}
+#track {
+    display: inline-block;
+    padding-right: 5px;
+    color: white;
+    font-size: 20px;
+    
+}
+/*Search button*/
+.search-go {
+    margin: 0;
+    padding: 5px 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:14px;
+    border:1px solid #0076a3; border-right:0px;
+    border-top-left-radius: 1px 1px;
+    border-bottom-left-radius: 5px 5px;
+}
+.search-button {
+    margin: 0;
+    padding: 5px 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:14px;
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+    border: solid 1px #0076a3; border-right:0px;
+    background: green;
+    border-top-right-radius: 1px 1px;
+    border-bottom-right-radius: 1px 1px;
+}
+.search-button:hover, .auth-form form input[type=submit]:hover, #register:hover, #get-qoute:hover {
+    text-decoration: none;
+    background: rgba(153, 205, 50, 0.87);
+}
+/* Fixes submit button height problem in Firefox */
+.search-button::-moz-focus-inner {
+  border: 0;
+}
+.search-clear {
+    clear:both;
+}
+/* SECTION */
+#section {
+    width: 80%;
+    margin-left: 80px;
+    margin-right: 80px;
+}
+
+#welcome {
+    text-align: center;
+    font-family: 'Patrick Hand', cursive;
+    color: rgb(148, 104, 104);
+    letter-spacing: .2em;
+    font-weight: bolder;
+}
+#login-with {
+    color: rgb(105, 109, 99);
+    margin-top: 1px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+/* DIV flex */
+#flex-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+/* OLD  MEMEBER*/
+#old {
+    background: rgba(122, 56, 36, 0.4);
+    max-width: 700px;
+    padding: 20px;
+    box-shadow: 2px 2px 3px 3px gray;
+    /* border: 1px solid white; */
+    border-radius: 3px;
+    color: white;
+    margin-top: 5%;
+    font-size: 1.2em;
+    box-sizing: border-box;
+}
+/*Transform text to img*/
+#img1 {
+   /* font-family: ; */
+   color:rgb(1, 0, 34);
+   font-style: oblique;
+   font-weight: bolder;
+   text-shadow: bisque;
+   font-stretch: ultra-expanded;
+}
+.star {
+    padding-right: 10px;
+    color: green;
+    font-weight: bolder;
+}
+.new2 {
+    color: rgb(39, 21, 21);
+    font-family: 'Lobster', cursive;
+    font-weight: bolder;
+    font-size: 1.2em;
+    
+}
+.existing {
+  margin-left: 40px;
+  
+}
+/* FORM */
+.auth-form {
+    background: rgba(122, 56, 36, 0.4);
+    max-width: 500px;
+    padding: 20px;
+    box-shadow: 3px 2px 3px 2px gray;
+    /* border: 1px solid rgb(104, 53, 53); */
+    border-radius: 3px;
+    margin-top: 5%;
+    box-sizing: border-box;
+    /* display: none; */
+} 
+.auth-form form label {
+    display: block;
+    float: left;
+    padding: 5px;
+}
+  
+.auth-form input {
+    width: 100%;
+    border-radius: 2px;
+    outline: none;
+    border: none;
+    margin-bottom: 15px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+  
+.auth-form form input[type=submit] {
+    background: green;
+    width: fit-content;
+    text-align: center;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1em;
+    font-weight: bolder;
+}
+ 
+
+#login-modal, #signup-modal {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.new-title {
+    display: block; 
+    font-weight: bolder;
+    text-align: center;
+    color: white;
+}
+/*Home*/
+.home {
+    display: flex;
+    flex-direction: column;
+    /* flex: 1 1 100%; */
+}
+#section-home {
+    background: antiquewhite;
+}
+
+#wrapper {
+    background-image: url('../img/edited-banner.jpg');
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 350px;
+    margin-top: 0px;
+}
+.overlay {
+    background: rgba(122, 56, 36, 0.8);
+    width: 100vw;
+    height: 350px;
+    margin-top: 58px;
+    top: 0;
+    left: 0; 
+    position: absolute;
+    padding: 0;
+    z-index: 2;
+}
+.overlay-home {
+    margin-top: 165px;
+}
+#form2 {
+    margin: 2em 0;
+    border: 15px solid rgba(0, 0, 0, 0.144);
+    border-radius: 2px;
+    display: flex;
+    padding-bottom: 5px;
+    width: max-content;
+    justify-content: center;
+}
+  
+   /**
+  * Make the field a flex-container, reverse the order so label is on top.
+  */
+  
+.field {
+    display: flex;
+    height: max-content;
+    padding: 5px;
+    flex-flow: column-reverse;
+  }
+  /**
+  * Add a transition to the label and input.
+  * I'm not even sure that touch-action: manipulation works on
+  * inputs, but hey, it's new and cool and could remove the 
+  * pesky delay.
+  */
+#form label, #form input {
+    transition: all 0.2s;
+    touch-action: manipulation;
+}
+  
+.field input {
+    width: 200px;
+    font-size: 1em;
+    border-bottom: 2px solid brown;
+    outline-color: burlywood; 
+    font-family: inherit;
+    -webkit-appearance: none;
+    cursor: text;
+}
+  
+#form2 input:focus {
+    outline: 0;
+    border-bottom: 1px solid #666;
+}
+  
+ #form2 label {
+    font-style: oblique;
+    display: inline; 
+    font-size: 12px;
+    color: rgba(0, 128, 0, 0.801);
+    text-align:start;
+}
+  /**
+  * Translate down and scale the label up to cover the placeholder,
+  * when following an input (with placeholder-shown support).
+  * Also make sure the label is only on one row, at max 2/3rds of the
+  * field—to make sure it scales properly and doesn't wrap.
+  */
+#form2 input:placeholder-shown + label {
+    cursor: text;
+    max-width: 66.66%;
+    white-space: nowrap;
+    overflow: hidden;
+    transform-origin: left bottom;
+    transform: translate(0, 2.125rem) scale(1.5);
+}
+  /**
+  * By default, the placeholder should be transparent. Also, it should 
+  * inherit the transition.
+  */
+::-webkit-input-placeholder {
+    opacity: 0;
+    transition: inherit;
+}
+  /**
+  * Show the placeholder when the input is focused.
+  */
+#form2 input:focus::-webkit-input-placeholder {
+    opacity: 1;
+}
+  /**
+  * When the element is focused, remove the label transform.
+  * Also, do this when the placeholder is _not_ shown, i.e. when 
+  * there's something in the input at all.
+  */
+#form2 input:not(:placeholder-shown) +  label,
+#form2 input:focus + label {
+    transform: translate(0, 0) scale(1.5);
+    color: white;
+    cursor: pointer;
+}
+#option {
+      color: green;
+      width: 200px;
+      outline: green;
+      font-size: 1em;
+      padding: 10px;
+      cursor: auto;
+      font-weight: bolder;
+      border-bottom: 2px solid brown;
+      margin-top: 14px;
+      background: white;
+      /* background: rgb(110, 1, 1); */
+}
+#option:hover {
+      outline: green;
+      outline-width: 2px;
+      /* border: ghostwhite; */
+}
+#default {
+
+    margin-left: 40px;
+    -webkit-appearance:none
+}
+#get-qoute {
+      color: white;
+      cursor: pointer;
+      background: green;
+      font-size: 1.2em;
+      border-radius: 3px;
+      box-shadow: 1px 1px 2px 1px gray;
+}
+#call-action {
+      font-size: xx-large;
+      font-family: 'Patrick Hand', cursive;
+      opacity: .7;
+      font-weight: bolder;
+      color: rgb(252, 252, 252);
+      letter-spacing: .2em;
+}
+#personnel {
+    display: flex;
+    align-self: center;
+    justify-content: space-around;
+    align-items: center;
+    width: 55%;
+    margin-top: 40px;
+    /* float: center; */
+}
+#timely {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+
+#choose {
+text-align: center;
+font-family: 'Inknut Antiqua', serif;
+letter-spacing: 0.1em;
+
+}
+
+#choose :first-child {
+    font-size: 1.7em;
+    font-size-adjust: 100%;
+    line-height: 1.1;
+    font-weight: bolder;
+    display: inline-block;
+    /* padding-bottom: 0px; */
+    margin-bottom: 0px;
+    color: rgb(43, 2, 59);
+}
+#choose :first-child span {
+  color: rgb(43, 2, 59);
+}   
+
+#choose :last-child {
+    font-size: 1.2em;
+    margin-left: 40px;
+    /* margin-top: 0px; */
+    color: rgba(43, 2, 59, 0.801);
+    display: inline;
+}
+
+/* PRICING GRID */
+.plan ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.plan ul li:last-child {
+    border-bottom: 0;
+}
+.plan a {
+    text-decoration: none;
+    background: rgba(122, 56, 36, 0.966);
+    /* background: rgb(54, 16, 124); */
+    padding: 10px;
+    color: yellow;
+    border-radius:4px; 
+}
+.plan a:hover {
+    background: rgba(122, 56, 36, 0.4);;
+}
+.plan h4 {
+    text-transform: uppercase;
+    color: rgba(27, 194, 63, 0.637);
+    letter-spacing: 2px;
+    text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.img-icon {
+    display: block;
+    margin-bottom: 5px;
+    padding-top: 5px;
+    box-shadow: 1px 1px 2px 1px gray;
+    /* border: 2px solid gray; */
+    width: 50px;
+    border-radius: 20px;
+}
+/* .globe {
+    /* width: 2px; */
+/* } */ 
+.bill-courier img {
+    width: 50px;
+}
+.biker img {
+    width: 40px;
+}
+.price {
+    font-size: 50px;
+    font-family: serif;
+    margin: 10px 0;
+}
+.pricing-grid {
+    /* order: 3; */
+    padding-top: 40px;
+    max-width: 750px;
+    margin: 0 auto;
+    /* flex: 3; */
+    display: flex;
+    align-items: center;
+    /* border-left: 1px dotted green; */
+    /* border-right: 1px dotted green; */
+
+}
+
+.plan {
+    display: flex;
+    flex: 1 1 100%;
+    flex-wrap: wrap;
+    background: white;
+    /* margin: 20px; */
+    /* padding: 20px; */
+    border-radius: 4px;
+    border-top: 2px solid rgba(128, 128, 128, 0.568);
+    box-shadow: 0px 2px 2px 1px gray;
+    text-align: center;
+}
+.p {
+    color: rgb(54, 16, 90);
+    /* background: wheat; */
+    border: 1px solid rgb(54, 16, 90);
+    box-shadow: 0px 0px 3px 1px gray;
+}
+ li {
+    text-align: center;
+    font-size: .9em;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+/* All the descendants of plan */
+.plan > * {
+    
+    flex: 1 1 100%;
+    /* flex-basis: 100%; */
+
+}
+.features li {
+    padding-top: 10px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    /* font-weight: normal; */
+    font-style: normal;
+}
+.cost {
+    font-weight: bolder;
+    font-size: 2em;
+    text-shadow: 3px 3px 0 rgba(219, 212, 212, 0.856);
+}
+.plan .cta {
+    align-self: flex-end;
+    font-weight: bolder;
+}
+.plan ul li {
+    padding-left: 10px;
+    list-style-image: url(ico.jpg)
+}
+/* DROPDODOWN */
+#section-send {
+    width: 90%;
+    padding-right: 20px;
+}
+#dropdown {
+    flex: 1 1 auto;
+    display: flex;
+    
+    justify-content: space-between;
+}
+#dropdown a {
+    text-decoration: none;
+
+}
+#dropdown li {
+    display: block;
+    width: fit-content;
+    height: fit-content;
+    border-top: 2px solid rgba(128, 128, 128, 0.568);
+    box-shadow: 0px 2px 2px 1px gray;
+    letter-spacing: .2em;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 10px;
+    text-transform: uppercase;
+    font-weight: bolder;
+    border-radius: 10%;
+}
+#dropdown li:hover {
+  color: white;
+  background: rgb(231, 171, 171);
+}
+#book {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+}
+.details-form {
+    align-self: center;
+    background: rgba(231, 171, 171, 0.301);
+}
+.my-details {
+    text-align: center;
+}
+
+#footer {
+    text-align: center;
+    margin-top: 20px;
+    background: antiquewhite;
+    align-self: flex-end;
+    right: 0;
+    overflow-y: hidden;
+    align-self: flex-end;
+    bottom: 0;
+    left: 0;
+    padding: .4rem;
+}
+
+
