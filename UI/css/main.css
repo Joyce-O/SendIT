@@ -41,6 +41,8 @@ body {
 #top-img {
     height: 100px;
     width: 100px;
+    cursor: pointer;
+    margin: 2px;
 }
 #sub-head {
     display: flex;
@@ -105,8 +107,11 @@ input {
     padding: 10px;
     border: 0;
 }
+.my-parcel {
+    display: flex;
+}
 #my-parcels {
-    display: inline-block;
+    /* display: inline-block; */
     margin-top: 10px;
     background: transparent;
     padding: 10px;
@@ -117,7 +122,19 @@ input {
     border: 1px solid green;
 }
 
-#my-parcels:hover {
+#signin {
+    margin-top: 10px;
+    margin-left: 10px;
+    color: yellowgreen;
+    height: 30px;
+    cursor: pointer;
+    background: transparent;
+    font-size: 1.1em;
+    font-weight: bolder;
+    border: 1px solid green;
+}
+
+#my-parcels:hover, #signin:hover {
     box-shadow: 3px 5px 5px 5px gray;
 }
 
@@ -350,8 +367,8 @@ li {
 .overlay {
     background: rgba(122, 56, 36, 0.8);
     width: 100vw;
-    height: 350px;
-    margin-top: 58px;
+    height: 352px;
+    margin-top: 60px;
     top: 0;
     left: 0; 
     position: absolute;
