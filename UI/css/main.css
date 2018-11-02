@@ -711,17 +711,20 @@ letter-spacing: 0.1em;
     text-align: center;
 }
 
-#footer {
+.footer {
     text-align: center;
     margin-top: 20px;
     background: antiquewhite;
     align-self: flex-end;
     right: 0;
     overflow-y: hidden;
-    align-self: flex-end;
     bottom: 0;
     left: 0;
     padding: .4rem;
+    height: 30px;
+}
+.footer-login {
+    position: fixed;
 }
 
 
