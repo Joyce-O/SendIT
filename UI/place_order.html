@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>MailXpress | Login</title>
+    <meta name="description" content="MailXpress is a courier service that helps users deliver parcels to different destinations.">
+    <meta name="keywords" content="google map implementation, courier">
+    <meta name="author" content="Joyce-O">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div id="top-head">
+                <div>
+                    <a href="index.html">
+                        <img id="top-img" src="img/logo.png" alt="logo">
+                    </a>
+                </div>
+                <div class="my-parcel">
+                    <div id="my-parcels">
+                        <span id="cart">
+                            <img src="img/cart2.jpg" alt="cart">
+                        </span>My Parcels</div>
+                    <input id="signin" type="button" value="Sign/Register">
+                </div>
+            </div>
+            <div id="sub-head">
+                <nav class="flex-nav">
+                    <ul id="open">
+                        <!-- <li><a href="#"><img src="greaterthan.png"></a></li> -->
+                        <li>
+                            <a href="#">Send</a>
+                        </li>
+                        <li>
+                            <a href="#">Our Services</a>
+                        </li>
+                        <li>
+                            <a href="#">Help</a>
+                        </li>
+                </nav>
+                <div id="search-header">
+                    <form id="search-form" method="get" action="#">
+
+                        <span id="track">Track A Parcel
+                            <input type="text" placeholder="Barcode or Receipt No." class="search-go" name="q" size="21" maxlength="120">
+                            <input type="submit" value="Go" class="search-button">
+                        </span>
+                    </form>
+                    <div class="search-clear"></div>
+                </div>
+
+            </div>
+
+        </header>
+        <section class="section ">
+            <div id="place-order-area">
+                <div id="add-package">
+                    <p>Add Packages</p>
+                </div>
+                <article id="parcel-details">
+                    <h6 class="details-header">Delivery Details</h6>
+                    <div class="delivery-content">
+
+                    </div>
+
+                </article>
+                <aside id="modify-parcel">
+                        <h6 class="details-header">Modify</h6>
+                </aside>
+            </div>
+
+        </section>
+        <footer class="footer footer-login">
+            <p>&#169;Joyce 2018</p>
+        </footer>
+    </div>
+    <script src="js.js"></script>
+</body>
+
+</html>
