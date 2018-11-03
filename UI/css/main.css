@@ -145,7 +145,7 @@ input {
     padding-right: 5px;
 }
 
-#register {
+#signup {
     margin-top: 10px;
     background: green;
     width: max-content;
@@ -154,12 +154,12 @@ input {
     color: white;
     border-radius: 3px;
     text-align: center;
-    font-size: 1em;
+    font-size: .9em;
     font-weight: bolder;
 }
+#signup:hover {
+    background: rgba(153, 205, 50, 0.87);
 
-#line {
-    padding-left: 10px;
 }
 
 #open {
@@ -221,7 +221,7 @@ li {
     border-top-right-radius: 1px 1px;
     border-bottom-right-radius: 1px 1px;
 }
-.search-button:hover, .auth-form form input[type=submit]:hover, #register:hover, #get-qoute:hover {
+.search-button:hover, .auth-login-form input[type=submit]:hover, #get-qoute:hover {
     text-decoration: none;
     background: rgba(153, 205, 50, 0.87);
 }
@@ -297,7 +297,7 @@ li {
   
 }
 /* FORM */
-.auth-form {
+#auth-login-form {
     background: rgba(122, 56, 36, 0.4);
     max-width: 500px;
     padding: 20px;
@@ -308,13 +308,13 @@ li {
     box-sizing: border-box;
     /* display: none; */
 } 
-.auth-form form label {
+#auth-login-form form label {
     display: block;
     float: left;
     padding: 5px;
 }
   
-.auth-form input {
+#auth-login-form input {
     width: 100%;
     border-radius: 2px;
     outline: none;
@@ -324,7 +324,7 @@ li {
     box-sizing: border-box;
 }
   
-.auth-form form input[type=submit] {
+#auth-login-form form input[type=submit] {
     background: green;
     width: fit-content;
     text-align: center;
@@ -334,11 +334,6 @@ li {
     font-weight: bolder;
 }
  
-
-#login-modal, #signup-modal {
-    cursor: pointer;
-    text-decoration: underline;
-}
 
 .new-title {
     display: block; 
@@ -388,22 +383,13 @@ li {
     justify-content: center;
 }
   
-   /**
-  * Make the field a flex-container, reverse the order so label is on top.
-  */
-  
 .field {
     display: flex;
     height: max-content;
     padding: 5px;
     flex-flow: column-reverse;
   }
-  /**
-  * Add a transition to the label and input.
-  * I'm not even sure that touch-action: manipulation works on
-  * inputs, but hey, it's new and cool and could remove the 
-  * pesky delay.
-  */
+  
 #form label, #form input {
     transition: all 0.2s;
     touch-action: manipulation;
@@ -590,9 +576,7 @@ letter-spacing: 0.1em;
     width: 50px;
     border-radius: 20px;
 }
-/* .globe {
-    /* width: 2px; */
-/* } */ 
+
 .bill-courier img {
     width: 50px;
 }
@@ -612,8 +596,6 @@ letter-spacing: 0.1em;
     /* flex: 3; */
     display: flex;
     align-items: center;
-    /* border-left: 1px dotted green; */
-    /* border-right: 1px dotted green; */
 
 }
 
@@ -640,7 +622,7 @@ letter-spacing: 0.1em;
     font-size: .9em;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
-/* All the descendants of plan */
+
 .plan > * {
     
     flex: 1 1 100%;
@@ -709,6 +691,125 @@ letter-spacing: 0.1em;
 }
 .my-details {
     text-align: center;
+}
+
+/*Modal*/
+#modal {
+    z-index: 2;
+    display: none;
+    text-align: center;
+    background: rgba(36, 40, 38, 0.8);
+    min-height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    color: #fff;
+
+}
+  
+#auth-btn {
+    display: block;
+}
+  
+#auth-btn input {
+    border-radius: 5px;
+    padding: 10px;
+    width: 200px;
+    background: green;
+    color: white ;
+    border: none;
+    font-size: 17px;
+    font-family: fantasy;
+    outline: none;
+    display: inline-block;
+    box-shadow: 1px 1px 1px 1px #1a1a1a;
+    cursor: pointer;
+}
+  
+.login {
+    margin-left: 20px;
+}
+  
+#auth-btn input:hover {
+    font-weight: bold;
+    box-shadow: 1px 3px 2px 1px #1a1a1a;
+}
+
+  
+.my-order {
+    position: fixed;
+}
+  
+#modal-content {
+    margin: 20px auto 0;
+    max-width: 500px;
+}
+  
+#auth-form {
+    max-width: 500px;
+    padding: 20px;
+    border: 4px solid bisque;
+    margin-top: 20%;
+    display: none;
+    background: rgb(122, 56, 36);
+    box-shadow: 3px 2px 3px 2px gray;
+    border-radius: 3px;
+}
+      
+#auth-form form label {
+    display: block;
+    float: left;
+    padding: 5px;
+}
+  
+#auth-form input {
+    width: 100%;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    margin-bottom: 13px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#auth-form #login-open {
+    outline: none;
+    cursor: pointer;
+    width: 60px;
+    margin-left: 0px;
+    padding: 5px;
+    background: transparent;
+    color: lightskyblue;
+    font-size: 1.2em;
+} 
+
+#auth-form form input[type=submit] {
+    background: green;
+    color: #fff;
+    cursor: pointer;
+    width: 40%;
+}
+  
+#auth-form form input[type=submit]:hover {
+    background: rgba(153, 205, 50, 0.87);
+}
+  
+#close-signup {
+    float: right;
+    cursor: pointer;
+    color: #fff;
+    font-size: 20px;
+}
+  
+#signup-modal {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.form-title {
+    display: block;
+    font-weight: bolder
 }
 
 .footer {
