@@ -238,8 +238,8 @@ li {
 .section {
     /* width: 80vh; */
     height: 90vh;
-    margin-left: 80px;
-    margin-right: 80px;
+    margin-left: 60px;
+    margin-right: 60px;
 }
 
 #welcome {
