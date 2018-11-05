@@ -4,12 +4,14 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>MailXpress | Login</title>
+    <title>MailXpress | Place-order</title>
     <meta name="description" content="MailXpress is a courier service that helps users deliver parcels to different destinations.">
     <meta name="keywords" content="google map implementation, courier">
     <meta name="author" content="Joyce-O">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/acc.css" />
+
 
 </head>
 
@@ -24,7 +26,7 @@
                 </div>
                 <div class="my-parcel">
                     <div id="my-parcels">
-                        <span id="cart">
+                        <span class="cart">
                             <img src="img/cart2.jpg" alt="cart">
                         </span>My Parcels</div>
                     <input id="signin" type="button" value="Sign/Register">
@@ -58,271 +60,94 @@
             </div>
 
         </header>
-        <section class="section ">
-            <div id="place-order-area">
-                <div id="add-package">
-                    <p>
-                        <span>&#43; </span>Add Order</p>
+        <section class="section">
+
+            <div class="container">
+                <div class="display-list">
                 </div>
-                <article id="parcel-details">
-                    <h6 class="details-header">My Order List</h6>
-                    <div class="delivery-content">
-                        <div class="accordion">
-                            <div>
-                                <label for="Date">Date:</label>
-                                <p>09/7/2018</p>
-                            </div>
-                            <div>
-                                <label for="ID">ID:</label>
-                                <p>123450AD</p>
-                            </div>
-                            <div>
-                                <label for="Parcel-contents">Parcel Contents:</label>
-                                <p>Books</p>
-                            </div>
-                            <div class="parcel-view">
-                                <a href="#pa">View
-                                    <span> *.*</span>
-                                </a>
-                                <button class="cancel-order">Cancel</button>
-                            </div>
-                            <!-- <div class="parcel-view "></div> -->
+                <button class="accordion">Send a Parcel</button>
+                <div class="panel">
+                    <div class="po">
+                     <p>My parcel Details</p>
+                    </div>
+                    <div id="return-details">
 
-                        </div>
-                        <div class="panel pa">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                                laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        </div>
+                        <form class="flex-form">
 
-                        <div class="accordion">
-                            <div>
-                                <label for="Date">Date:</label>
-                                <p>2/5/2018</p>
-                            </div>
-                            <div>
-                                <label for="ID">ID</label>
-                                <p>123440AS</p>
-                            </div>
-                            <div>
-                                <label for="Parcel-contents">Parcel Contents:</label>
-                                <p class="parcel-content">Hand Bags</p>
-                            </div>
-                            <div class="parcel-view">
-                                <a href="#pa">View
-                                    <span> *.*</span>
-                                </a>
-                                <button class="cancel-order">Cancel</button>
-                            </div>
+                            <!-- <input type="search" placeholder="Make your choice!"> -->
+                            <label for="from">From</label>
+                            <input class="location" type="text" name="q" placeholder="Enugu" />
 
-                        </div>
-                        <div class="panel">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                                laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        </div>
-                        <div class="accordion">
-                            <div>
-                                <label for="Date">Date:</label>
-                                <p>6/4/2018</p>
-                            </div>
-                            <div>
-                                <label for="ID">ID</label>
-                                <p>123440AS</p>
-                            </div>
-                            <div>
-                                <label for="Parcel-contents">Parcel Contents:</label>
-                                <p class="parcel-content">Hand Bags</p>
-                            </div>
-                            <div class="parcel-view">
-                                <a href="#pa">View
-                                    <span> *.*</span>
-                                </a>
-                                <button class="cancel-order">Cancel</button>
-                            </div>
+                            <label for="from">To</label>
+                            <input class="location" type="text" name="q" required placeholder="Lagos" />
 
-                        </div>
-                        <div class="panel">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                                laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        </div>
-                        <div class="accordion">
-                            <div>
-                                <label for="Date">Date:</label>
-                                <p>8/5/2018</p>
-                            </div>
-                            <div>
-                                <label for="ID">ID</label>
-                                <p>123440AS</p>
-                            </div>
-                            <div>
-                                <label for="Parcel-contents">Parcel Contents:</label>
-                                <p class="parcel-content">Hand Bags</p>
-                            </div>
-                            <div class="parcel-view">
-                                <a href="#pa">View
-                                    <span> *.*</span>
-                                </a>
-                                <button class="cancel-order">Cancel</button>
-                            </div>
+                            <label for="from">weight</label>
+                            <input class="location" type="number" min="1" name="q" required placeholder="" />
 
-                        </div>
-                        <div class="panel">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                                laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        </div>
-                        <div class="accordion">
-                            <div>
-                                <label for="Date">Date:</label>
-                                <p>12/7/2018</p>
-                            </div>
-                            <div>
-                                <label for="ID">ID</label>
-                                <p>123440AS</p>
-                            </div>
-                            <div>
-                                <label for="Parcel-contents">Parcel Contents:</label>
-                                <p class="parcel-content">Hand Bags</p>
-                            </div>
-                            <div class="parcel-view">
-                                <a href="#pa">View
-                                    <span> *.*</span>
-                                </a>
-                                <button class="cancel-order">Cancel</button>
-                            </div>
+                            <label for="from">Quantity</label>
+                            <input class="location" type="number" min="1" name="q" required placeholder="" />
 
-                        </div>
-                        <div class="panel">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                                laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        </div>
-                        <div class="accordion">
-                            <div>
-                                <label for="Date">Date:</label>
-                                <p>1/7/2018</p>
-                            </div>
-                            <div>
-                                <label for="ID">ID</label>
-                                <p>123440AS</p>
-                            </div>
-                            <div>
-                                <label for="Parcel-contents">Parcel Contents:</label>
-                                <p class="parcel-content">Hand Bags</p>
-                            </div>
-                            <div class="parcel-view">
-                                <a href="#pa">View
-                                    <span> *.*</span>
-                                </a>
-                                <button class="cancel-order">Cancel</button>
-                            </div>
+                            <label for="from">Parcel content</label>
+                            <input class="location" type="text" min="1" name="q" required placeholder="" />
+                        </form>
 
-                        </div>
-                        <div class="panel">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                                laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        </div>
-                        <div class="accordion">
-                            <div>
-                                <label for="Date">Date:</label>
-                                <p>10/03/2018</p>
-                            </div>
-                            <div>
-                                <label for="ID">ID</label>
-                                <p>123440AS</p>
-                            </div>
-                            <div>
-                                <label for="Parcel-contents">Parcel Contents:</label>
-                                <p class="parcel-content">Hand Bags</p>
-                            </div>
-                            <div class="parcel-view">
-                                <a href="#pa">View
-                                    <span> *.*</span>
-                                </a>
-                                <button class="cancel-order">Cancel</button>
-                            </div>
 
-                        </div>
-                        <div class="panel">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                                laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        </div>
-                        <div class="accordion">
-                            <div>
-                                <label for="Date">Date:</label>
-                                <p><p>1/04/2018</p</p>
-                            </div>
-                            <div>
-                                <label for="ID">ID</label>
-                                <p>123440AS</p>
-                            </div>
-                            <div>
-                                <label for="Parcel-contents">Parcel Contents:</label>
-                                <p class="parcel-content">Hand Bags</p>
-                            </div>
-                            <div class="parcel-view">
-                                <a href="#pa">View
-                                    <span> *.*</span>
-                                </a>
-                                <button class="cancel-order">Cancel</button>
-                            </div>
+                    </div>
+                    <div id="return-details">
+                        <div>
+                            <form class="signup-form">
+                                <legend class="po my-details">Pickup Location</legend> <label for="name">Name: </label>
+                                <input type="text" name="name" class="fullname" id="name" required placeholder="Enter your name">
+                                <label for="email">Email: </label>
+                                <input type="email" name="email" class="email" id="email" placeholder="example@mail.com" required>
+                                <label for="Address">Address: </label>
+                                <input type="text" name="address" class="address" id="address" required placeholder="Your residential address">
+                                <label for="phone">Phone: </label>
+                                <input type="phone" name="phone" class="phone" id="phone" required placeholder="Phone (+234090.....)">
 
+                            </form>
                         </div>
-                        <div class="panel">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                                laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        </div>
-                        <div class="accordion">
-                            <div>
-                                <label for="Date">Date:</label>
-                                <p>19/10/2018</p>
-                            </div>
-                            <div>
-                                <label for="ID">ID</label>
-                                <p>123440AS</p>
-                            </div>
-                            <div>
-                                <label for="Parcel-contents">Parcel Contents:</label>
-                                <p class="parcel-content">Hand Bags</p>
-                            </div>
-                            <div class="parcel-view">
-                                <a href="#pa">View
-                                    <span> *.*</span>
-                                </a>
-                                <button class="cancel-order">Cancel</button>
-                            </div>
+                        <div>
+                            <form class="signup-form">
+                                <legend class="po my-details">Destination</legend>
+                                <label for="name">Name: </label>
+                                <input type="text" name="name" class="fullname" id="name" required placeholder="Enter your name">
+                                <label for="email">Email: </label>
+                                <input type="email" name="email" class="email" id="email" placeholder="example@mail.com" required>
+                                <label for="Address">Address: </label>
+                                <input type="text" name="address" class="address" id="address" required placeholder="Your residential address">
+                                <label for="phone">Phone: </label>
+                                <input type="phone" name="phone" class="phone" id="phone" required placeholder="Phone (+234090.....)">
 
-                        </div>
-                        <div class="panel">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                                laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            </form>
+                            <input type="submit" value="Submit">
                         </div>
                     </div>
 
-                </article>
-                <aside id="modify-parcel">
-                    <h6 class="details-headers serve">We are here to serve you!</h6>
-                    <ul id="modify-ul">
-                        <li> Get updates on the progress of your parcel by SMS/email.</li>
-                        <li>You can track your parcel down to the final 15 minute timeslot.</li>
-                        <li>Get a receipt for your parcel for peace of mind.
-                        </li>
-                    </ul>
-                </aside>
-            </div>
+                </div>
 
+                <button class="accordion">Modify Orders</button>
+                <div class="panel">
+
+                </div>
+
+                <button class="accordion">My Profile</button>
+                <div class="panel">
+
+                </div>
+
+                <button class="accordion">Help</button>
+                <div class="panel">
+
+                </div>
+            </div>
         </section>
         <footer class="footer footer-login">
             <p>&#169;Joyce 2018</p>
         </footer>
     </div>
-    <script src="js.js"></script>
+    <!-- <script src="js.js"></script> -->
+    <script src="js/place_order.js"></script>
 </body>
 
 </html>
