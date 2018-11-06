@@ -14,12 +14,40 @@
 }
 .display-list {
     position: absolute;
-    background: wheat;
-    float: right;
-    /* text-align: center; */
-    margin-left: 400px;
-    width: 700px;
-    height: 100px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-left: 380px;
+    width: 80%;
+    /* height: 100px; */
+}
+.display-list h5 {
+    color: slategray;
+    font-weight: bolder;
+    font-size: 1.2em;
+}
+.parcel-list {
+    box-shadow: 1px 2px 3px 2px gray;
+    margin-right: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    flex: 1 1 80%;
+    width: 80%;
+    margin-top: 5px;
+    padding-top: 10px;
+    font-weight: bolder;
+    /* cursor: pointer; */
+    
+}
+.parcel-list p, label  {
+    padding: 3px;
+    font-style: oblique;
+    display: inline;
+ 
+}
+.parcel-list p  {
+    color: steelblue;
+ 
 }
 
 .cart-parcel img {
@@ -129,7 +157,11 @@ button.accordion {
 
 .panel-open {
     max-height: 80%;
-    /* transition: max-height 0s ease-out */
+    transition: max-height 0s ease-out
+}
+button.accordion:hover {
+    /* border: 1px solid rgba(128, 128, 128, 0.568); */
+    box-shadow: 1px 1px 1px 1px goldenrod;
 }
 
 /* button.accordion:nth-of-type(1),
@@ -242,6 +274,46 @@ label {
 }
 .my-details {
     margin-bottom: 30px;
+}
+/* Modify- panel  */
+ .modify-main {
+    display: flex;
+    justify-content: space-between;
+    /* flex-wrap: nowrap; */
+    flex-direction: column;
+    max-width: 100%;
+    /* max-height: max-content; */
+    /* border: 2px solid gray; */
+}
+.modify-panel {
+    display: flex;
+    flex: 1;
+    /* border: 2px solid silver; */
+    align-self: stretch;
+    align-items: stretch;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid rgba(128, 128, 128, 0.568);
+    box-shadow: 1px 1px 1px 1px gray;
+    /* border-radius: 5px; */
+    justify-content: space-between;
+}
+.modify-panel #modify-img {
+    max-width: 30px;
+    max-height: 20px;
+}
+.modify-panel.panel2{
+    display: flex;
+    /* flex-direction: column; */
+    /* background: violet; */
+}
+.modify-panel.panel2 label, address {
+  display: block;
+  padding: 10px;
+}
+.add-parcel {
+    border: none;
+    padding: 10px;
 }
 
 @media screen and (max-width: 500px) { 
