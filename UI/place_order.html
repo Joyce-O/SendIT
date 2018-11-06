@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>MailXpress | Place-order</title>
+    <meta name="description" content="MailXpress is a courier service that helps users deliver parcels to different destinations.">
+    <meta name="keywords" content="google map implementation, courier">
+    <meta name="author" content="Joyce-O">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/acc.css" />
+
+
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div id="top-head">
+                <div>
+                    <a href="index.html">
+                        <img id="top-img" src="img/logo.png" alt="logo">
+                    </a>
+                </div>
+                <div class="my-parcel">
+                    <div id="my-parcels">
+                        <span class="cart">
+                            <img src="img/cart2.jpg" alt="cart">
+                        </span>My Parcels</div>
+                    <input id="signin" type="button" value="Sign/Register">
+                </div>
+            </div>
+            <div id="sub-head">
+                <nav class="flex-nav">
+                    <ul id="open">
+                        <!-- <li><a href="#"><img src="greaterthan.png"></a></li> -->
+                        <li>
+                            <a href="#">Send</a>
+                        </li>
+                        <li>
+                            <a href="#">Our Services</a>
+                        </li>
+                        <li>
+                            <a href="#">Help</a>
+                        </li>
+                </nav>
+                <div id="search-header">
+                    <form id="search-form" method="get" action="#">
+
+                        <span id="track">Track A Parcel
+                            <input type="text" placeholder="Barcode or Receipt No." class="search-go" name="q" size="21" maxlength="120">
+                            <input type="submit" value="Go" class="search-button">
+                        </span>
+                    </form>
+                    <div class="search-clear"></div>
+                </div>
+
+            </div>
+
+        </header>
+        <section class="section">
+
+            <div class="container">
+                <div class="display-list">
+                    <div>
+                        <h5>Orders Summary</h5>
+                    </div>
+                    <div class="parcel-list">
+                        <label for="date">Date:</label>
+                        <p class="date">6/4/2018</p>
+                        <label for="ID">ID</label>
+                        <p class="id">123440AS</p>
+                        <label for="Parcel-content">Parcel Contents:</label>
+                        <p class="parcel-content">Hand Bags</p>
+
+                    </div>
+                    <div class="parcel-list">
+                        <label for="date">Date:</label>
+                        <p class="date">6/4/2018</p>
+                        <label for="ID">ID</label>
+                        <p class="id">123440AS</p>
+                        <label for="Parcel-content">Parcel Contents:</label>
+                        <p class="parcel-content">Hand Bags</p>
+
+                    </div>
+                    <div class="parcel-list">
+                        <label for="date">Date:</label>
+                        <p class="date">6/4/2018</p>
+                        <label for="id">ID</label>
+                        <p class="id">123440AS</p>
+                        <label for="parcel-content">Parcel Contents:</label>
+                        <p class="parcel-content">Hand Bags</p>
+
+                    </div>
+                    <div class="parcel-list">
+                        <label for="date">Date:</label>
+                        <p class="date">6/4/2018</p>
+                        <label for="id">ID</label>
+                        <p class="id">123440AS</p>
+                        <label for="parcel-content">Parcel Contents:</label>
+                        <p class="parcel-content">Hand Bags</p>
+
+                    </div>
+                    <div class="parcel-list">
+                        <label for="date">Date:</label>
+                        <p class="date">6/4/2018</p>
+                        <label for="id">ID</label>
+                        <p class="id">123440AS</p>
+                        <label for="parcel-content">Parcel Contents:</label>
+                        <p class="parcel-content">Hand Bags</p>
+
+                    </div>
+                    <div class="parcel-list">
+                        <label for="date">Date:</label>
+                        <p class="date">6/4/2018</p>
+                        <label for="id">ID</label>
+                        <p class="id">123440AS</p>
+                        <label for="parcel-content">Parcel Contents:</label>
+                        <p class="parcel-content">Hand Bags</p>
+
+                    </div>
+                    <div class="parcel-list">
+                        <label for="date">Date:</label>
+                        <p class="date">6/4/2018</p>
+                        <label for="id">ID</label>
+                        <p class="id">123440AS</p>
+                        <label for="parcel-content">Parcel Contents:</label>
+                        <p class="parcel-content">Hand Bags</p>
+
+                    </div>
+                    <div class="parcel-list">
+                        <label for="date">Date:</label>
+                        <p class="date">6/4/2018</p>
+                        <label for="id">ID</label>
+                        <p class="id">123440AS</p>
+                        <label for="parcel-content">Parcel Contents:</label>
+                        <p class="parcel-content">Hand Bags</p>
+
+                    </div>
+
+                </div>
+
+
+                <button class="accordion">Send a Parcel</button>
+                <div class="panel">
+                    <div class="po">
+                        <p>My parcel Details</p>
+                    </div>
+                    <div id="return-details">
+
+                        <form class="flex-form">
+
+                            <!-- <input type="search" placeholder="Make your choice!"> -->
+                            <label for="from">From</label>
+                            <input class="location" type="text" name="q" placeholder="Enugu" />
+
+                            <label for="from">To</label>
+                            <input class="location" type="text" name="q" required placeholder="Lagos" />
+
+                            <label for="from">weight</label>
+                            <input class="location" type="number" min="1" name="q" required placeholder="" />
+
+                            <label for="from">Quantity</label>
+                            <input class="location" type="number" min="1" name="q" required placeholder="" />
+
+                            <label for="from">Parcel content</label>
+                            <input class="location" type="text" min="1" name="q" required placeholder="" />
+                        </form>
+
+
+                    </div>
+                    <div id="return-details">
+                        <div>
+                            <form class="signup-form">
+                                <legend class="po my-details">Pickup Location</legend>
+                                <label for="name">Name: </label>
+                                <input type="text" name="name" class="fullname" id="name" required placeholder="Enter your name">
+                                <label for="email">Email: </label>
+                                <input type="email" name="email" class="email" id="email" placeholder="example@mail.com" required>
+                                <label for="Address">Address: </label>
+                                <input type="text" name="address" class="address" id="address" required placeholder="Your residential address">
+                                <label for="phone">Phone: </label>
+                                <input type="phone" name="phone" class="phone" id="phone" required placeholder="Phone (+234090.....)">
+
+                            </form>
+                        </div>
+                        <div>
+                            <form class="signup-form">
+                                <legend class="po my-details">Destination</legend>
+                                <label for="name">Name: </label>
+                                <input type="text" name="name" class="fullname" id="name" required placeholder="Enter your name">
+                                <label for="email">Email: </label>
+                                <input type="email" name="email" class="email" id="email" placeholder="example@mail.com" required>
+                                <label for="Address">Address: </label>
+                                <input type="text" name="address" class="address" id="address" required placeholder="Your residential address">
+                                <label for="phone">Phone: </label>
+                                <input type="phone" name="phone" class="phone" id="phone" required placeholder="Phone (+234090.....)">
+
+                            </form>
+                            <input type="submit" value="Submit">
+                        </div>
+                    </div>
+
+                </div>
+
+                <button class="accordion">Edit My Orders</button>
+                <div class="panel">
+                    <div class="modify-main">
+                        <div class="modify-panel">
+                            <div>
+                                <p>
+                                    <span>
+                                        <img id="modify-img" src="img/logo.png" alt="logo">
+                                    </span> Send 12 Books to Lagos
+                                </p>
+                            </div>
+                            <div>
+                                <input type="button" value="Edit">
+                            </div>
+                            <div>
+                                <input type="button" value="Cancel">
+                            </div>
+                        </div>
+                        <div class="modify-panel panel2">
+                            <div>
+                                <label for="Address">Pick-up Location: Johen Doga</label>
+                                <br>
+                                <address>
+                                    Studio 12 West Terrace, SOUTH QUEENSFERRY EH30 9LL United Kingdom
+                                </address>
+                            </div>
+                            <div>
+                                <label for="Address">Destination: Abimbola Doga</label>
+                                <br>
+                                <address>
+                                    Studio 12 West Terrace, SOUTH QUEENSFERRY EH30 9LL United Kingdom
+                                </address>
+
+                            </div>
+                            <div>
+                                <label for="Price">Total Price</label>
+                                <br>
+                                <p>
+                                    ₦500
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="add-parcel">
+                            <input type="button" value="Add another parcel">
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+
+                <button class="accordion">My Profile</button>
+                <div class="panel"></div>
+
+                <button class="accordion">Help</button>
+                <div class="panel"></div>
+            </div>
+        </section>
+        <footer class="footer footer-login">
+            <p>&#169;Joyce 2018</p>
+        </footer>
+    </div>
+    <!-- <script src="js.js"></script> -->
+    <script src="js/place_order.js"></script>
+</body>
+
+</html>
