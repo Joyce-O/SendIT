@@ -315,7 +315,88 @@ label {
     border: none;
     padding: 10px;
 }
+.panel.profile {
+    background: rgb(255, 251, 255);
+    display: flex;
+    margin-right: 20px;
+    /* flex-direction: row; */
+    /* justify-content: space-evenly; */
+    flex-direction: column;
+}
+.profile-details {
+    display: flex;
+    flex-direction: column;
+}
+aside h3 {
+    text-align: center;
+}
+#profile-img {
+   max-width: 70px;
+   border-radius: 30px;
+   border: 1px solid brown;
+   /* padding-right: 10px; */
+}
+.panel.profile aside {
+    display: flex;
+    margin-top: 10px;
+    justify-content: space-between;
+    /* padding: 10px; */
+}
+#my-account {
+    color: gray;
+    font-weight: bolder;
+    font-size: 1.2em;
+}
+.two-way-border {
+    display: flex;
+    width: 400px;
+    flex-direction: column;
+    justify-content: space-around;
+    
+}
+.two-way-border:nth-of-type(2) {
+    /* border-left: 2px solid gray; */
+    /* border-right: 2px solid gray; */
+    flex: 2;
+    /* padding: 5px; */
 
+}
+.two-way-border label {
+    font-size: .9em;
+    color: grey;
+    padding-bottom: 5px;
+}
+.two-way-border p {
+    font-size: .8em;
+    color: rebeccapurple;
+    font-weight: bolder;
+    border: 1px dotted lavender;
+    padding-right: 15px;
+}
+.delivery-status {
+    padding-left: 0px;
+    color: lawngreen;
+    /* font-weight: bolder; */
+    font-size: 1.2em;
+}
+
+.transit-status {
+    padding-left: 0px;
+    color: rgb(128, 178, 245);
+    font-weight: bolder;
+    font-size: 1.2em;
+}
+.float-left {
+    float: left;
+    width: 400px;
+    display: flex;
+    text-align: center;
+    background: whitesmoke;
+    box-shadow: 1px 1px 1px 1px gray;
+}
+.float-flex {
+    display: flex;
+}
 @media screen and (max-width: 500px) { 
   div{width:70%;} 
 }
