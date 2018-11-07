@@ -12,7 +12,7 @@ router.get('/api/v1', (request, response) => {
 router.all('*', (request, response) => {
     response.status(404)
     .json({
-        message: 'Sorry! This page does not exist'
+        message: 'Sorry! This page does not exist, enter a valid url.'
     });
 });
 
