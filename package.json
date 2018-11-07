@@ -1,0 +1,22 @@
+{
+  "name": "mailxpress",
+  "version": "1.0.0",
+  "description": "MailXpress is a courier service that helps users deliver parcels to different destinations. MailXpress provides courier quotes based on weight categories.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Joyce-O/MailXpress.git"
+  },
+  "keywords": [
+    "courier"
+  ],
+  "author": "Joyce",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Joyce-O/MailXpress/issues"
+  },
+  "homepage": "https://github.com/Joyce-O/MailXpress#readme"
+}
