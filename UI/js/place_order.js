@@ -25,3 +25,32 @@ for (let current = 0; current < accordion.length; current++) {
         }
     });
 }
+
+let accordion = document.getElementsByClassName("dashboard-accordion");
+for (i of accordion) {
+  i.addEventListener("click",  function () {
+    this.classList.toggle("active");
+    let panel = this.nextElementSibling;
+    if (panel.style.maxHeight){
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  });
+}
+
+const toggleNav = document.querySelector("#toggleNav");
+const open = document.getElementById("open");
+
+ const switchForm = () => {
+     console.log("Clickde");
+     if (open.style.display === "none"){
+       return open.style.display = "flex";   
+    }else{
+        return open.style.display = "none";
+    }
+
+};
+
+
+toggleNav.addEventListener('click', switchForm);
