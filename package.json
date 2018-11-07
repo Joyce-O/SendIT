@@ -4,6 +4,7 @@
   "description": "MailXpress is a courier service that helps users deliver parcels to different destinations. MailXpress provides courier quotes based on weight categories.",
   "main": "app.js",
   "scripts": {
+    "start": "nodemon --exec babel-node -- app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -26,5 +27,10 @@
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "nodemon": "^1.18.4"
+  },
+  "devDependencies": {
+    "eslint": "^5.8.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0"
   }
 }
