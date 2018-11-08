@@ -22,6 +22,10 @@
         "requireReturnType": true,
         "requireParamDescription": false,
         "requireReturnDescription": true
-      }]
+      }],
+      "arrayContainer":true,
+      "SliderInstance":true,
+      "DomObjects":true
+
     }
 }
