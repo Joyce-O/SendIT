@@ -6,5 +6,6 @@ import placeOrderValidator from '../middlewares/placeOrderValidator';
 const placeOrderRouter = express.Router();
 
 placeOrderRouter.post('/placeOrder', placeOrderValidator.orderValidator, placeOrdersController.orders);
+placeOrderRouter.get('/parcels', placeOrdersController.fetchAllOrders);
 
 export default placeOrderRouter;

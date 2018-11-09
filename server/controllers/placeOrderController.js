@@ -56,6 +56,14 @@ class placeOrderHandler {
             sendOrder
         });
     }
+    static fetchAllOrders(request, response) {
+        const allParcelsOrdered = placeOrders.reverse();
+        return response.status(200)
+          .json({
+            message: 'All parcel delivery orders',
+            allParcelsOrdered
+          });
+      }
 }
 
 export default placeOrderHandler;
