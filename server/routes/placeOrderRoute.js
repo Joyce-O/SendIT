@@ -5,6 +5,6 @@ import placeOrderValidator from '../middlewares/placeOrderValidator';
 
 const placeOrderRouter = express.Router();
 
-placeOrderRouter.post('/placeOrder', placeOrdersController.orders);
+placeOrderRouter.post('/placeOrder', placeOrderValidator.orderValidator, placeOrdersController.orders);
 
 export default placeOrderRouter;
