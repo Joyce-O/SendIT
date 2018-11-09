@@ -6,9 +6,10 @@ import {
     emptyEmail, invalidEmailFormat, invalidEmailLength,
     undefinedWeight, emptyWeight, invalidWeightLength, invalidWeigthChar, undefinedParcelContent,
     emptyParcelContent, invalidParcelContentLt, invalidParcelContentChar, undefinedPrice,
-    emptyPrice, invalidPriceLength, invalidPriceChar, undefinedQty, emptyQty,invalidQtyLength, invalidQtyChar, undefinedParcelType, emptyParcelType, invalidParcelTypeLt, invalidParcelTypeChar
+    emptyPrice, invalidPriceLength, invalidPriceChar, undefinedQty, emptyQty, invalidQtyLength, invalidQtyChar, undefinedParcelType, emptyParcelType, invalidParcelTypeLt, invalidParcelTypeChar
 
 } from './placeOrderMock';
+import placeOrder from '../inMemoryData/placeOrder';
 
 const { expect } = chai;
 
@@ -105,7 +106,7 @@ describe('Test for Parcel Order Endpoints', () => {
                     done();
                 });
         });
-       
+
         it('Should return 400 for Undefined phone number', (done) => {
             chai.request(app)
                 .post('/api/v1/placeOrder')
@@ -400,6 +401,18 @@ describe('Test for Parcel Order Endpoints', () => {
                 .end((error, response) => {
                     expect(response).to.have.status(400);
                     expect(response.body.message).to.equal('parcelType should be 8 to 12 characters long');
+                    done();
+                });
+        });
+    });
+
+    describe('Test for Fetch all Parcels Orders Endpoint', () => {
+        it('Should return 200 for success', (done) => {
+            chai.request(app)
+                .get('/api/v1/parcels')
+                .end((error, response) => {
+                    expect(response).to.have.status(200);
+                    expect(response.body.message).to.equal('All parcel delivery orders');
                     done();
                 });
         });
