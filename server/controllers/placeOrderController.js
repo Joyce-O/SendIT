@@ -1,9 +1,9 @@
 
 import placeOrders from '../inMemoryData/placeOrder';
-import uuidv5  from 'uuid/v5';
+import uuidv5 from 'uuid/v5';
 
 class placeOrderHandler {
-    static orders (request, response) {
+    static orders(request, response) {
         const {
             email,
             weight,
@@ -12,7 +12,7 @@ class placeOrderHandler {
             quantity,
             pickupAddress,
             parcelType,
-            senderPhone, 
+            senderPhone,
             senderName,
             receiverName,
             destinationAddress,
@@ -20,10 +20,10 @@ class placeOrderHandler {
 
         } = request.body;
 
-         console.log(request.body);
+        console.log(request.body);
         //If delicate return 100 else non-delicate 50
         const parcelTypeCost = (delicate) => {
-             return (delicate === "delicate") ? 100 : 50;
+            return (delicate === "delicate") ? 100 : 50;
         }
         const presentLocation = "Jos";
         const total = (quantity * price) + parcelTypeCost(parcelType);
@@ -38,12 +38,12 @@ class placeOrderHandler {
             quantity,
             pickupAddress,
             parcelType,
-            senderPhone, 
+            senderPhone,
             senderName,
             receiverName,
             destinationAddress,
             receiverPhone,
-            status, 
+            status,
             total,
             presentLocation,
             trackingID
@@ -51,19 +51,32 @@ class placeOrderHandler {
 
         placeOrders.push(sendOrder);
         return response.status(201)
-        .json({
-            message: "Your delivery order is booked successfully",
-            sendOrder
-        });
+            .json({
+                message: "Your delivery order is booked successfully",
+                sendOrder
+            });
     }
+    
     static fetchAllOrders(request, response) {
         const allParcelsOrdered = placeOrders.reverse();
+        console.log(allParcelsOrdered);
         return response.status(200)
-          .json({
-            message: 'All parcel delivery orders',
-            allParcelsOrdered
-          });
-      }
+            .json({
+                message: 'All parcel delivery orders',
+                allParcelsOrdered
+            });
+    }
+
+    static fetchSpecificOrders(request, response) {
+        const { recievedOrders } = request.body;
+        console.log(request.body);
+        return response.status(200)
+            .json({
+                message: 'Fetched order successfull!',
+                recievedOrders
+            });
+    }
 }
+
 
 export default placeOrderHandler;

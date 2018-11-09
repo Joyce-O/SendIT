@@ -1,3 +1,4 @@
+import placeOrder from "../inMemoryData/placeOrder";
 
 class placeOrderValidators {
     static orderValidator(request, response, next) {
@@ -11,7 +12,7 @@ class placeOrderValidators {
             parcelContent,
             price,
             quantity,
-            parcelType          
+            parcelType
         } = request.body;
 
         //Validate Name
@@ -42,7 +43,7 @@ class placeOrderValidators {
                 });
         }
 
-       
+
         if (senderName.length < 3 || senderName.length > 50) {
             return response.status(400)
                 .json({
@@ -87,7 +88,7 @@ class placeOrderValidators {
                 });
         }
 
-        
+
         if (senderPhone.length < 10 || senderPhone.length > 12) {
             return response.status(400)
                 .json({
@@ -118,7 +119,7 @@ class placeOrderValidators {
                     message: "Please enter your email"
                 });
         }
-        
+
         email = email.trim();
         const validEmail = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
         if (!validEmail.test(email)) {
@@ -322,5 +323,26 @@ class placeOrderValidators {
         next();
 
     }
+    static getSpecificOrderValidator(request, response, next) {
+        const { orderTrackId } = request.params;
+        if (!Number(orderTrackId)) {
+            return response.status(400)
+                .json({
+                    status: 'Unsuccessful!',
+                    message: 'Sorry! this is an invalid URL'
+                });
+        }
+        const nonExistOrder = placeOrder.find(order => order.trackingID === Number(orderTrackId));
+        if (!nonExistOrder) {
+            return response.status(404)
+                .json({
+                    status: 'Unsuccessful!',
+                    message: 'Sorry! Order does not exist'
+                });
+        }
+        request.body.nonExistOrder = nonExistOrder;
+        next();
+    }
 }
+
 export default placeOrderValidators;
