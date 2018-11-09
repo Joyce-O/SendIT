@@ -237,7 +237,7 @@ class placeOrderValidators {
             return response.status(400)
                 .json({
                     status: "Unsuccessful!",
-                    message: "Price should be 3 to 20 digits long"
+                    message: "Price should be 3 to 5 digits long"
                 });
         }
 
@@ -271,7 +271,7 @@ class placeOrderValidators {
             return response.status(400)
                 .json({
                     status: "Unsuccessful!",
-                    message: "1 to 2 digits expect for quantity"
+                    message: "1 to 2 digits expected for quantity"
                 });
         }
 
