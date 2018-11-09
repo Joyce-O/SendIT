@@ -417,4 +417,34 @@ describe('Test for Parcel Order Endpoints', () => {
                 });
         });
     });
+
+    describe('Test for Fetch specific Parcel Order Endpoint', () => {
+        it('should return 200 for success', (done) => {
+            chai.request(app)
+              .get('/api/v1/parcels/:219b1e64-afe5-5e71-ac0b-8b6a4c605a01')
+              .end((error, response) => {
+                expect(response).to.have.status(200);
+                expect(response.body.message).to.equal('Fetched order successfull!');
+                done();
+              });
+          });
+          it('should return 400 for invalid URL', (done) => {
+            chai.request(app)
+              .get('/api/v1/orders/fat')
+              .end((error, response) => {
+                expect(response).to.have.status(400);
+                expect(response.body.message).to.equal('Sorry! this is an invalid URL');
+                done();
+              });
+          });
+          it('return 404 for orderTrackId number that does not exist', (done) => {
+            chai.request(app)
+              .get('/api/v1/orders/:00001')
+              .end((error, response) => {
+                expect(response).to.have.status(404);
+                expect(response.body.message).to.equal('Sorry! Order does not exist');
+                done();
+              });
+          });
+    });
 });

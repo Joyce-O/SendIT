@@ -7,6 +7,6 @@ const placeOrderRouter = express.Router();
 
 placeOrderRouter.post('/placeOrder', placeOrderValidator.orderValidator, placeOrdersController.orders);
 placeOrderRouter.get('/parcels', placeOrdersController.fetchAllOrders);
-placeOrderRouter.get('/parcels/:parcelId', placeOrderValidator.getSpecificOrderValidator);
+placeOrderRouter.get('/parcels/:parcelId', placeOrderValidator.getSpecificOrderValidator, placeOrdersController.fetchSpecificOrders);
 
 export default placeOrderRouter;
