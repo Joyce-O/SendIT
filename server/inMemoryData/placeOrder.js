@@ -22,7 +22,7 @@ export default [
 
     {
         id: 2,
-        senderName: "Blessing John",
+        senderName: "Julie John",
         email: "jujo@hotmail.com",
         senderPhone: "2348000008",
         weight: "2kg",
@@ -39,5 +39,25 @@ export default [
         total: "2250",
         status: "Delivered"
 
-    }
+    },
+    {
+    id: 3,
+    senderName: "Joyce Ken",
+    email: 'joyke@gmail.com',
+    senderPhone: "2348000008",
+    weight: "2kg",
+    parcelContent: "40 packs of gloves",
+    pickupLocation: "12 Owerri Street, Jos",
+    parcelType: "delicate",
+    receiverName: "Sopuru Bing",
+    destinationAddress: "40 Johnson Street, Lagos",
+    receiverPhone: "2348000008",
+    presentLocation: "Benin",
+    trackingID: "219b2hg3-afe5-5e71-ac0b-8b6a4c605a01",
+    quantity: "3",
+    price: "500",
+    total: "2250",
+    status: "Delivered"
+
+}
 ];
