@@ -18,6 +18,33 @@ class UserController {
         message: 'Signup was successful',
       });
   }
+
+  static getAllUsers(request, response) {
+    const allUsers = users.reverse();
+
+    return response.status(200)
+        .json({
+            message: 'All users',
+            allUsers
+        });
 }
 
-export default UserController;
+static fetchSpecificUser(request, response) {
+  const { isExistUser } = request.body;
+
+  console.log(isExistUser);
+  return response.status(200)
+      .json({
+          message: 'Fetched order successfull!',
+          isExistUser
+      });
+}
+
+}
+const {
+  userSignUp, getAllUsers, fetchSpecificUser
+} = UserController;
+
+export {
+  userSignUp, getAllUsers, fetchSpecificUser
+};
