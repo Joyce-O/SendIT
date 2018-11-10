@@ -1,12 +1,17 @@
 import express from 'express';
-import placeOrdersController from '../controllers/placeOrderController';
-// import placeOrdersController from '../controllers/placeOrderController';
-import placeOrderValidator from '../middlewares/placeOrderValidator';
+import {
+    orders, fetchAllOrders, fetchSpecificOrders
+  } from '../controllers/placeOrderController';
+
+import {
+    orderValidator, getSpecificOrderValidator
+  } from '../middlewares/placeOrderValidator';
+  
 
 const placeOrderRouter = express.Router();
 
-placeOrderRouter.post('/placeOrder', placeOrderValidator.orderValidator, placeOrdersController.orders);
-placeOrderRouter.get('/parcels', placeOrdersController.fetchAllOrders);
-placeOrderRouter.get('/parcels/:parcelId', placeOrderValidator.getSpecificOrderValidator, placeOrdersController.fetchSpecificOrders);
+placeOrderRouter.post('/placeOrder', orderValidator, orders);
+placeOrderRouter.get('/parcels', fetchAllOrders);
+placeOrderRouter.get('/parcels/:parcelId', getSpecificOrderValidator, fetchSpecificOrders);
 
 export default placeOrderRouter;
