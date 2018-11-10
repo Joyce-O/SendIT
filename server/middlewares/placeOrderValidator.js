@@ -324,25 +324,31 @@ class placeOrderValidators {
 
     }
     static getSpecificOrderValidator(request, response, next) {
-        const { orderTrackId } = request.params;
-        if (!Number(orderTrackId)) {
+        let {parcelId} = request.params;
+        if (!(parcelId)) {
             return response.status(400)
                 .json({
                     status: 'Unsuccessful!',
                     message: 'Sorry! this is an invalid URL'
                 });
         }
-        const nonExistOrder = placeOrder.find(order => order.trackingID === Number(orderTrackId));
-        if (!nonExistOrder) {
+        const isExistOrder = placeOrder.find(placeOrder => placeOrder.trackingID === (parcelId));
+        if (!isExistOrder) {
             return response.status(404)
                 .json({
                     status: 'Unsuccessful!',
                     message: 'Sorry! Order does not exist'
                 });
         }
-        request.body.nonExistOrder = nonExistOrder;
+        request.body.isExistOrder = isExistOrder;
         next();
     }
 }
 
-export default placeOrderValidators;
+const {
+    orderValidator, getSpecificOrderValidator
+  } = placeOrderValidators
+  
+  export {
+    orderValidator, getSpecificOrderValidator
+  };

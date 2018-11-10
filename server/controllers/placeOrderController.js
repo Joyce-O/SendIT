@@ -59,7 +59,7 @@ class placeOrderHandler {
     
     static fetchAllOrders(request, response) {
         const allParcelsOrdered = placeOrders.reverse();
-        console.log(allParcelsOrdered);
+        // console.log(allParcelsOrdered);
         return response.status(200)
             .json({
                 message: 'All parcel delivery orders',
@@ -68,15 +68,22 @@ class placeOrderHandler {
     }
 
     static fetchSpecificOrders(request, response) {
-        const { recievedOrders } = request.body;
-        console.log(request.body);
+        const { isExistOrder } = request.body;
+
+        console.log(isExistOrder);
         return response.status(200)
             .json({
                 message: 'Fetched order successfull!',
-                recievedOrders
+                isExistOrder
             });
     }
 }
 
+const {
+    orders, fetchAllOrders, fetchSpecificOrders
+  } = placeOrderHandler
+  
+  export {
+    orders, fetchAllOrders, fetchSpecificOrders
+  };
 
-export default placeOrderHandler;
