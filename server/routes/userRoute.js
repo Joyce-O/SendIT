@@ -1,17 +1,20 @@
 import express from 'express';
 
 import {
-    userSignUp, getAllUsers
+    userSignUp, getAllUsers, fetchSpecificUser
   } from '../controllers/userController';
+
+  import {
+    signupValidator, getSpecificUserValidator
+  } from '../middlewares/userValidator';
   
-import userValidator from '../middlewares/userValidator';
-import { fetchAllOrders } from '../controllers/placeOrderController';
  
 
 
 const userRouter = express.Router();
 
-userRouter.post('/users', userValidator.signupValidator, userSignUp);
+userRouter.post('/users', signupValidator, userSignUp);
 userRouter.get('/users',  getAllUsers);
+userRouter.get('/users/:userId', getSpecificUserValidator, fetchSpecificUser);
 
 export default userRouter;

@@ -143,6 +143,33 @@ class UserValidator {
     return next();
   }
 
+  static getSpecificUserValidator(request, response, next) {
+    let {userId} = request.params;
+    if (!Number(userId)) {
+        return response.status(400)
+            .json({
+                status: 'Unsuccessful!',
+                message: 'Sorry! this is an invalid URL'
+            });
+    }
+    const isExistUser = users.find(users => users.id === Number(userId));
+    if (!(isExistUser)) {
+        return response.status(404)
+            .json({
+                status: 'Unsuccessful!',
+                message: 'Sorry! User does not exist'
+            });
+    }
+    request.body.isExistUser = isExistUser;
+    next();
 }
 
-export default UserValidator;
+}
+
+const {
+  signupValidator, getSpecificUserValidator
+} = UserValidator;
+  
+export {
+  signupValidator, getSpecificUserValidator
+};
