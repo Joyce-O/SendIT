@@ -58,7 +58,7 @@ class placeOrderHandler {
                 sendOrder
             });
     }
-    
+
     static fetchAllOrders(request, response) {
         const allParcelsOrdered = placeOrders.reverse();
         // console.log(allParcelsOrdered);
@@ -91,14 +91,30 @@ class placeOrderHandler {
             });
     }
     
+    static cancelOrder(request, response) {
+        let { parcelStatus } = request.body;
+        let isExistOrder = request.body;
+        parcelStatus = "Cancelled";
+        isExistOrder.status = parcelStatus;
+
+        return response.status(200)
+            .json({
+                message: 'Your order is Cancelled!',
+            });
+
+        let object = placeOrder.find(({ trackingID }) => trackingID === isExistOrder.trackingID);
+        if (object) {
+            Object.assign(object, isExistOrde);
+        }
+    }
 
 }
 
 const {
-    orders, fetchAllOrders, fetchSpecificOrders,  fetchUserOrderHistory
-  } = placeOrderHandler
-  
-  export {
-    orders, fetchAllOrders, fetchSpecificOrders,  fetchUserOrderHistory
+    orders, fetchAllOrders, fetchSpecificOrders, fetchUserOrderHistory, cancelOrder
+} = placeOrderHandler
+
+export {
+    orders, fetchAllOrders, fetchSpecificOrders, fetchUserOrderHistory, cancelOrder
 };
 
