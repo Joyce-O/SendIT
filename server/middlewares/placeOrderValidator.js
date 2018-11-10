@@ -361,12 +361,48 @@ class placeOrderValidators {
         request.body.isExistOrder = isExistOrder;
         next();
     }
+
+    static updateOrderValidator(request, response, next) {
+        const { parcelId } = request.params;
+        if (!(parcelId)) {
+            return response.status(400)
+                .json({
+                    status: 'Unsuccessful!',
+                    message: 'Sorry! this is an invalid URL'
+                });
+        }
+
+        const isExistOrder = placeOrder.find(placeOrder => placeOrder.trackingID === (parcelId));
+        if (!isExistOrder) {
+            return response.status(404)
+                .json({
+                    status: 'Unsuccessful!',
+                    message: 'Sorry! Order does not exist'
+                });
+        }
+
+        let parcelStatus = isExistOrder.status;
+         
+        if (parcelStatus === 'Delivered' || parcelStatus === 'Cancelled') {
+            return response.status(404)
+                .json({
+                    status: 'Unsuccessful!',
+                    message: 'Parcel order cannot be updated, it is either delivered or cancelled.'
+                });
+        }
+        request.body.parcelStatus = parcelStatus;
+        request.body = isExistOrder;
+        next();
+    }
+    
+            
+
 }
 
 const {
-    orderValidator, getOrderHistoryValidator, getSpecificOrderValidator
+    orderValidator, getOrderHistoryValidator, getSpecificOrderValidator, updateOrderValidator
   } = placeOrderValidators
   
   export {
-    orderValidator, getOrderHistoryValidator, getSpecificOrderValidator
+    orderValidator, getOrderHistoryValidator, getSpecificOrderValidator, updateOrderValidator
   };

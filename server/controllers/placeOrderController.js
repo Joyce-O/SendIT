@@ -58,7 +58,7 @@ class placeOrderHandler {
                 sendOrder
             });
     }
-    
+
     static fetchAllOrders(request, response) {
         const allParcelsOrdered = placeOrders.reverse();
         // console.log(allParcelsOrdered);
@@ -90,15 +90,15 @@ class placeOrderHandler {
                 userOrders
             });
     }
-    
+   
 
 }
 
 const {
-    orders, fetchAllOrders, fetchSpecificOrders,  fetchUserOrderHistory
-  } = placeOrderHandler
-  
-  export {
-    orders, fetchAllOrders, fetchSpecificOrders,  fetchUserOrderHistory
+    orders, fetchAllOrders, fetchSpecificOrders, fetchUserOrderHistory
+} = placeOrderHandler
+
+export {
+    orders, fetchAllOrders, fetchSpecificOrders, fetchUserOrderHistory
 };
 
