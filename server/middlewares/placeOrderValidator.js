@@ -1,4 +1,5 @@
 import placeOrder from "../inMemoryData/placeOrder";
+import users from '../inMemoryData/users';
 
 class placeOrderValidators {
     static orderValidator(request, response, next) {
@@ -323,6 +324,23 @@ class placeOrderValidators {
         next();
 
     }
+    static getOrderHistoryValidator(request, response, next) {
+        const { userId } = request.params;
+        
+        const isExistUser = users.find(users => users.id === Number(userId));
+
+        console.log("my user id " + isExistUser);
+        if (!Number(userId) || userId <= 0) {
+          return response.status(400)
+            .json({
+              status: 'Unsuccessful!',
+              message: 'URL does not exist. userId should be a positive integer greater than zero'
+            });
+        }
+        next();
+      }
+    
+
     static getSpecificOrderValidator(request, response, next) {
         let {parcelId} = request.params;
         if (!(parcelId)) {
@@ -346,9 +364,9 @@ class placeOrderValidators {
 }
 
 const {
-    orderValidator, getSpecificOrderValidator
+    orderValidator, getOrderHistoryValidator, getSpecificOrderValidator
   } = placeOrderValidators
   
   export {
-    orderValidator, getSpecificOrderValidator
+    orderValidator, getOrderHistoryValidator, getSpecificOrderValidator
   };

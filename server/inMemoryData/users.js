@@ -10,8 +10,8 @@ export default [
     },
     {
       id: 2,
-      fullName: 'Sen Ken',
-      email: 'senken@hotmail.com',
+      fullName: 'Blessing John',
+      email: 'jujo@hotmail.com',
       phone: '09177346210',
       address: '1 Lobu road Lagos',
       password: 'skenen',

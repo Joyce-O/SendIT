@@ -1,6 +1,8 @@
 
-import placeOrders from '../inMemoryData/placeOrder';
+// import placeOrders from '../inMemoryData/placeOrder';
 import uuidv5 from 'uuid/v5';
+import users from '../inMemoryData/users';
+import placeOrder from '../inMemoryData/placeOrder';
 
 class placeOrderHandler {
     static orders(request, response) {
@@ -69,21 +71,34 @@ class placeOrderHandler {
 
     static fetchSpecificOrders(request, response) {
         const { isExistOrder } = request.body;
-
-        console.log(isExistOrder);
         return response.status(200)
             .json({
                 message: 'Fetched order successfull!',
                 isExistOrder
             });
     }
+
+    static fetchUserOrderHistory(request, response) {
+        const { userId } = request.params;
+        let userEmail = users.find(users => users.id === Number(userId));
+
+        userEmail = userEmail.email;
+        let userOrders = placeOrder.filter((placeOrder) => placeOrder.email === userEmail);
+        return response.status(200)
+            .json({
+                message: 'Fetched order!',
+                userOrders
+            });
+    }
+    
+
 }
 
 const {
-    orders, fetchAllOrders, fetchSpecificOrders
+    orders, fetchAllOrders, fetchSpecificOrders,  fetchUserOrderHistory
   } = placeOrderHandler
   
   export {
-    orders, fetchAllOrders, fetchSpecificOrders
-  };
+    orders, fetchAllOrders, fetchSpecificOrders,  fetchUserOrderHistory
+};
 
