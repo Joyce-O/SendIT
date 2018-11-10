@@ -18,6 +18,22 @@ class UserController {
         message: 'Signup was successful',
       });
   }
+
+  static getAllUsers(request, response) {
+    const allUsers = users.reverse();
+
+    return response.status(200)
+        .json({
+            message: 'All users',
+            allUsers
+        });
 }
 
-export default UserController;
+}
+const {
+  userSignUp, getAllUsers
+} = UserController;
+
+export {
+  userSignUp, getAllUsers
+};

@@ -142,6 +142,7 @@ class UserValidator {
     request.body.email = email;
     return next();
   }
+
 }
 
 export default UserValidator;

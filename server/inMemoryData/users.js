@@ -5,7 +5,8 @@ export default [
       phone: '09177346210',
       address: '12 Jota road Lagos',
       email: 'joyke@gmail.com',
-      password: 'kenjoy'
+      password: 'kenjoy',
+      userType: 'admin'
     },
     {
       id: 2,
@@ -13,7 +14,8 @@ export default [
       email: 'senken@hotmail.com',
       phone: '09177346210',
       address: '1 Lobu road Lagos',
-      password: 'skenen'
+      password: 'skenen',
+      userType: 'admin'
     }
   ];
   
