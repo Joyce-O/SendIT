@@ -5,6 +5,9 @@
   max-height: 90vh;
   overflow: auto;
 }
+.place-order-wrap {
+    background: gainsboro;
+}
 
 #parcel-details {
     display: flex;
@@ -12,6 +15,7 @@
     justify-content: space-evenly;
     box-shadow: 1px 2px 3px 2px gray;
 }
+
 .display-list {
     position: absolute;
     display: flex;
@@ -131,7 +135,6 @@ button.accordion {
     text-align: center;
     outline: none;
     font-size: 1.2em;
-    /* transition: 0s; */
     font-weight: bolder;
     float: left;
     height: 100px
@@ -172,7 +175,7 @@ div.panel:nth-of-type(2) {
 /*Background colors of each section, both accordion and panels*/
 
 button.accordion:nth-of-type(1) {
-    background: wheat;
+    background: grey;
 }
 
 button.accordion:nth-of-type(2) {

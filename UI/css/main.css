@@ -179,16 +179,16 @@ li {
     list-style: none;
     padding-bottom: 5px;
 }
-#open li a {
+/* #open li a {
     flex: 1 1 100%;
     text-decoration: none;
     padding-right: 5px;
-    /* margin: 5px; */
+    /* margin: 5px; 
     font-size: 20px;
     color: white;
     margin-left: 60px;
     list-style: none;
-}
+} */
 
 /* PARCEL-SUBMIT */
  #search-header {
@@ -327,6 +327,7 @@ li {
 #auth-login-form form label {
     display: block;
     float: left;
+    color: black;
     padding: 5px;
 }
   
@@ -832,17 +833,30 @@ letter-spacing: 0.1em;
 /* Admin dashoboard */
 .admin-body {
     max-width: 90%;
-    margin-left: 30px;
+    margin-left: 50px;
+    background: grey;
     margin-right: 10px;
 }
 
 .dashboard-article h3 {
-    color: brown;
+    color: floralwhite;
     margin-bottom: 0px;
     text-align: center;
 }
+#admin-span {
+    color: rgb(240, 231, 231);
+    margin-bottom: 0px;
+    text-align: center;
+    font-size: 1em;
+}
+.dashboard-article h6 {
+    color: gainsboro;
+    font-size: .7em;
+    letter-spacing: .9;
+    line-height: .5em;
+}
 .dashboard-article h5 {
-    color: cadetblue;
+    color: rgb(240, 209, 209);
     text-align: center;
 }
 .dashboard-article {
@@ -855,7 +869,7 @@ letter-spacing: 0.1em;
 
 #toggleNav {
     display: block;
-    color: blue;
+    color: whitesmoke;
     text-decoration: none;
     line-height: 2em;
     z-index: 3;
@@ -869,15 +883,22 @@ letter-spacing: 0.1em;
     list-style: none;
     justify-content: center;
     display: block;
-    color: green;
+    color: rgb(244, 241, 247);
     text-decoration: none;
     line-height: 2em;
-    font-weight: 900;
+    font-weight: bolder;
+    font-size: 1em;
     text-align: center;
     padding: 5px;
 }
-
-
+.admin-update{
+    color: blue;
+}
+#admin-logout {
+    color: lime;
+    font-size: 1.2em;
+    font-family: Arial, Helvetica, sans-serif;
+}
 .dashboard-accordion {
     background-color: burlywood;
     color: #444;
