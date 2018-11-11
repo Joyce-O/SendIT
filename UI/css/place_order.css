@@ -397,6 +397,11 @@ aside h3 {
 .float-flex {
     display: flex;
 }
+.google-map {
+    /* display: flex; */
+    display: none;
+    justify-content: center;
+}
 @media screen and (max-width: 500px) { 
   div{width:70%;} 
 }
@@ -433,3 +438,4 @@ aside h3 {
         top: initial;
     }
 }
+
