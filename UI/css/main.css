@@ -248,9 +248,10 @@ li {
 /* SECTION */
 .section {
     /* width: 80vh; */
-    height: 90vh;
+    height: 100vh;
     margin-left: 60px;
     margin-right: 60px;
+    overflow: auto;
 }
 
 #welcome {
@@ -308,10 +309,10 @@ li {
     font-size: 1.2em;
     
 }
-#exist {
-  /* margin-left: 40px; */
+/* #exist {
+  /* margin-left: 40px; 
   
-}
+} */
 /* FORM */
 #auth-login-form {
     background: rgba(122, 56, 36, 0.4);
@@ -388,7 +389,7 @@ li {
     z-index: 2;
 }
 .overlay-home {
-    margin-top: 190px;
+    margin-top: 180px;
 }
 #form2 {
     margin: 2em 0;
@@ -970,5 +971,15 @@ letter-spacing: 0.1em;
 .footer-login {
     position: fixed;
 }
+/* .footer-place-order {
+        /* position: fixed; */
+        /* left: 0;
+        bottom: 0;
+        width: 100%; */
+        /* background-color: red; */
+        /* color: white; 
+        text-align: center;
+     }
+} */
 
 

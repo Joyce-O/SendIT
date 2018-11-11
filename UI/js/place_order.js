@@ -26,8 +26,8 @@ for (let current = 0; current < accordion.length; current++) {
     });
 }
 
-let accordion = document.getElementsByClassName("dashboard-accordion");
-for (i of accordion) {
+let accordion2 = document.getElementsByClassName("dashboard-accordion");
+for (i of accordion2) {
   i.addEventListener("click",  function () {
     this.classList.toggle("active");
     let panel = this.nextElementSibling;
