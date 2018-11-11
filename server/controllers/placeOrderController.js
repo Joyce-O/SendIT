@@ -1,4 +1,5 @@
 
+
 // import placeOrders from '../inMemoryData/placeOrder';
 import uuidv5 from 'uuid/v5';
 import users from '../inMemoryData/users';
@@ -51,7 +52,7 @@ class placeOrderHandler {
             trackingID
         };
 
-        placeOrders.push(sendOrder);
+        placeOrder.push(sendOrder);
         return response.status(201)
             .json({
                 message: "Your delivery order is booked successfully",
@@ -60,7 +61,7 @@ class placeOrderHandler {
     }
 
     static fetchAllOrders(request, response) {
-        const allParcelsOrdered = placeOrders.reverse();
+        const allParcelsOrdered = placeOrder.reverse();
         // console.log(allParcelsOrdered);
         return response.status(200)
             .json({
@@ -92,20 +93,21 @@ class placeOrderHandler {
     }
     
     static cancelOrder(request, response) {
-        let { parcelStatus } = request.body;
-        let isExistOrder = request.body;
+        let { parcelStatus, isExistOrder } = request.body;
+        // let isExistOrder = request.body;
         parcelStatus = "Cancelled";
         isExistOrder.status = parcelStatus;
 
         return response.status(200)
             .json({
                 message: 'Your order is Cancelled!',
+                isExistOrder
             });
 
-        let object = placeOrder.find(({ trackingID }) => trackingID === isExistOrder.trackingID);
-        if (object) {
-            Object.assign(object, isExistOrde);
-        }
+        // let object = placeOrder.find(({ trackingID }) => trackingID === isExistOrder.trackingID);
+        // if (object) {
+        //     Object.assign(object, isExistOrder);
+        // }
     }
 
 }

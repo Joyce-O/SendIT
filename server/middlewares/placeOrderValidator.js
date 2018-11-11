@@ -391,7 +391,7 @@ class placeOrderValidators {
                 });
         }
         request.body.parcelStatus = parcelStatus;
-        request.body = isExistOrder;
+        request.body.isExistOrder = isExistOrder;
         next();
     }
     
