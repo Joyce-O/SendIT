@@ -28,7 +28,7 @@ class placeOrderValidators {
             return response.status(400)
                 .json({
                     status: "Unsuccessful!",
-                    message: "Please enter senderName or receiverName"
+                    message: "Please enter name"
                 });
         }
 
@@ -167,7 +167,7 @@ class placeOrderValidators {
         }
 
         weight = parseFloat(weight);
-        if (weight < 0 || weight > 1000) {
+        if (weight <= 0 || weight > 1000) {
             return response.status(400)
                 .json({
                     status: "Unsuccessful!",
@@ -269,14 +269,6 @@ class placeOrderValidators {
                 });
         }
 
-        if (quantity.length < 1 || quantity.length > 2) {
-            return response.status(400)
-                .json({
-                    status: "Unsuccessful!",
-                    message: "1 to 2 digits expected for quantity"
-                });
-        }
-
         //Validate parcelType
         if (parcelType === undefined) {
             return response.status(400)
@@ -329,7 +321,6 @@ class placeOrderValidators {
         
         const isExistUser = users.find(users => users.id === Number(userId));
 
-        console.log("my user id " + isExistUser);
         if (!Number(userId) || userId <= 0) {
           return response.status(400)
             .json({
@@ -343,13 +334,6 @@ class placeOrderValidators {
 
     static getSpecificOrderValidator(request, response, next) {
         let {parcelId} = request.params;
-        if (!(parcelId)) {
-            return response.status(400)
-                .json({
-                    status: 'Unsuccessful!',
-                    message: 'Sorry! this is an invalid URL'
-                });
-        }
         const isExistOrder = placeOrder.find(placeOrder => placeOrder.trackingID === (parcelId));
         if (!isExistOrder) {
             return response.status(404)

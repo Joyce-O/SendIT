@@ -1,6 +1,6 @@
 const successfulOrder = {
   email: 'joyce@gmail.com',
-  weight: "1.5",
+  weight: "1.5kg",
   parcelContent: "Books",
   price: "200",
   quantity: "2",
@@ -17,7 +17,7 @@ const successfulOrder = {
 };
 
 const undefinedName = {
-  weight: "1.5",
+  weight: "1.5kg",
   parcelContent: "Books",
   price: "200",
   quantity: "2",
@@ -33,7 +33,7 @@ const undefinedName = {
 
 const emptyName = {
   email: "joyce@gmail.com",
-  weight: "1.5",
+  weight: "1.5kg",
   parcelContent: "Books",
   price: "200",
   quantity: "2",
@@ -50,14 +50,14 @@ const emptyName = {
 };
 
 const invalidSenderNameLt = {
-  email: "joyce@gmail.",
-  weight: "1.5",
+  email: "joyce@gmail.com",
+  weight: "1.5kg",
   parcelContent: "Books",
   price: "200",
   quantity: "2",
   parcelType: "delicate",
   senderPhone: "02383837300",
-  senderName: "23Ben",
+  senderName: "en",
   receiverName: "Pamela Okoro",
   destinationAddress: "12 roag road Benin",
   receiverPhone: "02383837388",
@@ -69,7 +69,7 @@ const invalidSenderNameLt = {
 
 const invalidReceiverLt = {
   email: "joyce@gmail.",
-  weight: "1.5",
+  weight: "1.5kg",
   parcelContent: "Books",
   price: "200",
   quantity: "2",
@@ -86,14 +86,14 @@ const invalidReceiverLt = {
 }
 const invalidNameChar = {
   email: 'joyce@gmail.com',
-  weight: "1.5",
+  weight: "1.5kg",
   parcelContent: "Books",
   price: "200",
   quantity: "2",
   parcelType: "delicate",
   senderPhone: "02383837300",
-  senderName: "2lu",
-  receiverName: "@foro",
+  senderName: "290",
+  receiverName: "677",
   destinationAddress: "12 roag road Benin",
   receiverPhone: "02383837388",
   status: "pending",
@@ -104,7 +104,7 @@ const invalidNameChar = {
 
 const undefinedPhone = {
   email: 'joyce@gmail.com',
-  weight: "1.5",
+  weight: "1.5kg",
   parcelContent: "Books",
   price: "200",
   quantity: "2",
@@ -120,7 +120,7 @@ const undefinedPhone = {
 
 const emptyPhone = {
   email: 'joyce@gmail.com',
-  weight: "1.5",
+  weight: "1.5kg",
   parcelContent: "Books",
   price: "200",
   quantity: "2",
@@ -138,7 +138,7 @@ const emptyPhone = {
 
 const invalidPhoneFormat = {
   email: 'joyce@gmail.com',
-  weight: "1.5",
+  weight: "1.5kg",
   parcelContent: "Books",
   price: "200",
   quantity: "2",
@@ -156,7 +156,7 @@ const invalidPhoneFormat = {
 
 const invalidSenderPhoneLt = {
   email: 'joyce@gmail.com',
-  weight: "1.5",
+  weight: "1.5kg",
   parcelContent: "Books",
   price: "200",
   quantity: "2",
@@ -174,7 +174,7 @@ const invalidSenderPhoneLt = {
 
 const invalidReceiverPhoneLt = {
   email: 'joyce@gmail.com',
-  weight: "1.5",
+  weight: "1.5kg",
   parcelContent: "Books",
   price: "200",
   quantity: "2",
@@ -191,7 +191,7 @@ const invalidReceiverPhoneLt = {
 };
 
 const undefinedEmail = {
-  weight: "1.5",
+  weight: "1.5kg",
   parcelContent: "Books",
   price: "200",
   quantity: "2",
@@ -209,7 +209,7 @@ const undefinedEmail = {
 
 const emptyEmail = {
   email: "",
-  weight: "1.5",
+  weight: "1.5kg",
   parcelContent: "Books",
   price: "200",
   quantity: "2",
@@ -227,7 +227,7 @@ const emptyEmail = {
 
 const invalidEmailFormat = {
   email: "joycegmail.",
-  weight: "1.5",
+  weight: "1.5kg",
   parcelContent: "Books",
   price: "200",
   quantity: "2",
@@ -244,8 +244,8 @@ const invalidEmailFormat = {
 };
 
 const invalidEmailLength = {
-  email: 'e@gcm',
-  weight: "1.5:",
+  email: 'a@gl.com',
+  weight: "1.5kg",
   parcelContent: "Books",
   price: "200",
   quantity: "2",
@@ -297,7 +297,7 @@ const emptyWeight = {
 
 const invalidWeightLength = {
   email: 'joyce@gmail.com',
-  weight: "0",
+  weight: "0kg",
   parcelContent: "Books",
   price: "200",
   quantity: "2",
@@ -333,7 +333,7 @@ const invalidWeigthChar = {
 
 const undefinedParcelContent = {
   email: 'joyce@gmail.com',
-  weight: "1.5",
+  weight: "1.5kg",
   price: "200",
   quantity: "2",
   parcelType: "delicate",
@@ -350,7 +350,7 @@ const undefinedParcelContent = {
 
 const emptyParcelContent = {
   email: 'joyce@gmail.com',
-  weight: "1.5",
+  weight: "1.5kg",
   parcelContent: "",
   price: "200",
   quantity: "2",
@@ -368,7 +368,7 @@ const emptyParcelContent = {
 
 const invalidParcelContentLt = {
   email: 'joyce@gmail.com',
-  weight: "1.5",
+  weight: "1.5kg",
   parcelContent: "Bo",
   price: "200",
   quantity: "2",
@@ -386,8 +386,8 @@ const invalidParcelContentLt = {
 
 const invalidParcelContentChar = {
   email: 'joyce@gmail.com',
-  weight: "1.5",
-  parcelContent: "79Bo",
+  weight: "1.5kg",
+  parcelContent: "79",
   price: "200",
   quantity: "2",
   parcelType: "delicate",
@@ -403,7 +403,7 @@ const invalidParcelContentChar = {
 };
 const undefinedPrice = {
   email: 'joyce@gmail.com',
-  weight: "1.5",
+  weight: "1.5kg",
   parcelContent: "Books",
   quantity: "2",
   parcelType: "delicate",
@@ -420,7 +420,7 @@ const undefinedPrice = {
 
 const emptyPrice = {
   email: 'joyce@gmail.com',
-  weight: "1.5",
+  weight: "1.5kg",
   parcelContent: "Books",
   price: "",
   quantity: "2",
@@ -438,7 +438,7 @@ const emptyPrice = {
 
 const invalidPriceLength = {
   email: 'joyce@gmail.com',
-  weight: "1.5",
+  weight: "1.5kg",
   parcelContent: "Books",
   price: "20",
   quantity: "2",
@@ -456,9 +456,9 @@ const invalidPriceLength = {
 
 const invalidPriceChar = {
   email: 'joyce@gmail.com',
-  weight: "1.5",
+  weight: "1.5kg",
   parcelContent: "Books",
-  price: "9ab",
+  price: "ab",
   quantity: "2",
   parcelType: "delicate",
   senderPhone: "02383837300",
@@ -475,7 +475,7 @@ const invalidPriceChar = {
 
 const undefinedQty = {
   email: 'joyce@gmail.com',
-  weight: "1.5",
+  weight: "1.5kg",
   parcelContent: "Books",
   price: "200",
   parcelType: "delicate",
@@ -492,7 +492,7 @@ const undefinedQty = {
 
 const emptyQty = {
   email: 'joyce@gmail.com',
-  weight: "1.5",
+  weight: "1.5kg",
   parcelContent: "Books",
   price: "200",
   quantity: "",
@@ -508,27 +508,9 @@ const emptyQty = {
   trackingID: "381148a4-d861-5652-a697-730a865bccfe"
 };
 
-const invalidQtyLength = {
-  email: 'joyce@gmail.com',
-  weight: "1.5",
-  parcelContent: "Books",
-  price: "200",
-  quantity: "0",
-  parcelType: "delicate",
-  senderPhone: "02383837300",
-  senderName: "luke Ben",
-  receiverName: "Pamela Okoro",
-  destinationAddress: "12 roag road Benin",
-  receiverPhone: "02383837388",
-  status: "pending",
-  total: "500",
-  presentLocation: "Jos",
-  trackingID: "381148a4-d861-5652-a697-730a865bccfe"
-};
-
 const invalidQtyChar = {
   email: 'joyce@gmail.com',
-  weight: "1.5",
+  weight: "1.5kg",
   parcelContent: "Books",
   price: "200",
   quantity: "dg",
@@ -546,7 +528,8 @@ const invalidQtyChar = {
 
 const undefinedParcelType = {
   email: 'joyce@gmail.com',
-  weight: "1.5",
+  weight: "1.5kg",
+  parcelContent: "Books",
   price: "200",
   quantity: "2",
   senderPhone: "02383837300",
@@ -562,7 +545,7 @@ const undefinedParcelType = {
 
 const emptyParcelType = {
   email: 'joyce@gmail.com',
-  weight: "1.5",
+  weight: "1.5kg",
   parcelContent: "Books",
   price: "200",
   quantity: "2",
@@ -578,27 +561,9 @@ const emptyParcelType = {
   trackingID: "381148a4-d861-5652-a697-730a865bccfe"
 };
 
-const invalidParcelTypeLt = {
-  email: 'joyce@gmail.com',
-  weight: "1.5",
-  parcelContent: "Books",
-  price: "200",
-  quantity: "2",
-  parcelType: "deli",
-  senderPhone: "02383837300",
-  senderName: "luke Ben",
-  receiverName: "Pamela Okoro",
-  destinationAddress: "12 roag road Benin",
-  receiverPhone: "02383837388",
-  status: "pending",
-  total: "500",
-  presentLocation: "Jos",
-  trackingID: "381148a4-d861-5652-a697-730a865bccfe"
-};
-
 const invalidParcelTypeChar = {
   email: 'joyce@gmail.com',
-  weight: "1.5",
+  weight: "1.5kg",
   parcelContent: "Books",
   price: "200",
   quantity: "2",
@@ -619,5 +584,5 @@ export {
   emptyEmail, invalidEmailFormat, invalidEmailLength,
   undefinedWeight, emptyWeight, invalidWeightLength, invalidWeigthChar, undefinedParcelContent,
   emptyParcelContent, invalidParcelContentLt, invalidParcelContentChar, undefinedPrice,
-  emptyPrice, invalidPriceLength, invalidPriceChar, undefinedQty, emptyQty, invalidQtyLength, invalidQtyChar, undefinedParcelType, emptyParcelType, invalidParcelTypeLt, invalidParcelTypeChar
+  emptyPrice, invalidPriceLength, invalidPriceChar, undefinedQty, emptyQty, invalidQtyChar, undefinedParcelType, emptyParcelType, invalidParcelTypeChar
 };

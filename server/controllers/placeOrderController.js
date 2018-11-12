@@ -1,6 +1,3 @@
-
-
-// import placeOrders from '../inMemoryData/placeOrder';
 import uuidv5 from 'uuid/v5';
 import users from '../inMemoryData/users';
 import placeOrder from '../inMemoryData/placeOrder';
@@ -23,7 +20,6 @@ class placeOrderHandler {
 
         } = request.body;
 
-        console.log(request.body);
         //If delicate return 100 else non-delicate 50
         const parcelTypeCost = (delicate) => {
             return (delicate === "delicate") ? 100 : 50;
@@ -31,7 +27,7 @@ class placeOrderHandler {
         const presentLocation = "Jos";
         const total = (quantity * price) + parcelTypeCost(parcelType);
         const status = 'pending';
-        const id = placeOrders.length;
+        const id = placeOrder.length;
         const trackingID = uuidv5(`${senderName}${new Date()}${id}`, uuidv5.URL)
         const sendOrder = {
             email,
