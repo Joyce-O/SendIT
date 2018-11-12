@@ -450,8 +450,8 @@ aside h3 {
     display: flex;
 }
 #google-map {
-    display: flex;
-    /* display: none; */
+    /* display: flex; */
+    display: none;
     background-color: grey;
     height: 500px;  /* The height is 400 pixels */
     width: 60%;  /* The width is the width of the web page */
