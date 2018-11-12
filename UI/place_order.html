@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,12 +10,12 @@
     <meta name="author" content="Joyce-O">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="css/acc.css" />
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="css/acc.css" /> -->
 
 </head>
 
 <body>
-    <div class="container">
+    <div class="place-order-wrap">
         <header>
             <div id="top-head">
                 <div>
@@ -34,9 +35,6 @@
                 <nav class="flex-nav">
                     <ul id="open">
                         <li>
-                            <a href="#">Send</a>
-                        </li>
-                        <li>
                             <a href="#">Our Services</a>
                         </li>
                         <li>
@@ -48,7 +46,7 @@
 
                         <span id="track">Track A Parcel
                             <input type="text" placeholder="Barcode or Receipt No." class="search-go" name="q" size="21" maxlength="120">
-                            <input type="submit" value="Go" class="search-button">
+                            <input type="button" value="Go" class="button-go">
                         </span>
                     </form>
                     <div class="search-clear"></div>
@@ -61,7 +59,7 @@
             <div class="container">
                 <div class="display-list">
                     <div>
-                        <h5>Orders Summary</h5>
+                        <h5 class="order-summary">Orders Summary</h5>
                     </div>
                     <div class="parcel-list">
                         <label for="date">Date:</label>
@@ -70,7 +68,7 @@
                         <p class="id">123440AS</p>
                         <label for="Parcel-content">Parcel Contents:</label>
                         <p class="parcel-content">Hand Bags</p>
-               </div>
+                    </div>
                     <div class="parcel-list">
                         <label for="date">Date:</label>
                         <p class="date">6/4/2018</p>
@@ -143,7 +141,7 @@
                     <div class="po">
                         <p>My parcel Details</p>
                     </div>
-                    <div id="return-details">
+                    <div class="return-details">
 
                         <form class="flex-form">
 
@@ -159,42 +157,59 @@
 
                             <label for="from">Quantity</label>
                             <input class="location" type="number" min="1" name="q" required placeholder="" />
-
-                            <label for="from">Parcel content</label>
-                            <input class="location" type="text" min="1" name="q" required placeholder="" />
                         </form>
 
 
                     </div>
-                    <div id="return-details">
+                    <div class="return-details">
                         <div>
+                            <h4 class="po my-details">My Details</h4>
                             <form class="signup-form">
-                                <legend class="po my-details">Pickup Location</legend>
-                                <label for="name">Name: </label>
+                                <label for="name">Your Name: </label>
+                                <input type="text" name="name" class="fullname" id="name" required placeholder="Enter your name">
+                                <label for="name">Receiver's Name: </label>
                                 <input type="text" name="name" class="fullname" id="name" required placeholder="Enter your name">
                                 <label for="email">Email: </label>
                                 <input type="email" name="email" class="email" id="email" placeholder="example@mail.com" required>
-                                <label for="Address">Address: </label>
-                                <input type="text" name="address" class="address" id="address" required placeholder="Your residential address">
-                                <label for="phone">Phone: </label>
+                                <label for="phone">Pickup Phone: </label>
                                 <input type="phone" name="phone" class="phone" id="phone" required placeholder="Phone (+234090.....)">
+                                <label for="phone">Destination Phone: </label>
+                                <input type="phone" name="phone" class="phone" id="phone" required placeholder="Phone (+234090.....)">
+                                <label for="parcel-type">Parcel type</label>
+                                <select class="signup-form-select">
+                                    <option>Select</option>
+                                    <option>Delicate</option>
+                                    <option>Non-delicate</option>
+                                </select>
+
+                                <label for="">Choose delivery Package...</label>
+                                <select class="signup-form-select">
+                                    <option>Select</option>
+                                    <option>Normal</option>
+                                    <option>Fast Forward</option>
+                                </select>
 
                             </form>
                         </div>
                         <div>
-                            <form class="signup-form">
-                                <legend class="po my-details">Destination</legend>
-                                <label for="name">Name: </label>
-                                <input type="text" name="name" class="fullname" id="name" required placeholder="Enter your name">
-                                <label for="email">Email: </label>
-                                <input type="email" name="email" class="email" id="email" placeholder="example@mail.com" required>
-                                <label for="Address">Address: </label>
-                                <input type="text" name="address" class="address" id="address" required placeholder="Your residential address">
-                                <label for="phone">Phone: </label>
-                                <input type="phone" name="phone" class="phone" id="phone" required placeholder="Phone (+234090.....)">
+                            <div class="">
+                                <div class="help-">
+                                    <h4>Here to help</h4>
+                                    <p>
+                                        Please be notified that we DO NOT accept contrabound goods.
+                                    </p>
+                                    <p>
+                                        For international bound goods, make sure they comply with international laws guilding those types of goods.
+                                    </p>
+                                    <p>You can also find useful guildlines on packaging your items and a list of our top FAQs
+                                            <a href="#help-accordion">here</a>
+                                    </p>
+                                    <input id="checkbox" type="checkbox" name="accept" value="accept"> Yes I have understood and accepted the conditions
+                                </div>
 
-                            </form>
-                            <input type="submit" value="Submit">
+                                <input id="help-button" type="button" value="Send">
+                            </div>
+                            
                         </div>
                     </div>
 
@@ -347,18 +362,18 @@
 
                 </div>
 
-                <button class="accordion">Help</button>
-                <div class="panel">
+                <!-- <button class="accordion">Help</button>
+                <div class="panel help-accordion">
                     <ul>
                         <h3></h3>
 
                     </ul>
-                </div>
+                </div> -->
             </div>
         </section>
-        <footer class="footer footer-login">
+        <!-- <footer class="footer footer-place-order">
             <p>&#169;Joyce 2018</p>
-        </footer>
+        </footer> -->
     </div>
     <!-- <script src="js.js"></script> -->
     <script src="js/place_order.js"></script>

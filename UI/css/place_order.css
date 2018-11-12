@@ -2,8 +2,14 @@
   display: flex;
   flex-basis: 1 1 80%;
   margin-top: 20px;
-  max-height: 90vh;
+  height: 90vh;
   overflow: auto;
+ 
+}
+.place-order-wrap {
+    background: gainsboro;
+    overflow-y: hidden;
+    /* : 100vh; */
 }
 
 #parcel-details {
@@ -12,6 +18,7 @@
     justify-content: space-evenly;
     box-shadow: 1px 2px 3px 2px gray;
 }
+
 .display-list {
     position: absolute;
     display: flex;
@@ -33,6 +40,7 @@
     justify-content: space-evenly;
     flex: 1 1 80%;
     width: 80%;
+    background: aliceblue;
     margin-top: 5px;
     padding-top: 10px;
     font-weight: bolder;
@@ -131,7 +139,6 @@ button.accordion {
     text-align: center;
     outline: none;
     font-size: 1.2em;
-    /* transition: 0s; */
     font-weight: bolder;
     float: left;
     height: 100px
@@ -141,7 +148,7 @@ button.accordion {
     display: flex;
     flex-direction: column;
     padding: 0 18px;
-    background-color: white;
+    /* background-color: white; */
     max-height: 0;
     z-index: 2;
     overflow: hidden;
@@ -157,11 +164,12 @@ button.accordion {
 
 .panel-open {
     max-height: 80%;
-    transition: max-height 0s ease-out
+    transition: max-height 0s ease-out;
+    /* overflow: auto; */
 }
 button.accordion:hover {
     /* border: 1px solid rgba(128, 128, 128, 0.568); */
-    box-shadow: 1px 1px 1px 1px goldenrod;
+    box-shadow: 3px 3px 3px 3px rgb(32, 218, 110);
 }
 
 /* button.accordion:nth-of-type(1),
@@ -172,24 +180,24 @@ div.panel:nth-of-type(2) {
 /*Background colors of each section, both accordion and panels*/
 
 button.accordion:nth-of-type(1) {
-    background: wheat;
+    background: slategray;
 }
 
 button.accordion:nth-of-type(2) {
-    background: lightblue
+    background: rgb(190, 83, 83);
 }
 
 button.accordion:nth-of-type(3) {
-    background: purple
+    background: slategray;
 }
 
 button.accordion:nth-of-type(4) {
-    background: teal
+    background: rgb(190, 83, 83);
 }
-
+/* 
 button.accordion:nth-of-type(5) {
-    background: orange
-}
+    background: rgb(112, 73, 1);
+} */
 
 
 .flex-form {
@@ -198,9 +206,10 @@ button.accordion:nth-of-type(5) {
     justify-content: space-around;
     border: 20px solid rgba(0, 0, 0, 0.2);
     border-radius: 5px;
+    height: 30px;
 }
 .flex-form > * {
-    /* flex: 1 1 100%; */
+    flex: 1 1 100%;
     flex-wrap: nowrap;
     border: 0;
     padding: 4px;
@@ -224,6 +233,7 @@ button.accordion:nth-of-type(5) {
 .flex-form input[type="submit"]:hover, input[type="number"]:hover, .location:hover{
     border: 2px solid green;
 }
+
 input[type="submit"] {
     background-color: rgb(27, 194, 63);
     border: 0;
@@ -238,8 +248,9 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background: forestgreen;
 }
+
 label {
-    color: goldenrod;
+    color: rgb(43, 2, 53);
 }
 
 .po {
@@ -249,28 +260,69 @@ label {
     text-align: start;
     font-weight: bolder;
 }
-#return-details {
+.return-details {
     display: flex;
     flex: 1 1 100%;
+    /* max-height: 100%; */
     justify-content: space-evenly;
     margin-top: 40px;
 }
 #signup-form{
     display: block;
+    width: auto;
+    max-height: 100%;
+    overflow: auto;
     margin-top: 40px;
     border-top: 1px solid bisque;
     padding-top: 10px;
 }
-#signup-form input[type="text"], input[type="email"], input[type="phone"], .address,.fullname {
+#signup-form input[type="text"], input[type="email"], input[type="phone"], .address,.fullname, select {
     display: block;
-    border: 5px solid rgba(0, 0, 0, 0.2);
+    border: 2px solid rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     margin-bottom: 30px;
-    height: 5px;
-    width: 200px;
+    /* height: 2px; */
+    width: 350px;
 }
 #signup-form input[type="text"]:hover, input[type="email"]:hover, input[type="phone"]:hover, .address:hover, .fullname:hover {
     outline-color: green;
+}
+.signup-form-select {
+    padding: 5px;
+}
+
+.help- {
+border: 2px solid floralwhite;
+width: 350px;
+padding: 5px;
+background: white;
+margin-left: 150px;
+border-radius: 5px;
+margin-top: 40px;
+font-family: 'Courier New', Courier, monospace;
+font-weight: bolder;
+}
+#help-button {
+    background-color: rgb(27, 194, 63);
+    margin-top: 20px;
+    margin-left: 230px;
+    width: 40%;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#help-button:hover {
+    background: springgreen;
+}
+.help- h4 {
+    text-align: center;
+    color: steelblue;
+    font-size: 1.2em;
+}
+#checkbox {
+    color: steelblue;
+}
+.help- a {
+    color: blue;
 }
 .my-details {
     margin-bottom: 30px;
@@ -397,6 +449,15 @@ aside h3 {
 .float-flex {
     display: flex;
 }
+#google-map {
+    /* display: flex; */
+    display: none;
+    background-color: grey;
+    height: 500px;  /* The height is 400 pixels */
+    width: 60%;  /* The width is the width of the web page */
+    justify-content: center;
+    align-items: center;
+}
 @media screen and (max-width: 500px) { 
   div{width:70%;} 
 }
@@ -433,3 +494,4 @@ aside h3 {
         top: initial;
     }
 }
+
