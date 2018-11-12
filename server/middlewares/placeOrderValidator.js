@@ -126,7 +126,7 @@ class placeOrderValidators {
         if (!validEmail.test(email)) {
             return response.status(400)
                 .json({
-                    status: "!Unsuccessful",
+                    status: "Unsuccessful!",
                     message: "You are sending invalid email format"
                 });
         }
@@ -167,7 +167,7 @@ class placeOrderValidators {
         }
 
         weight = parseFloat(weight);
-        if (weight < 0 || weight > 1000) {
+        if (weight <= 0 || weight > 1000) {
             return response.status(400)
                 .json({
                     status: "Unsuccessful!",
@@ -269,7 +269,7 @@ class placeOrderValidators {
                 });
         }
 
-        if (quantity.length < 1 || quantity.length > 2) {
+        if (quantity.length > 2) {
             return response.status(400)
                 .json({
                     status: "Unsuccessful!",
@@ -302,15 +302,6 @@ class placeOrderValidators {
                     message: "Wrong format, please enter parcelType as 'delicate' or 'non-delicate'"
                 });
         }
-
-        if (parcelType.length < 8 || parcelType.length > 11) {
-            return response.status(400)
-                .json({
-                    status: "Unsuccessful!",
-                    message: "parcelType should be 8 to 12 characters long"
-                });
-        }
-
         request.body.senderName = senderName;
         request.body.receiverName = receiverName
         request.body.senderPhone = senderPhone;
@@ -343,13 +334,6 @@ class placeOrderValidators {
 
     static getSpecificOrderValidator(request, response, next) {
         let {parcelId} = request.params;
-        if (!(parcelId)) {
-            return response.status(400)
-                .json({
-                    status: 'Unsuccessful!',
-                    message: 'Sorry! this is an invalid URL'
-                });
-        }
         const isExistOrder = placeOrder.find(placeOrder => placeOrder.trackingID === (parcelId));
         if (!isExistOrder) {
             return response.status(404)

@@ -31,7 +31,7 @@ class placeOrderHandler {
         const presentLocation = "Jos";
         const total = (quantity * price) + parcelTypeCost(parcelType);
         const status = 'pending';
-        const id = placeOrders.length;
+        const id = placeOrder.length;
         const trackingID = uuidv5(`${senderName}${new Date()}${id}`, uuidv5.URL)
         const sendOrder = {
             email,
@@ -55,8 +55,8 @@ class placeOrderHandler {
         placeOrder.push(sendOrder);
         return response.status(201)
             .json({
-                message: "Your delivery order is booked successfully",
-                sendOrder
+                message: "Your delivery order is booked successfully"
+                // sendOrder
             });
     }
 
