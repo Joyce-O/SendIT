@@ -6,7 +6,7 @@ import {
     emptyEmail, invalidEmailFormat, invalidEmailLength,
     undefinedWeight, emptyWeight, invalidWeightLength, invalidWeigthChar, undefinedParcelContent,
     emptyParcelContent, invalidParcelContentLt, invalidParcelContentChar, undefinedPrice,
-    emptyPrice, invalidPriceLength, invalidPriceChar, undefinedQty, emptyQty, invalidQtyLength, invalidQtyChar, undefinedParcelType, emptyParcelType, invalidParcelTypeLt, invalidParcelTypeChar
+    emptyPrice, invalidPriceLength, invalidPriceChar, undefinedQty, emptyQty, invalidQtyLength, invalidQtyChar, undefinedParcelType, emptyParcelType, invalidParcelTypeChar
 
 } from './placeOrderMock';
 import placeOrder from '../inMemoryData/placeOrder';
@@ -45,7 +45,7 @@ describe('Test for Parcel Order Endpoints', () => {
         it('Should return 201 for success', (done) => {
             chai.request(app)
                 .post('/api/v1/placeOrder')
-                .send(successOrder)
+                .send(successfulOrder)
                 .end((error, response) => {
                     expect(response).to.have.status(201);
                     expect(response.body.message).to.equal("Your delivery order is booked successfully");
@@ -66,10 +66,10 @@ describe('Test for Parcel Order Endpoints', () => {
         it('Should return 400 for empty name', (done) => {
             chai.request(app)
                 .post('/api/v1/placeOrder')
-                .send(emptySenderName)
+                .send(emptyName)
                 .end((error, response) => {
                     expect(response).to.have.status(400);
-                    expect(response.body.message).to.equal('Please enter senderName');
+                    expect(response.body.message).to.equal('Please enter senderName or receiverName');
                     done();
                 });
         });
@@ -394,16 +394,7 @@ describe('Test for Parcel Order Endpoints', () => {
                     done();
                 });
         });
-        it('Should return 400 for invalid parcel type length', (done) => {
-            chai.request(app)
-                .post('/api/v1/placeOrder')
-                .send(invalidParcelTypeLt)
-                .end((error, response) => {
-                    expect(response).to.have.status(400);
-                    expect(response.body.message).to.equal('parcelType should be 8 to 12 characters long');
-                    done();
-                });
-        });
+
     });
 
     describe('Test for Fetch all Parcels Orders Endpoint', () => {
@@ -421,28 +412,20 @@ describe('Test for Parcel Order Endpoints', () => {
     describe('Test for Fetch specific Parcel Order Endpoint', () => {
         it('should return 200 for success', (done) => {
             chai.request(app)
-                .get('/api/v1/parcels/:219b1e64-afe5-5e71-ac0b-8b6a4c605a01')
+                .get('/api/v1/parcels/219b1e64-afe5-5e71-ac0b-8b6a4c605a01')
                 .end((error, response) => {
                     expect(response).to.have.status(200);
                     expect(response.body.message).to.equal('Fetched order successfull!');
                     done();
                 });
         });
-        it('should return 400 for invalid URL', (done) => {
-            chai.request(app)
-                .get('/api/v1/orders/fat')
-                .end((error, response) => {
-                    expect(response).to.have.status(400);
-                    expect(response.body.message).to.equal('Sorry! this is an invalid URL');
-                    done();
-                });
-        });
+        
         it('return 404 for orderTrackId number that does not exist', (done) => {
             chai.request(app)
                 .get('/api/v1/orders/:00001')
                 .end((error, response) => {
                     expect(response).to.have.status(404);
-                    expect(response.body.message).to.equal('Sorry! Order does not exist');
+                    expect(response.body.message).to.equal('Sorry! This page does not exist, enter a valid url.');
                     done();
                 });
         });

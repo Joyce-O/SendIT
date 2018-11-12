@@ -1,9 +1,10 @@
 const successfulOrder = {
   email: 'joyce@gmail.com',
-  weight: "1.5",
+  weight: "1.5kg",
   parcelContent: "Books",
   price: "200",
   quantity: "2",
+  pickupAddress: '12 Owerri Street, Jos',
   parcelType: "delicate",
   senderPhone: "02383837300",
   senderName: "luke Ben",
@@ -13,7 +14,7 @@ const successfulOrder = {
   status: "pending",
   total: "500",
   presentLocation: "Jos",
-  trackingID: "381148a4-d861-5652-a697-730a865bccfe"
+  trackingID: "219b1e64-afe5-5e71-ac0b-8b6a4c605a01"
 };
 
 const undefinedName = {
@@ -21,6 +22,7 @@ const undefinedName = {
   parcelContent: "Books",
   price: "200",
   quantity: "2",
+  pickupAddress: '12 Owerri Street, Jos',
   parcelType: "delicate",
   senderPhone: "02383837300",
   destinationAddress: "12 roag road Benin",
@@ -37,6 +39,7 @@ const emptyName = {
   parcelContent: "Books",
   price: "200",
   quantity: "2",
+  pickupAddress: '12 Owerri Street, Jos',
   parcelType: "delicate",
   senderPhone: "02383837300",
   senderName: "",
@@ -50,14 +53,15 @@ const emptyName = {
 };
 
 const invalidSenderNameLt = {
-  email: "joyce@gmail.",
-  weight: "1.5",
+  email: "joyce@gmail.com",
+  weight: "1.5kg",
   parcelContent: "Books",
   price: "200",
   quantity: "2",
+  pickupAddress: '12 Owerri Street, Jos',
   parcelType: "delicate",
   senderPhone: "02383837300",
-  senderName: "23Ben",
+  senderName: "23",
   receiverName: "Pamela Okoro",
   destinationAddress: "12 roag road Benin",
   receiverPhone: "02383837388",
@@ -73,6 +77,7 @@ const invalidReceiverLt = {
   parcelContent: "Books",
   price: "200",
   quantity: "2",
+  pickupAddress: '12 Owerri Street, Jos',
   parcelType: "delicate",
   senderPhone: "02383837300",
   senderName: "luke Ben",
@@ -86,14 +91,15 @@ const invalidReceiverLt = {
 }
 const invalidNameChar = {
   email: 'joyce@gmail.com',
-  weight: "1.5",
+  weight: "1.5kg",
   parcelContent: "Books",
   price: "200",
   quantity: "2",
+  pickupAddress: '12 Owerri Street, Jos',
   parcelType: "delicate",
   senderPhone: "02383837300",
-  senderName: "2lu",
-  receiverName: "@foro",
+  senderName: "209",
+  receiverName: "5667",
   destinationAddress: "12 roag road Benin",
   receiverPhone: "02383837388",
   status: "pending",
@@ -104,10 +110,11 @@ const invalidNameChar = {
 
 const undefinedPhone = {
   email: 'joyce@gmail.com',
-  weight: "1.5",
+  weight: "1.5kg",
   parcelContent: "Books",
   price: "200",
   quantity: "2",
+  pickupAddress: '12 Owerri Street, Jos',
   parcelType: "delicate",
   senderName: "luke Ben",
   receiverName: "Pamela Okoro",
@@ -120,10 +127,11 @@ const undefinedPhone = {
 
 const emptyPhone = {
   email: 'joyce@gmail.com',
-  weight: "1.5",
+  weight: "1.5kg",
   parcelContent: "Books",
   price: "200",
   quantity: "2",
+  pickupAddress: '12 Owerri Street, Jos',
   parcelType: "delicate",
   senderPhone: "",
   senderName: "luke Ben",
@@ -138,10 +146,11 @@ const emptyPhone = {
 
 const invalidPhoneFormat = {
   email: 'joyce@gmail.com',
-  weight: "1.5",
+  weight: "1.5kg",
   parcelContent: "Books",
   price: "200",
   quantity: "2",
+  pickupAddress: '12 Owerri Street, Jos',
   parcelType: "delicate",
   senderPhone: "rt4553",
   senderName: "luke Ben",
@@ -156,10 +165,11 @@ const invalidPhoneFormat = {
 
 const invalidSenderPhoneLt = {
   email: 'joyce@gmail.com',
-  weight: "1.5",
+  weight: "1.5kg",
   parcelContent: "Books",
   price: "200",
   quantity: "2",
+  pickupAddress: '12 Owerri Street, Jos',
   parcelType: "delicate",
   senderPhone: "0238",
   senderName: "luke Ben",
@@ -174,10 +184,11 @@ const invalidSenderPhoneLt = {
 
 const invalidReceiverPhoneLt = {
   email: 'joyce@gmail.com',
-  weight: "1.5",
+  weight: "1.5kg",
   parcelContent: "Books",
   price: "200",
   quantity: "2",
+  pickupAddress: '12 Owerri Street, Jos',
   parcelType: "delicate",
   senderPhone: "0238908669",
   senderName: "luke Ben",
@@ -191,10 +202,11 @@ const invalidReceiverPhoneLt = {
 };
 
 const undefinedEmail = {
-  weight: "1.5",
+  weight: "1.5kg",
   parcelContent: "Books",
   price: "200",
   quantity: "2",
+  pickupAddress: '12 Owerri Street, Jos',
   parcelType: "delicate",
   senderPhone: "02383837300",
   senderName: "luke Ben",
@@ -209,10 +221,11 @@ const undefinedEmail = {
 
 const emptyEmail = {
   email: "",
-  weight: "1.5",
+  weight: "1.5kg",
   parcelContent: "Books",
   price: "200",
   quantity: "2",
+  pickupAddress: '12 Owerri Street, Jos',
   parcelType: "delicate",
   senderPhone: "02383837300",
   senderName: "luke Ben",
@@ -226,11 +239,12 @@ const emptyEmail = {
 };
 
 const invalidEmailFormat = {
-  email: "joycegmail.",
-  weight: "1.5",
+  email: "joycegail.",
+  weight: "1.5kg",
   parcelContent: "Books",
   price: "200",
   quantity: "2",
+  pickupAddress: '12 Owerri Street, Jos',
   parcelType: "delicate",
   senderPhone: "02383837300",
   senderName: "luke Ben",
@@ -244,11 +258,12 @@ const invalidEmailFormat = {
 };
 
 const invalidEmailLength = {
-  email: 'e@gcm',
-  weight: "1.5:",
+  email: 'e@gma.com',
+  weight: "1.5kg",
   parcelContent: "Books",
   price: "200",
   quantity: "2",
+  pickupAddress: '12 Owerri Street, Jos',
   parcelType: "delicate",
   senderPhone: "02383837300",
   senderName: "luke Ben",
@@ -266,6 +281,7 @@ const undefinedWeight = {
   parcelContent: "Books",
   price: "200",
   quantity: "2",
+  pickupAddress: '12 Owerri Street, Jos',
   parcelType: "delicate",
   senderPhone: "02383837300",
   senderName: "luke Ben",
@@ -283,6 +299,7 @@ const emptyWeight = {
   parcelContent: "Books",
   price: "200",
   quantity: "2",
+  pickupAddress: '12 Owerri Street, Jos',
   parcelType: "delicate",
   senderPhone: "02383837300",
   senderName: "luke Ben",
@@ -297,10 +314,11 @@ const emptyWeight = {
 
 const invalidWeightLength = {
   email: 'joyce@gmail.com',
-  weight: "0",
+  weight: "0kg",
   parcelContent: "Books",
   price: "200",
   quantity: "2",
+  pickupAddress: '12 Owerri Street, Jos',
   parcelType: "delicate",
   senderPhone: "02383837300",
   senderName: "luke Ben",
@@ -319,6 +337,7 @@ const invalidWeigthChar = {
   parcelContent: "Books",
   price: "200",
   quantity: "2",
+  pickupAddress: '12 Owerri Street, Jos',
   parcelType: "delicate",
   senderPhone: "02383837300",
   senderName: "luke Ben",
@@ -333,9 +352,10 @@ const invalidWeigthChar = {
 
 const undefinedParcelContent = {
   email: 'joyce@gmail.com',
-  weight: "1.5",
+  weight: "1.5kg",
   price: "200",
   quantity: "2",
+  pickupAddress: '12 Owerri Street, Jos',
   parcelType: "delicate",
   senderPhone: "02383837300",
   senderName: "luke Ben",
@@ -350,10 +370,11 @@ const undefinedParcelContent = {
 
 const emptyParcelContent = {
   email: 'joyce@gmail.com',
-  weight: "1.5",
+  weight: "1.5kg",
   parcelContent: "",
   price: "200",
   quantity: "2",
+  pickupAddress: '12 Owerri Street, Jos',
   parcelType: "delicate",
   senderPhone: "02383837300",
   senderName: "luke Ben",
@@ -368,10 +389,11 @@ const emptyParcelContent = {
 
 const invalidParcelContentLt = {
   email: 'joyce@gmail.com',
-  weight: "1.5",
+  weight: "1.5kg",
   parcelContent: "Bo",
   price: "200",
   quantity: "2",
+  pickupAddress: '12 Owerri Street, Jos',
   parcelType: "delicate",
   senderPhone: "02383837300",
   senderName: "luke Ben",
@@ -386,10 +408,11 @@ const invalidParcelContentLt = {
 
 const invalidParcelContentChar = {
   email: 'joyce@gmail.com',
-  weight: "1.5",
+  weight: "1.5kg",
   parcelContent: "79Bo",
   price: "200",
   quantity: "2",
+  pickupAddress: '12 Owerri Street, Jos',
   parcelType: "delicate",
   senderPhone: "02383837300",
   senderName: "luke Ben",
@@ -403,9 +426,10 @@ const invalidParcelContentChar = {
 };
 const undefinedPrice = {
   email: 'joyce@gmail.com',
-  weight: "1.5",
+  weight: "1.5kg",
   parcelContent: "Books",
   quantity: "2",
+  pickupAddress: '12 Owerri Street, Jos',
   parcelType: "delicate",
   senderPhone: "02383837300",
   senderName: "luke Ben",
@@ -420,10 +444,11 @@ const undefinedPrice = {
 
 const emptyPrice = {
   email: 'joyce@gmail.com',
-  weight: "1.5",
+  weight: "1.5kg",
   parcelContent: "Books",
   price: "",
   quantity: "2",
+  pickupAddress: '12 Owerri Street, Jos',
   parcelType: "delicate",
   senderPhone: "02383837300",
   senderName: "luke Ben",
@@ -438,10 +463,11 @@ const emptyPrice = {
 
 const invalidPriceLength = {
   email: 'joyce@gmail.com',
-  weight: "1.5",
+  weight: "1.5kg",
   parcelContent: "Books",
   price: "20",
   quantity: "2",
+  pickupAddress: '12 Owerri Street, Jos',
   parcelType: "delicate",
   senderPhone: "02383837300",
   senderName: "luke Ben",
@@ -456,10 +482,11 @@ const invalidPriceLength = {
 
 const invalidPriceChar = {
   email: 'joyce@gmail.com',
-  weight: "1.5",
+  weight: "1.5kg",
   parcelContent: "Books",
-  price: "9ab",
+  price: "ab",
   quantity: "2",
+  pickupAddress: '12 Owerri Street, Jos',
   parcelType: "delicate",
   senderPhone: "02383837300",
   senderName: "luke Ben",
@@ -475,9 +502,10 @@ const invalidPriceChar = {
 
 const undefinedQty = {
   email: 'joyce@gmail.com',
-  weight: "1.5",
+  weight: "1.5kg",
   parcelContent: "Books",
   price: "200",
+  pickupAddress: '12 Owerri Street, Jos',
   parcelType: "delicate",
   senderPhone: "02383837300",
   senderName: "luke Ben",
@@ -492,10 +520,11 @@ const undefinedQty = {
 
 const emptyQty = {
   email: 'joyce@gmail.com',
-  weight: "1.5",
+  weight: "1.5kg",
   parcelContent: "Books",
   price: "200",
   quantity: "",
+  pickupAddress: '12 Owerri Street, Jos',
   parcelType: "delicate",
   senderPhone: "02383837300",
   senderName: "luke Ben",
@@ -510,10 +539,11 @@ const emptyQty = {
 
 const invalidQtyLength = {
   email: 'joyce@gmail.com',
-  weight: "1.5",
+  weight: "1.5kg",
   parcelContent: "Books",
   price: "200",
-  quantity: "0",
+  quantity: "234",
+  pickupAddress: '12 Owerri Street, Jos',
   parcelType: "delicate",
   senderPhone: "02383837300",
   senderName: "luke Ben",
@@ -528,10 +558,11 @@ const invalidQtyLength = {
 
 const invalidQtyChar = {
   email: 'joyce@gmail.com',
-  weight: "1.5",
+  weight: "1.5kg",
   parcelContent: "Books",
   price: "200",
   quantity: "dg",
+  pickupAddress: '12 Owerri Street, Jos',
   parcelType: "delicate",
   senderPhone: "02383837300",
   senderName: "luke Ben",
@@ -546,9 +577,11 @@ const invalidQtyChar = {
 
 const undefinedParcelType = {
   email: 'joyce@gmail.com',
-  weight: "1.5",
+  weight: "1.5kg",
+  parcelContent: "Books",
   price: "200",
   quantity: "2",
+  pickupAddress: '12 Owerri Street, Jos',
   senderPhone: "02383837300",
   senderName: "luke Ben",
   receiverName: "Pamela Okoro",
@@ -562,29 +595,12 @@ const undefinedParcelType = {
 
 const emptyParcelType = {
   email: 'joyce@gmail.com',
-  weight: "1.5",
+  weight: "1.5kg",
   parcelContent: "Books",
   price: "200",
   quantity: "2",
   parcelType: "",
-  senderPhone: "02383837300",
-  senderName: "luke Ben",
-  receiverName: "Pamela Okoro",
-  destinationAddress: "12 roag road Benin",
-  receiverPhone: "02383837388",
-  status: "pending",
-  total: "500",
-  presentLocation: "Jos",
-  trackingID: "381148a4-d861-5652-a697-730a865bccfe"
-};
-
-const invalidParcelTypeLt = {
-  email: 'joyce@gmail.com',
-  weight: "1.5",
-  parcelContent: "Books",
-  price: "200",
-  quantity: "2",
-  parcelType: "deli",
+  pickupAddress: '12 Owerri Street, Jos',
   senderPhone: "02383837300",
   senderName: "luke Ben",
   receiverName: "Pamela Okoro",
@@ -598,10 +614,11 @@ const invalidParcelTypeLt = {
 
 const invalidParcelTypeChar = {
   email: 'joyce@gmail.com',
-  weight: "1.5",
+  weight: "1.5kg",
   parcelContent: "Books",
   price: "200",
   quantity: "2",
+  pickupAddress: '12 Owerri Street, Jos',
   parcelType: "78hg",
   senderPhone: "02383837300",
   senderName: "luke Ben",
@@ -619,5 +636,5 @@ export {
   emptyEmail, invalidEmailFormat, invalidEmailLength,
   undefinedWeight, emptyWeight, invalidWeightLength, invalidWeigthChar, undefinedParcelContent,
   emptyParcelContent, invalidParcelContentLt, invalidParcelContentChar, undefinedPrice,
-  emptyPrice, invalidPriceLength, invalidPriceChar, undefinedQty, emptyQty, invalidQtyLength, invalidQtyChar, undefinedParcelType, emptyParcelType, invalidParcelTypeLt, invalidParcelTypeChar
+  emptyPrice, invalidPriceLength, invalidPriceChar, undefinedQty, emptyQty, invalidQtyLength, invalidQtyChar, undefinedParcelType, emptyParcelType, invalidParcelTypeChar
 };
