@@ -1,8 +1,8 @@
-# MailXpress
+# SendIT
 [![Build Status](https://travis-ci.org/Joyce-O/MailXpress.svg?branch=develop)](https://travis-ci.org/Joyce-O/MailXpress) [![Coverage Status](https://coveralls.io/repos/github/Joyce-O/MailXpress/badge.svg?branch=develop)](https://coveralls.io/github/Joyce-O/MailXpress?branch=develop) [![Maintainability](https://api.codeclimate.com/v1/badges/ba8d6de7ffdcee6c81ea/maintainability)](https://codeclimate.com/github/Joyce-O/MailXpress/maintainability)
 
 # Description
-MailXpress is a courier service that helps users deliver parcels to different destinations. MailXpress provides courier quotes based on weight categories.
+SendIT is a courier service that helps users deliver parcels to different destinations. SendIT provides courier quotes based on weight categories.
 
 <br/><b>gh-pages:</b> https://joyce-o.github.io/MailXpress/UI/index.html
 <br/><b> Hosted API on Heroku: </b> https://joyce-o-mailxpress.herokuapp.com/api/v1
