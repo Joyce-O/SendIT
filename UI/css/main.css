@@ -95,6 +95,7 @@ font-family: 'Inknut Antiqua', serif;
     display: inline-block;
     height: 40px;
     width: 40px;
+    outline: none;
     border-radius: 20px;
     font-size: 32px;
     font-weight: bolder;
@@ -145,7 +146,7 @@ input {
     margin-top: 10px;
     background: green;
     width: max-content;
-    padding: 5px;
+    padding: 7px;
     padding-top: 3px;
     cursor: pointer;
     color: white;
@@ -216,13 +217,14 @@ li {
     font-size: 20px;
     
 }
+
 /*Search button*/
 .search-go {
     margin: 0;
     padding: 5px 0px;
     font-family: Arial, Helvetica, sans-serif;
     font-size:14px;
-    border:1px solid #0076a3; border-right:0px;
+    /* border:1px solid #0076a3; border-right:0px; */
     border-top-left-radius: 1px 1px;
     border-bottom-left-radius: 5px 5px;
 }
@@ -245,7 +247,7 @@ li {
     text-align: center;
     text-decoration: none;
     color: #ffffff;
-    border: solid 1px #0076a3; border-right:0px;
+    /* border: solid 1px #0076a3; border-right:0px; */
     background: green;
     border-top-right-radius: 1px 1px;
     border-bottom-right-radius: 1px 1px;
@@ -260,6 +262,9 @@ li {
 }
 .search-clear {
     clear:both;
+}
+input.search-go:hover {
+    border: 2px solid green;
 }
 /* SECTION */
 .section {
@@ -396,7 +401,7 @@ li {
 .overlay {
     background: rgba(122, 56, 36, 0.8);
     width: 100vw;
-    height: 352px;
+    height: 350px;
     margin-top: 60px;
     top: 0;
     left: 0; 
@@ -405,7 +410,7 @@ li {
     z-index: 2;
 }
 .overlay-home {
-    margin-top: 180px;
+    margin-top: 105px;
 }
 #form2 {
     margin: 2em 0;
@@ -449,7 +454,7 @@ li {
     display: inline; 
     font-size: 12px;
     color: rgba(0, 128, 0, 0.801);
-    text-align:start;
+    text-align: center;
 }
   /**
   * Translate down and scale the label up to cover the placeholder,
@@ -519,15 +524,16 @@ li {
       background: green;
       font-size: 1.2em;
       border-radius: 3px;
-      box-shadow: 1px 1px 2px 1px gray;
+      outline: none;
 }
 #call-action {
-      font-size: xx-large;
+      font-size: 3em;
       font-family: 'Patrick Hand', cursive;
       opacity: .7;
       font-weight: bolder;
-      color: rgb(252, 252, 252);
-      letter-spacing: .2em;
+      color: white;
+      margin-top: 0px;
+      letter-spacing: .1em;
 }
 #personnel {
     display: flex;
