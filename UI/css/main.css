@@ -33,16 +33,16 @@ body {
     flex: 1 1 100%;
 
 }
-#top-head {
+/* #top-head {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     background: antiquewhite;
 }
-/* All the descendants of top-head */
+/* All the descendants of top-head 
 .top-head > * {
     flex: 1 1 100%;
-}
+} */
 
 #top-img {
     height: 80px;
@@ -115,45 +115,23 @@ input {
 }
 .my-parcel {
     display: flex;
+    margin-right: 15px;
 }
 #my-parcels {
     /* display: inline-block; */
-    margin-top: 10px;
-    background: transparent;
-    padding: 10px;
-    color: brown;
+    margin-top: 20px;
+    /* background: transparent; */
+    padding: 5px;
+    color: white;
     max-height: fit-content;
     font-size: 1.2em;
     font-weight: bolder;
-    border: 1px solid green;
+    /* border: 2px solid green; */
 }
 
-#signin {
+#login {
     margin-top: 10px;
-    margin-left: 10px;
-    color: yellowgreen;
-    height: 30px;
-    cursor: pointer;
     background: transparent;
-    font-size: 1.1em;
-    font-weight: bolder;
-    border: 1px solid green;
-}
-
-#my-parcels:hover, #signin:hover, #top-img:hover {
-    box-shadow: 3px 5px 5px 5px gray;
-}
-
-.cart img {
-    width: 20px;
-    height: 22px;
-    transform: rotate(0deg);
-    padding-right: 5px;
-}
-
-#signup {
-    margin-top: 10px;
-    background: green;
     width: max-content;
     padding: 5px;
     cursor: pointer;
@@ -162,11 +140,37 @@ input {
     text-align: center;
     font-size: .9em;
     font-weight: bolder;
+} 
+#signup {
+    margin-top: 10px;
+    background: green;
+    width: max-content;
+    padding: 5px;
+    padding-top: 3px;
+    cursor: pointer;
+    color: white;
+    border-radius: 3px;
+    text-align: center;
+    font-size: .9em;
+    font-weight: bolder;
 }
-#signup:hover {
+#signup:hover, #login:hover {
     background: rgba(153, 205, 50, 0.87);
 
 }
+
+/* #my-parcels:hover, #signin:hover, #top-img:hover {
+    box-shadow: 3px 5px 5px 5px gray;
+} */
+
+.cart img {
+    width: 20px;
+    height: 22px;
+    transform: rotate(0deg);
+    padding-right: 5px;
+}
+
+
 
 #open {
     display: flex;
@@ -175,10 +179,18 @@ input {
     align-items: stretch;
     flex-basis: 100%;
 }
+#open li {
+    font-family: 'Times New Roman', Times, serif;
+    margin: 5px;
+}
+#open li:hover {
+    transform: scale(1.1);
+}
 li {
     list-style: none;
     padding-bottom: 5px;
 }
+
 /* #open li a {
     flex: 1 1 100%;
     text-decoration: none;
@@ -194,6 +206,8 @@ li {
  #search-header {
     padding: 10px;
     margin-right: 20px;
+    align-self: center;
+
 }
 #track {
     display: inline-block;
@@ -215,6 +229,8 @@ li {
 .button-go{
     width: auto;
     padding: 7px;
+    padding-right: 10px;
+    font-size: .7em;
     border-radius: 3px;
     color: white;
     background: green;
@@ -971,6 +987,26 @@ letter-spacing: 0.1em;
 .footer-login {
     position: fixed;
 }
+/* FEEDBACK */
+.sendit-logo {
+    padding-top: 0px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.7em;
+    margin-right: 5px;
+    margin-top: 6px;
+}
+.sendit-logo #span-logo{
+    font-size: 1em;
+    color: rgb(240, 173, 91);
+}
+.our-services {
+margin-top: 5px;
+font-size: 1.4em;
+}
+
+
+
 /* .footer-place-order {
         /* position: fixed; */
         /* left: 0;
