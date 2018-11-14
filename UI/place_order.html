@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>MailXpress | Place-order</title>
-    <meta name="description" content="MailXpress is a courier service that helps users deliver parcels to different destinations.">
+    <title>SendIT | Place-order</title>
+    <meta name="description" content="SendIT is a courier service that helps users deliver parcels to different destinations.">
     <meta name="keywords" content="google map implementation, courier">
     <meta name="author" content="Joyce-O">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -34,29 +34,322 @@
             <div id="sub-head">
                 <nav class="flex-nav">
                     <ul id="open">
+                        <!-- <li><a href="#"><img src="greaterthan.png"></a></li> -->
                         <li>
-                            <a href="#">Our Services</a>
+                            <a class="sendit-logo" href="#">Send
+                                <span id="span-logo">&#921;&#932;</span>
+                            </a>
                         </li>
                         <li>
-                            <a href="#">Help</a>
+                            <a class="our-services" href="#">Our Services</a>
+                        </li>
+                        <li>
+                            <a class="our-services" href="#">Help</a>
                         </li>
                 </nav>
                 <div id="search-header">
                     <form id="search-form" method="get" action="#">
 
                         <span id="track">Track A Parcel
-                            <input type="text" placeholder="Barcode or Receipt No." class="search-go" name="q" size="21" maxlength="120">
+                            <input type="text" placeholder="" class="search-go" name="q" size="21" maxlength="120">
                             <input type="button" value="Go" class="button-go">
                         </span>
                     </form>
                     <div class="search-clear"></div>
                 </div>
+                <div class="my-parcel">
+                    <div id="my-parcels">
+                        <div class="dropdown" style="float:right;">
+                            <span id="avatarName">
+                                <img id="avatar" src="img/avater2.jpg" alt="profile name" width="20px">&#711;</span>
+
+                            <div class="dropdown-content">
+                                <a href="profile.html">profile</a>
+                                <a href="index.html">Logout</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+        </header>
+        <section class="section-order">
+
+
+            <div class="order-sum-wrap">
+                <h2>Parcel Order History</h2>
+                <div class="aside-diva">
+                    <aside id="aside-add">
+                        <input type="button" value="Add Parcel" id="add-parcel">
+                    </aside>
+
+                </div>
+            </div>
+
+
+            <!-- <div id="activity-title">ADD ACTIVITY</div>
+            <div id="add-activity">
+                <form id="form">
+                    <label for="date">Date</label>
+                    <input type="text" placeholder="date" required class="date">
+                    <label for="name"></label>
+                    <input type="text" placeholder="Name" class="Name">
+                    <label for="email">Email</label>
+                    <input type="email" placeholder="Email" required class="email">
+                    <label for="SenderPhone">Sender phone</label>
+                    <input type="Sender phone" placeholder="Sender phone" required class="SenderPhone">
+                    <label for="ReceiverPhone">Receiver phone</label>
+                    <input type="Receiver phone" placeholder="Receiver phone" required class="ReceiverPhone">
+                    <label for="weight">weight</label>
+                    <input type="weight" placeholder="weight" required class="weight">
+
+                    <input id="add-submit" type="submit" value="Submit">
+                    <input id="never" type="button" value="Never mind">
+                </form> -->
+                <!-- <div class="order-column id">S/N</div>
+                <div class="order-column date">Date</div>
+                <div class="order-column TrackingID">TrackingID</div>
+                <div class="order-column parcel-content">Parcel Content</div>
+                <div class="order-column location">Present Location</div>
+                <div class="order-column status">Status</div>
+                <div title="Click to edit your parcel" class="order-column edit-col edit-head">Edit</div>
+            </div>
+            
+        </div> -->
+
+            <div class="order-wrapper">
+                <div class="order-history column-head">
+                    <div class="order-column id">S/N</div>
+                    <div class="order-column date">Date</div>
+                    <div class="order-column TrackingID">TrackingID</div>
+                    <div class="order-column parcel-content">Parcel Content</div>
+                    <div class="order-column location">Present Location</div>
+                    <div class="order-column status">Status</div>
+                    <div title="Click to edit your parcel" class="order-column edit-col edit-head">Edit</div>
+                </div>
+                <div class="order-history">
+                    <div class="order-column id">
+                        <p>1</p>
+                    </div>
+                    <div class="order-column date">
+                        <p>13-09-2018</p>
+                    </div>
+                    <div class="order-column TrackingID">
+                        <p>630eb68f...</p>
+                    </div>
+                    <div class="order-column parcel-content">
+                        <p>Laptop</p>
+                    </div>
+                    <div class="order-column location">
+                        <p>Lagos</p>
+                    </div>
+                    <div class="order-column status">
+                        <p>Pending</p>
+                    </div>
+                    <div class="order-column edit-col edit-body">
+                        <div class="dropdown3">
+                            <button onclick="myFunction()" class="dropbtn3">&#8942;</button>
+                            <div id="myDropdown3" class="dropdown-content3">
+                                <a class="edit" href="add-parcel.html">Edit
+                                    <span class="edit-icon">&#9998;</span>
+                                </a>
+                                <span class="delete">Delete
+                                    <span class="delete-code">&#10799;</span>
+                                </span>
+
+                            </div>
+                        </div>
+        
+                    </div>
+                  
+                </div>
+
+                <div class="order-history order-even">
+                        <div class="order-column id">
+                            <p>1</p>
+                        </div>
+                        <div class="order-column date">
+                            <p>13-09-2018</p>
+                        </div>
+                        <div class="order-column TrackingID">
+                            <p>630eb68f...</p>
+                        </div>
+                        <div class="order-column parcel-content">
+                            <p>Laptop</p>
+                        </div>
+                        <div class="order-column location">
+                            <p>Lagos</p>
+                        </div>
+                        <div class="order-column status">
+                            <p>Pending</p>
+                        </div>
+                        <div class="order-column edit-col edit-body">
+                            <div class="dropdown3">
+                                <button onclick="myFunction()" class="dropbtn3">&#8942;</button>
+                                <div id="myDropdown3" class="dropdown-content3">
+                                    <a class="edit" href="add-parcel.html">Edit
+                                        <span class="edit-icon">&#9998;</span>
+                                    </a>
+                                    <span class="delete">Delete
+                                        <span class="delete-code">&#10799;</span>
+                                    </span>
+    
+                                </div>
+                            </div>
+            
+                        </div>
+                      
+                    </div>
+                    <div class="order-history">
+                            <div class="order-column id">
+                                <p>1</p>
+                            </div>
+                            <div class="order-column date">
+                                <p>13-09-2018</p>
+                            </div>
+                            <div class="order-column TrackingID">
+                                <p>630eb68f...</p>
+                            </div>
+                            <div class="order-column parcel-content">
+                                <p>Laptop</p>
+                            </div>
+                            <div class="order-column location">
+                                <p>Lagos</p>
+                            </div>
+                            <div class="order-column status">
+                                <p>Pending</p>
+                            </div>
+                            <div class="order-column edit-col edit-body">
+                                <div class="dropdown3">
+                                    <button onclick="myFunction()" class="dropbtn3">&#8942;</button>
+                                    <div id="myDropdown3" class="dropdown-content3">
+                                        <a class="edit" href="add-parcel.html">Edit
+                                            <span class="edit-icon">&#9998;</span>
+                                        </a>
+                                        <span class="delete">Delete
+                                            <span class="delete-code">&#10799;</span>
+                                        </span>
+        
+                                    </div>
+                                </div>
+                
+                            </div>
+                          
+                        </div>
+                        <div class="order-history order-even">
+                                <div class="order-column id">
+                                    <p>1</p>
+                                </div>
+                                <div class="order-column date">
+                                    <p>13-09-2018</p>
+                                </div>
+                                <div class="order-column TrackingID">
+                                    <p>630eb68f...</p>
+                                </div>
+                                <div class="order-column parcel-content">
+                                    <p>Laptop</p>
+                                </div>
+                                <div class="order-column location">
+                                    <p>Lagos</p>
+                                </div>
+                                <div class="order-column status">
+                                    <p>Pending</p>
+                                </div>
+                                <div class="order-column edit-col edit-body">
+                                    <div class="dropdown3">
+                                        <button onclick="myFunction()" class="dropbtn3">&#8942;</button>
+                                        <div id="myDropdown3" class="dropdown-content3">
+                                            <a class="edit" href="add-parcel.html">Edit
+                                                <span class="edit-icon">&#9998;</span>
+                                            </a>
+                                            <span class="delete">Delete
+                                                <span class="delete-code">&#10799;</span>
+                                            </span>
+            
+                                        </div>
+                                    </div>
+                    
+                                </div>
+                              
+                            </div>
+                            <div class="order-history">
+                                    <div class="order-column id">
+                                        <p>1</p>
+                                    </div>
+                                    <div class="order-column date">
+                                        <p>13-09-2018</p>
+                                    </div>
+                                    <div class="order-column TrackingID">
+                                        <p>630eb68f...</p>
+                                    </div>
+                                    <div class="order-column parcel-content">
+                                        <p>Laptop</p>
+                                    </div>
+                                    <div class="order-column location">
+                                        <p>Lagos</p>
+                                    </div>
+                                    <div class="order-column status">
+                                        <p>Pending</p>
+                                    </div>
+                                    <div class="order-column edit-col edit-body">
+                                        <div class="dropdown3">
+                                            <button onclick="myFunction()" class="dropbtn3">&#8942;</button>
+                                            <div id="myDropdown3" class="dropdown-content3">
+                                                <a class="edit" href="add-parcel.html">Edit
+                                                    <span class="edit-icon">&#9998;</span>
+                                                </a>
+                                                <span class="delete">Delete
+                                                    <span class="delete-code">&#10799;</span>
+                                                </span>
+                
+                                            </div>
+                                        </div>
+                        
+                                    </div>
+                                  
+                                </div>
+                                <div class="order-history order-even">
+                                        <div class="order-column id">
+                                            <p>1</p>
+                                        </div>
+                                        <div class="order-column date">
+                                            <p>13-09-2018</p>
+                                        </div>
+                                        <div class="order-column TrackingID">
+                                            <p>630eb68f...</p>
+                                        </div>
+                                        <div class="order-column parcel-content">
+                                            <p>Laptop</p>
+                                        </div>
+                                        <div class="order-column location">
+                                            <p>Lagos</p>
+                                        </div>
+                                        <div class="order-column status">
+                                            <p>Pending</p>
+                                        </div>
+                                        <div class="order-column edit-col edit-body">
+                                            <div class="dropdown3">
+                                                <button onclick="myFunction()" class="dropbtn3">&#8942;</button>
+                                                <div id="myDropdown3" class="dropdown-content3">
+                                                    <a class="edit" href="add-parcel.html">Edit
+                                                        <span class="edit-icon">&#9998;</span>
+                                                    </a>
+                                                    <span class="delete">Delete
+                                                        <span class="delete-code">&#10799;</span>
+                                                    </span>
+                    
+                                                </div>
+                                            </div>
+                            
+                                        </div>
+                                      
+                                    </div>
 
             </div>
-        </header>
-        <section class="section">
 
-            <div class="container">
+
+
+            <!-- <div class="container">
                 <div class="display-list">
                     <div>
                         <h5 class="order-summary">Orders Summary</h5>
@@ -146,7 +439,7 @@
                         <form class="flex-form">
 
                             <!-- <input type="search" placeholder="Make your choice!"> -->
-                            <label for="from">From</label>
+            <!-- <label for="from">From</label>
                             <input class="location" type="text" name="q" placeholder="Enugu" />
 
                             <label for="from">To</label>
@@ -360,23 +653,24 @@
                         </article>
                     </div>
 
-                </div>
+                </div> -->
 
-                <!-- <button class="accordion">Help</button>
+            <!-- <button class="accordion">Help</button>
                 <div class="panel help-accordion">
                     <ul>
                         <h3></h3>
 
                     </ul>
-                </div> -->
+                </div> 
             </div>
-        </section>
-        <!-- <footer class="footer footer-place-order">
+        </section> -->
+            <!-- <footer class="footer footer-place-order">
             <p>&#169;Joyce 2018</p>
         </footer> -->
-    </div>
-    <!-- <script src="js.js"></script> -->
-    <script src="js/place_order.js"></script>
+            <!-- <script src="js.js"></script> -->
+            <script src="js/place_order.js"></script>
+            <script src="js/add.js"></script>
+
 </body>
 
 </html>
