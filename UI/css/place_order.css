@@ -155,7 +155,7 @@ button.accordion:nth-of-type(5) {
     margin-left: 0px;
 }
 
-.flex-form input[type="submit"]:hover, input[type="number"]:hover {
+.flex-form input[type="submit"]:hover, .flex-form input[type="number"]:hover {
     border: 2px solid green;
 }
 
@@ -657,6 +657,9 @@ max-height: auto;
        text-align: center;
        font-size: 1.5em;
    }
+   .add-parcel-item input {
+       font-size: 1em;
+   }
   form3 {
     display: flex;
     flex-direction: column;
@@ -697,13 +700,14 @@ max-height: auto;
     width: 100%
   }
   
-  .weight, .quantity {
+  .weight, #quantity {
     display: flex;
     flex: 1;
     flex-direction: column;
   }
-  .quantity {
+  #quantity {
       text-align: end;
+      border: none;
       margin-left: 10px;
   }
   
