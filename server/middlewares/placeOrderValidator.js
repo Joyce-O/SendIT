@@ -26,8 +26,8 @@ class placeOrderValidator {
             errors.phone = "Please enter valid phone number"
         }
         
-        const validEmail = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
-        if (!email || email < 10 && !validEmail.test(email)) {
+        const validEmailChar = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
+        if (!email || email < 10 && !validEmailChar.test(email)) {
             errors.email = "Please enter valid email"
         }
 

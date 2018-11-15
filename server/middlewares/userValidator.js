@@ -9,13 +9,13 @@ class UserValidator {
 
     const errors = {};
   
-    const nameValidChar = /^[a-z ]+$/i;
-    if (!fullName|| fullName <= 3 && !nameValidChar.test(fullName) ) {
+    const validNameChar = /^[a-z ]+$/i;
+    if (!fullName|| fullName <= 3 && !validNameChar.test(fullName) ) {
       errors.fullName = 'Please enter valid name characters'
     }
 
-    const validEmail = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
-    if (!email || email < 9 && !validEmail.test(email) ) {
+    const validEmailChar = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
+    if (!email || email < 9 && !validEmailChar.test(email) ) {
         errors.email = 'Please enter valid email format'
       }
   
