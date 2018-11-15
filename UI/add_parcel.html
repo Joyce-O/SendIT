@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SendIT | Add Parcel</title>
+    <meta name="description" content="SendIT is a courier service that helps users deliver parcels to different destinations.">
+    <meta name="keywords" content="google map implementation, courier">
+    <meta name="author" content="Joyce-O">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="css/acc.css" /> -->
+
+</head>
+
+<body class="add-parcel-wr">
+    <div>
+        <header>
+            <div id="sub-head">
+                <nav class="flex-nav">
+                    <ul id="open">
+                        <li>
+                            <a class="sendit-logo" href="index.html">Send
+                                <span id="span-logo">&#921;&#932;</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="our-services" href="#">Our Services</a>
+                        </li>
+                        <li>
+                            <a class="our-services" href="#">Help</a>
+                        </li>
+                </nav>
+                <div id="search-header">
+                    <form id="search-form" method="get" action="#">
+
+                        <span id="track">Track A Parcel
+                            <input type="text" placeholder="" class="search-go" name="q" size="21" maxlength="120">
+                            <input type="button" value="Go" class="button-go">
+                        </span>
+                    </form>
+                    <div class="search-clear"></div>
+                </div>
+                <div class="my-parcel">
+                    <div id="my-parcels">
+                        <div class="dropdown" style="float:right;">
+                            <span id="avatarName">
+                                <img id="avatar" src="img/avater2.jpg" alt="profile name" width="20px">&#711;</span>
+
+                            <div class="dropdown-content">
+                                <a href="profile.html">profile</a>
+                                <a href="index.html">Logout</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+        </header>
+
+      <div id="add-parcel-wrap">
+        <div class="add-parcel-item">
+            <form3 action="admin-food-items.html">
+                    <legend>Add a Parcel</legend>
+                <label for="receiver-name">Receiver Name</label>
+                <input type="text" placeholder="Receiver name">
+                <label for="description">Content Description</label>
+                <input type="text" placeholder="Describe content">
+                <div class="sub-input">
+                    <div class="weight">
+                        <label for="weight">Weight</label>
+                        <input type="text" placeholder="weight">
+                    </div>
+                    <div class="quantity">
+                        <label for="quantity">Quantity</label>
+                        <input type="number" placeholder="Available quantity">
+                    </div>
+                </div>
+                <label for="parcel-type">Parcel Type</label>
+                <input type="text" placeholder="parcel type">
+                <label for="email">Email</label>
+                <input type="email" placeholder="email">
+                <label for="address"> Pickup Address: </label>
+                <input type="text" name="address" class="address" id="address" placeholder="Pickup Address" required>
+                <label for="phone">Destination Phone: </label>
+                <input type="phone" name="phone" class="phone" id="phone" required placeholder="Phone (+234090.....)">
+                <label for="destination">Destination Address: </label>
+                <input type="text" class="address" id="address" name="address" required placeholder="Add destination">
+                <input type="submit" value="Submit">
+            </form>
+
+        </div>
+    </div>
+   </div>
+        
+</body>
+
+</html>

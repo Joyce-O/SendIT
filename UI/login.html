@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>MailXpress | Login</title>
-    <meta name="description" content="MailXpress is a courier service that helps users deliver parcels to different destinations.">
+    <title>SendIT | Login</title>
+    <meta name="description" content="SendIT is a courier service that helps users deliver parcels to different destinations.">
     <meta name="keywords" content="google map implementation, courier">
     <meta name="author" content="Joyce-O">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,7 +15,7 @@
 <body>
     <div class="container">
         <header>
-            <div id="top-head">
+            <!-- <div id="top-head">
                 <div>
                     <a href="index.html">
                         <img id="top-img" src="img/logo.png" alt="logo">
@@ -28,44 +28,49 @@
                         </span>My Parcels</div>
                     <input id="signin" type="button" value="Sign/Register">
                 </div>
-            </div>
+            </div> -->
             <div id="sub-head">
                 <nav class="flex-nav">
                     <ul id="open">
                         <!-- <li><a href="#"><img src="greaterthan.png"></a></li> -->
                         <li>
-                            <a href="#">Send</a>
+                            <a class="sendit-logo" href="index.html">Send<span id="span-logo">&#921;&#932;</span></a>
                         </li>
                         <li>
-                            <a href="#">Our Services</a>
+                            <a class="our-services" href="#">Our Services</a>
                         </li>
                         <li>
-                            <a href="#">Help</a>
+                            <a class="our-services" href="#">Help</a>
                         </li>
                 </nav>
                 <div id="search-header">
                     <form id="search-form" method="get" action="#">
 
                         <span id="track">Track A Parcel
-                            <input type="text" placeholder="Barcode or Receipt No." class="search-go" name="q" size="21" maxlength="120">
+                            <input type="text" placeholder="" class="search-go" name="q" size="21" maxlength="120">
                             <input type="button" value="Go" class="button-go">
                         </span>
                     </form>
                     <div class="search-clear"></div>
                 </div>
+                <div class="my-parcel">
+                     <div id="my-parcels">
+                        <input class="register" id="signup" type="button" value="Sign Up">
+                        <input class="register" id="login" type="button" value="Login">
+                    </div>
 
             </div>
 
         </header>
         <section class="section">
-            <h2 id="welcome">Welcome to Mail Xpress</h2>
+            <h2 id="welcome">Welcome to SendIT</h2>
             <h4 id="login-with">Sign in or register with Us</h4>
             <div id="flex-div">
                 <div id="new">
                     <p class="new2">Existing Customer?</p>
 
                     <div id="auth-login-form">
-                        <form action="#">
+                        <form class="form0" action="#">
                             <legend class="new-title">Login Here</legend>
                             <label for="email">Email</label>
                             <input type="email" name="email" id="email1" required placeholder="example@mail.com">
@@ -82,12 +87,12 @@
 
                 <div id="exist">
                     <div>
-                        <p class="new2 existing">New to Mail Xpress?</p>
+                        <p class="new2 existing">New to SendIT?</p>
                     </div>
                     <div id="old">
                         <p>
                             <span class="star">&#10003;</span>Benefits of using
-                            <span id="img1"> Mail Xpress:</span>
+                            <span id="img1">SendIT:</span>
                         </p>
                         <ul>
                             <li>
