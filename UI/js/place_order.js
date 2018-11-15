@@ -1,9 +1,11 @@
-function myFunction() {
+
+
+const myFunction = () => {
     document.getElementById("myDropdown3").classList.toggle("show3");
 }
 
 // Close the dropdown if the user clicks outside of it
-window.onclick = function(event) {
+window.onclick = (event) => {
   if (!event.target.matches('.dropbtn3')) {
 
     var dropdowns = document.getElementsByClassName("dropdown-content3");
