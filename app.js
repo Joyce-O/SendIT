@@ -15,6 +15,6 @@ app.use('/', router);
 
 const port = process.env.PORT || 5400;
 
-app.listen(port, () => console.log(`MailXpress is listening on port ${port}`));
+app.listen(port, () => console.log(`SendIT is listening on port ${port}`));
 
 export default app;

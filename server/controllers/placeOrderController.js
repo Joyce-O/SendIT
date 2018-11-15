@@ -20,7 +20,6 @@ class placeOrderHandler {
 
         } = request.body;
 
-        //If delicate return 100 else non-delicate 50
         const parcelTypeCost = (delicate) => {
             return (delicate === "delicate") ? 100 : 50;
         }
@@ -51,6 +50,7 @@ class placeOrderHandler {
         placeOrder.push(sendOrder);
         return response.status(201)
             .json({
+                succes: true,
                 message: "Your delivery order is booked successfully",
                 sendOrder
             });
@@ -58,9 +58,9 @@ class placeOrderHandler {
 
     static fetchAllOrders(request, response) {
         const allParcelsOrdered = placeOrder.reverse();
-        // console.log(allParcelsOrdered);
-        return response.status(200)
+           return response.status(200)
             .json({
+                succes: true,
                 message: 'All parcel delivery orders',
                 allParcelsOrdered
             });
@@ -70,6 +70,7 @@ class placeOrderHandler {
         const { isExistOrder } = request.body;
         return response.status(200)
             .json({
+                succes: true,
                 message: 'Fetched order successfull!',
                 isExistOrder
             });
@@ -83,6 +84,7 @@ class placeOrderHandler {
         let userOrders = placeOrder.filter((placeOrder) => placeOrder.email === userEmail);
         return response.status(200)
             .json({
+                succes: true,
                 message: 'Fetched order!',
                 userOrders
             });
@@ -90,20 +92,16 @@ class placeOrderHandler {
     
     static cancelOrder(request, response) {
         let { parcelStatus, isExistOrder } = request.body;
-        // let isExistOrder = request.body;
         parcelStatus = "Cancelled";
         isExistOrder.status = parcelStatus;
 
         return response.status(200)
             .json({
+                succes: true,
                 message: 'Your order is Cancelled!',
                 isExistOrder
             });
 
-        // let object = placeOrder.find(({ trackingID }) => trackingID === isExistOrder.trackingID);
-        // if (object) {
-        //     Object.assign(object, isExistOrder);
-        // }
     }
 
 }

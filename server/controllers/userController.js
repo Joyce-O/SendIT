@@ -15,6 +15,7 @@ class UserController {
     return response.status(201)
       .json({
         newUser,
+        success: true,
         message: 'Signup was successful',
       });
   }
@@ -24,6 +25,7 @@ class UserController {
 
     return response.status(200)
         .json({
+            success: true,
             message: 'All users',
             allUsers
         });
@@ -32,9 +34,9 @@ class UserController {
 static fetchSpecificUser(request, response) {
   const { isExistUser } = request.body;
 
-  console.log(isExistUser);
   return response.status(200)
       .json({
+          success: true,
           message: 'Fetched order successfull!',
           isExistUser
       });

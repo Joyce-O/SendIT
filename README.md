@@ -48,7 +48,7 @@ SendIT is a courier service that helps users deliver parcels to different destin
 ## Installation
 1. Clone this repository:
 ```
-https://github.com/Joyce-O/MailXpress.git
+https://github.com/Joyce-O/SendIT.git
 ```
 2. cd into the repository:
 ```
