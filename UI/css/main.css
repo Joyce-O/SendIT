@@ -793,6 +793,7 @@ letter-spacing: 0.1em;
     border-radius: 5px;
     outline: none;
     border: none;
+    font-size: 1.2em;
     margin-bottom: 13px;
     padding: 10px;
     box-sizing: border-box;
@@ -980,23 +981,14 @@ letter-spacing: 0.1em;
     position: fixed;
 }
 /* FEEDBACK */
-.sendit-logo {
-    padding-top: 0px;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 1.7em;
-    margin-right: 5px;
-    margin-top: 6px;
+#profile-edit {
+    width: 70%;
+    margin: 60px;
 }
-.sendit-logo #span-logo{
-    font-size: 1em;
-    color: rgb(240, 173, 91);
+#profile-edit input, #profile-edit input[type=email] {
+  outline: none;
+  border: none;
 }
-.our-services {
-margin-top: 5px;
-font-size: 1.4em;
-}
-
 
 
 /* .footer-place-order {
@@ -1009,5 +1001,8 @@ font-size: 1.4em;
         text-align: center;
      }
 } */
+
+/* Profile */
+
 
 

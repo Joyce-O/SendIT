@@ -19,3 +19,22 @@ window.onclick = (event) => {
   }
 };
 
+const btnEdit = document.querySelector('#btn-edit');
+var inputName1 = document.getElementById('name-edit');
+var inputName2 = document.getElementById('email-edit');
+var inputName3 = document.getElementById('phone-edit');
+var inputName4 = document.getElementById('address-edit');
+const toggleReadonly = (event) => {
+ 
+  if (event.target.id === 'btn-edit') {
+    inputName1.setAttribute('readonly', true);
+    inputName2.setAttribute('readonly', true);
+    inputName3.setAttribute('readonly', true);
+    inputName4.setAttribute('readonly', true);
+
+  } else {
+      inputName.removeAttribute('readonly');
+  }
+}
+
+btnEdit.addEventListener('click', toggleReadonly);
