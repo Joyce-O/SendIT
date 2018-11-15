@@ -487,7 +487,7 @@ aside h3 {
     margin-top: 20px;
     justify-content: space-between;
     max-width: 80%;
-    margin-left: 80px;
+    margin-left: 135px;
     padding-left: 0px;
 }
 .order-sum-wrap h2 {
@@ -495,7 +495,7 @@ aside h3 {
  /* margin: 30px; */
 }
 .aside-diva {
-    margin-top: 15px;
+    margin-top: 10px;
     
 }
 .aside-diva #add-parcel{
@@ -514,7 +514,7 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 /* margin: 10px; */
-margin-left: 80px;
+margin-left: 135px;
 max-height: auto;
  }
  .order-wrapper > * {
