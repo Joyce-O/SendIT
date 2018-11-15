@@ -10,22 +10,22 @@ class UserValidator {
     const errors = {};
   
     const nameValidChar = /^[a-z ]+$/i;
-    if (fullName === undefined || fullName <= 3 && !nameValidChar.test(fullName) ) {
+    if (!fullName|| fullName <= 3 && !nameValidChar.test(fullName) ) {
       errors.fullName = 'Please enter valid name characters'
     }
 
     const validEmail = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
-    if (email === undefined || email < 9 && !validEmail.test(email) ) {
+    if (!email || email < 9 && !validEmail.test(email) ) {
         errors.email = 'Please enter valid email format'
       }
   
       const foundEmail = users.find(user => user.email === email);
 
-      if (phone === undefined || phone < 10 && !/^[0-9]+$/.test(phone)) {
+      if (!phone || phone < 10 && !/^[0-9]+$/.test(phone)) {
         errors.phone = "Please enter valid phone number"
     }
     
-    if (password === undefined || password < 4) {
+    if (!password || password < 4) {
       errors.password = 'Password cannot be empty'
     }
   

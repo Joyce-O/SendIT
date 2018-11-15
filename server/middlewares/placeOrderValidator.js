@@ -18,35 +18,35 @@ class placeOrderValidator {
 
         const errors = {};
 
-        if (senderName === undefined || senderName < 3 && !/[a-z]+$/i.test(senderName)) {
+        if (!senderName || senderName < 3 && !/[a-z]+$/i.test(senderName)) {
             error.name = "Please enter valid name"
         }
 
-        if (senderPhone === undefined || senderPhone < 10 && ! /^[0-9]+$/.test(senderPhone)) {
+        if (!senderPhone || senderPhone < 10 && ! /^[0-9]+$/.test(senderPhone)) {
             errors.phone = "Please enter valid phone number"
         }
         
         const validEmail = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
-        if (email === undefined || email < 10 && !validEmail.test(email)) {
+        if (!email || email < 10 && !validEmail.test(email)) {
             errors.email = "Please enter valid email"
         }
 
         const validateWeight = /^(0|\d{1,3})([.]\d{1})?(\w[kg])$/;
-        if (weight === undefined || parseFloat(weight) <= 0 && !validateWeight.test(weight)) {
+        if (!weight || parseFloat(weight) <= 0 && !validateWeight.test(weight)) {
             errors.weight = "Weight should be in formats '0.0kg' or '00.0kg' or '000.0kg'"
         }
 
-        if (parcelContent === undefined || parcelContent <= 3 && !/^[a-z]+$/i.test(parcelContent)) {
+        if (!parcelContent || parcelContent <= 3 && !/^[a-z]+$/i.test(parcelContent)) {
 
             errors.parcelContent = "Please enter valid parcel content description"
         }
 
-        if (quantity === undefined || quantity <= 0 && !/^\d+$/.test(quantity)) {
+        if (!quantity || quantity <= 0 && !/^\d+$/.test(quantity)) {
             errors.quantity = "Please enter valid quantity value"
         }
 
         const validParcelType = /(?:$|^| )(non-delicate|delicate)(?:$|^| )/;
-        if (parcelType === undefined || parcelType < 8 && !validParcelType.test(parcelType)) {
+        if (!parcelType || parcelType < 8 && !validParcelType.test(parcelType)) {
             errors.parcelType = "Please enter valid parcel type"
         }
 
