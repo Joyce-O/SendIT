@@ -18,12 +18,7 @@ const increment = () => {
 }
   
   const unsubmit = (event) => {
-      //console.log(" I am clicked")
       event.preventDefault()
-    //   let activity = document.getElementById('Activity').value;
-    //   let note = document.getElementById('Note').value;
-    //   let date = document.getElementById('Date').value;
-    //   let time = document.getElementById('Time').value;
     let Date = document.querySelector('.date').value;
     let TrackingID = document.querySelector('.TrackingID').value;
     let ParcelContent = document.querySelector('.parcel-content').value;
@@ -31,7 +26,6 @@ const increment = () => {
     let status = document.querySelector('.status').value;
     let Edit = document.querySelector('.edit-col').value;
   
-    // console.log(form + ". > actvity: "+ activity + ". note: "+note + ". date: "+ date + ". Time: "+ time );
      increment();
     const addActivities = document.createElement('DIV');
     addActivities.innerHTML = `<div class="order-history">
@@ -60,9 +54,7 @@ const increment = () => {
 </div>
 `;
 const up = document.querySelector('.order-wrapper');
-// btn.addEventListener('click', markup);
 up.appendChild(addActivities);
-// userDataTable.innerHTML = `
 };
 
   const close = () => {
@@ -72,5 +64,3 @@ up.appendChild(addActivities);
 addActive.addEventListener('click', display);
 addSubmit.addEventListener('click', unsubmit);
 never.addEventListener('click', close);
-// }
-// window.load = onclk();
