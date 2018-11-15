@@ -1,2 +1,2 @@
-# MailXpress
-MailXpress is a courier service that helps users deliver parcels to different destinations. MailXpress provides courier quotes based on weight categories.
+# SendIT
+SendIT is a courier service that helps users deliver parcels to different destinations. MailXpress provides courier quotes based on weight categories.

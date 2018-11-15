@@ -33,16 +33,6 @@ body {
     flex: 1 1 100%;
 
 }
-/* #top-head {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    background: antiquewhite;
-}
-/* All the descendants of top-head 
-.top-head > * {
-    flex: 1 1 100%;
-} */
 
 #top-img {
     height: 80px;
@@ -161,10 +151,6 @@ input {
 
 }
 
-/* #my-parcels:hover, #signin:hover, #top-img:hover {
-    box-shadow: 3px 5px 5px 5px gray;
-} */
-
 .cart img {
     width: 20px;
     height: 22px;
@@ -193,17 +179,6 @@ li {
     list-style: none;
     padding-bottom: 5px;
 }
-
-/* #open li a {
-    flex: 1 1 100%;
-    text-decoration: none;
-    padding-right: 5px;
-    /* margin: 5px; 
-    font-size: 20px;
-    color: white;
-    margin-left: 60px;
-    list-style: none;
-} */
 
 /* PARCEL-SUBMIT */
  #search-header {
@@ -310,6 +285,8 @@ input.search-go:hover {
     border-radius: 3px;
     color: white;
     margin-top: 5%;
+    font-weight: 100;
+    font-family: 'Times New Roman', Times, serif;
     font-size: 1.2em;
     box-sizing: border-box;
 }
@@ -334,10 +311,7 @@ input.search-go:hover {
     font-size: 1.2em;
     
 }
-/* #exist {
-  /* margin-left: 40px; 
-  
-} */
+
 /* FORM */
 #auth-login-form {
     background: rgba(122, 56, 36, 0.4);
@@ -667,11 +641,11 @@ letter-spacing: 0.1em;
     border: 1px solid rgb(54, 16, 90);
     box-shadow: 0px 0px 3px 1px gray;
 }
- li {
+ /* li {
     text-align: center;
     font-size: .9em;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
+} */
 
 .plan > * {
     
