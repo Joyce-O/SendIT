@@ -18,80 +18,36 @@ class placeOrderValidator {
 
         const errors = {};
 
-        if (senderName === undefined || senderName < 3) {
-            error.name = "Please enter name"
+        if (senderName === undefined || senderName < 3 && !/[a-z]+$/i.test(senderName)) {
+            error.name = "Please enter valid name"
         }
 
-        const validateName = /[a-z]+$/i;
-        if (!validateName.test(senderName || receiverName)) {
-            errors.InvalidName = "Alphebet characters expected for senderName or receiverName"
-
+        if (senderPhone === undefined || senderPhone < 10 && ! /^[0-9]+$/.test(senderPhone)) {
+            errors.phone = "Please enter valid phone number"
         }
-
-        senderPhone = senderPhone.trim();
-        if (senderPhone === undefined || senderPhone < 10) {
-            errors.phone = "phone number field should not be empty"
-        }
-
-        const validPhoneNo = /^[0-9]+$/;
-        if (!validPhoneNo.test(senderPhone)) {
-            errors.InvalidPhone = "Phone number field accepts only number digits"
-
-        }
-
-        email = email.trim();
-        if (email === undefined || email < 10) {
-            errors.email = "Please input your email"
-        }
-
+        
         const validEmail = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
-        if (!validEmail.test(email)) {
-            errors.invalidEmail = "You are sending invalid email format"
-        }
-
-        weight = weight.trim();
-        if (weight === undefined || parseFloat(weight) <= 0) {
-            errors.weight = "Weight field should not be empty "
+        if (email === undefined || email < 10 && !validEmail.test(email)) {
+            errors.email = "Please enter valid email"
         }
 
         const validateWeight = /^(0|\d{1,3})([.]\d{1})?(\w[kg])$/;
-        if (!validateWeight.test(weight)) {
-
-            errors.invalidWeight = "Weight should be in formats '0.0kg' or '00.0kg' or '000.0kg'"
+        if (weight === undefined || parseFloat(weight) <= 0 && !validateWeight.test(weight)) {
+            errors.weight = "Weight should be in formats '0.0kg' or '00.0kg' or '000.0kg'"
         }
 
-        parcelContent = parcelContent.trim();
-        if (parcelContent === undefined || parcelContent <= 3) {
+        if (parcelContent === undefined || parcelContent <= 3 && !/^[a-z]+$/i.test(parcelContent)) {
 
-            errors.parcelContent = "parcel content field should not be empty"
+            errors.parcelContent = "Please enter valid parcel content description"
         }
 
-        const validParcelContent = /^[a-z]+$/i;
-        if (!validParcelContent.test(parcelContent)) {
-
-            errors.invalidParContent = "Alphebet characters expected in parcelContent field"
-        }
-
-        quantity = quantity.trim();
-        if (quantity === undefined || quantity <= 0) {
-            errors.quantity = "Quantity field should not be empty"
-        }
-
-        const validateQty = /^\d+$/;
-        if (!validateQty.test(quantity)) {
-
-            errors.invalidQty = "Number digits expected in quantity field"
-        }
-
-        parcelType = parcelType.trim();
-        if (parcelType === undefined || parcelType < 8) {
-            errors.parcelType = "ParcelType field should not be empty"
-
+        if (quantity === undefined || quantity <= 0 && !/^\d+$/.test(quantity)) {
+            errors.quantity = "Please enter valid quantity value"
         }
 
         const validParcelType = /(?:$|^| )(non-delicate|delicate)(?:$|^| )/;
-        if (!validParcelType.test(parcelType)) {
-            errors.invalidParcelType = "Wrong format, please enter noparcelType as 'delicate' or 'non-delicate'"
+        if (parcelType === undefined || parcelType < 8 && !validParcelType.test(parcelType)) {
+            errors.parcelType = "Please enter valid parcel type"
         }
 
         return response.status(400)
