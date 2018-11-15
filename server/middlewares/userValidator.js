@@ -7,169 +7,115 @@ class UserValidator {
       fullName, email, phone, address, password
     } = request.body;
 
-    console.log(request.body);
-    if (fullName === undefined) {
-      return response.status(406)
+    const errors = {};
+  
+    
+    if (fullName === undefined || fullName <= 3 ) {
+      errors[fullName] = response.status(406)
         .json({
-          message: 'Please input your fullname',
+          success: false,
+          message: 'Full name cannot be empty',
         });
     }
 
-    if (fullName === '') {
-      return response.status(406)
-        .json({
-          message: 'fullName field cannot be empty',
-        });
-    }
-
-    fullName = fullName.trim();
-    if (fullName.length < 4 || fullName.length > 20) {
-      return response.status(406)
-        .json({
-          message: 'fullName should be 4 to 20 characters long',
-        });
-    }
-
+    // fullName = fullName.trim();
     const fullNameValidCharacters = /^[a-z ]+$/i;
     if (!fullNameValidCharacters.test(fullName)) {
-      return response.status(406)
+      errors[fullName] = response.status(406)
         .json({
-          message: 'fullName can only contain alphabets and whitespace',
+          success: false,
+          message: 'full name can only contain alphabets and whitespace',
         });
     }
 
-    if (email === undefined) {
-        return response.status(406)
+    email = email.toLowerCase().trim();
+    if (email === undefined || email < 9 ) {
+        errors[email] = response.status(406)
           .json({
-            message: 'Please input your email address',
+            success: false,
+            message: 'Email field should not be empty',
           });
       }
-      if (email === '') {
-        return response.status(406)
-          .json({
-            message: 'Email field cannot be empty',
-          });
-      }
-      email = email.toLowerCase().trim();
+
       const validEmail = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
       if (!validEmail.test(email)) {
-        return response.status(406)
+        errors[email] = response.status(406)
           .json({
+            success: false,
             message: 'Your email format is not valid',
           });
       }
-      
-      if (email.length < 10 || email.length > 40) {
-        return response.status(400)
-            .json({
-                status: "Unsuccessful!",
-                message: "Email should be 10 to 40 characters long"
-            });
-    }
   
       const foundEmail = users.find(user => user.email === email);
       if (foundEmail) {
-        return res.status(409)
+        errors[email] = response.status(409)
           .json({
-            message: 'Your email is received! sign in',
+            success: true,
+            message: 'Your email is received!',
           });
       }
 
-      if (phone === undefined) {
+      if (phone === undefined || phone < 10) {
         return response.status(400)
             .json({
-                status: "Unsuccessful!",
-                message: "phone number field should not be undefined"
+                success: false,
+                message: "phone number field should not be empty"
             });
     }
-
-    if (phone === '') {
-        return response.status(400)
-            .json({
-                status: "Unsuccessful!",
-                message: "Please enter phone number"
-            });
-    }
-
     
-    phone = phone.trim();
     const validPhoneNo = /^[0-9]+$/;
     if (!validPhoneNo.test(phone)) {
-        return response.status(400)
+        errors[phone] = response.status(400)
             .json({
-                status: "Unsuccessful!",
+                success: false,
                 message: "phone number field accepts only number digits"
             });
     }
 
-
-    if (phone.length < 10 || phone.length > 12) {
-        return response.status(400)
-            .json({
-                status: "Unsuccessful!",
-                message: "phone number should be 10 to 12 digits long"
-            });
-    }
-
-    if (password === undefined) {
-      return response.status(406)
-        .json({
-          message: 'Please input your password',
-        });
-    }
-
-    if (password === '') {
-      return response.status(406)
-        .json({
-          message: 'Password field cannot be empty',
-        });
-    }
     password = password.trim();
+    if (password === undefined || password < 4) {
+      errors.json({
+          message: 'Password cannot be empty',
+        });
+    }
+return   error.response.status(400)
+            .json({
+                success: false,
+                message: "",
+                errors
+            });
 
-    if (password.length < 4 || password.length > 16) {
-      return res.status(406)
-        .json({
-          message: 'Password should be 4 to 16 characters long',
-        });
-    }
-    if (password.includes(' ')) {
-      return response.status(406)
-        .json({
-          message: 'Remove whitespace from your password',
-        });
-    }
-    request.body.fullName = fullName;
-    request.body.email = email;
-    return next();
+    // request.body.fullName = fullName;
+    // request.body.email = email;
+ 
+  return errors;
+    next();
   }
 
-  static getSpecificUserValidator(request, response, next) {
+  static getAUserValidator(request, response, next) {
     let {userId} = request.params;
-    if (!Number(userId)) {
-        return response.status(400)
-            .json({
-                status: 'Unsuccessful!',
-                message: 'Sorry! this is an invalid URL'
-            });
-    }
+
     const isExistUser = users.find(users => users.id === Number(userId));
+    console.log(isExistUser);
     if (!(isExistUser)) {
         return response.status(404)
             .json({
-                status: 'Unsuccessful!',
+                success: false,
                 message: 'Sorry! User does not exist'
             });
     }
+
     request.body.isExistUser = isExistUser;
+    // console.log(request.body + 90);
     next();
 }
 
 }
 
 const {
-  signupValidator, getSpecificUserValidator
+  signupValidator, getAUserValidator
 } = UserValidator;
   
 export {
-  signupValidator, getSpecificUserValidator
+  signupValidator, getAUserValidator
 };

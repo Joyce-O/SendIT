@@ -4,7 +4,7 @@ import {
   } from '../controllers/placeOrderController';
 
 import {
-    orderValidator, getOrderHistoryValidator, getSpecificOrderValidator, updateOrderValidator
+    orderValidator, getOrderValidator, getAnOrderValidator, updateOrderValidator
   } from '../middlewares/placeOrderValidator';
   
 
@@ -12,8 +12,8 @@ const placeOrderRouter = express.Router();
 
 placeOrderRouter.post('/placeOrder', orderValidator, orders);
 placeOrderRouter.get('/parcels', fetchAllOrders);
-placeOrderRouter.get('/parcels/:parcelId', getSpecificOrderValidator, fetchSpecificOrders);
-placeOrderRouter.get('/users/:userId/parcels', getOrderHistoryValidator, fetchUserOrderHistory); 
+placeOrderRouter.get('/parcels/:parcelId', getAnOrderValidator, fetchSpecificOrders);
+placeOrderRouter.get('/users/:userId/parcels', getOrderValidator, fetchUserOrderHistory); 
 placeOrderRouter.put('/parcels/:parcelId/cancel', updateOrderValidator, cancelOrder );
 
 export default placeOrderRouter;

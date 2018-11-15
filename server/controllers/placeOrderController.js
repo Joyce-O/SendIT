@@ -58,9 +58,9 @@ class placeOrderHandler {
 
     static fetchAllOrders(request, response) {
         const allParcelsOrdered = placeOrder.reverse();
-        // console.log(allParcelsOrdered);
-        return response.status(200)
+           return response.status(200)
             .json({
+                succes: true,
                 message: 'All parcel delivery orders',
                 allParcelsOrdered
             });
@@ -70,6 +70,7 @@ class placeOrderHandler {
         const { isExistOrder } = request.body;
         return response.status(200)
             .json({
+                succes: true,
                 message: 'Fetched order successfull!',
                 isExistOrder
             });
@@ -83,6 +84,7 @@ class placeOrderHandler {
         let userOrders = placeOrder.filter((placeOrder) => placeOrder.email === userEmail);
         return response.status(200)
             .json({
+                succes: true,
                 message: 'Fetched order!',
                 userOrders
             });
@@ -96,14 +98,11 @@ class placeOrderHandler {
 
         return response.status(200)
             .json({
+                succes: true,
                 message: 'Your order is Cancelled!',
                 isExistOrder
             });
 
-        // let object = placeOrder.find(({ trackingID }) => trackingID === isExistOrder.trackingID);
-        // if (object) {
-        //     Object.assign(object, isExistOrder);
-        // }
     }
 
 }

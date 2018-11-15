@@ -1,1 +1,3 @@
-repo_token: JhqHRBNyEbgEZpVdA1y6VBXlKzoPyR5Ck
+import 'dotenv/config';
+
+repo_token: process.env.repo_token
