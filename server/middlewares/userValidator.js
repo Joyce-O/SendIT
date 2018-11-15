@@ -9,38 +9,22 @@ class UserValidator {
 
     const errors = {};
   
-    
-    if (fullName === undefined || fullName <= 3 ) {
-      errors.fullName = 'Full name cannot be empty'
+    const nameValidChar = /^[a-z ]+$/i;
+    if (fullName === undefined || fullName <= 3 && !nameValidChar.test(fullName) ) {
+      errors.fullName = 'Please enter valid name characters'
     }
 
-    const fullNameValidCharacters = /^[a-z ]+$/i;
-    if (!fullNameValidCharacters.test(fullName)) {
-        errors.invalidName = 'full name can only contain alphabets and whitespace'
-    }
-
-    email = email.toLowerCase().trim();
-    if (email === undefined || email < 9 ) {
-        errors.email = 'Email field should not be empty'
-      }
-
-      const validEmail = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
-      if (!validEmail.test(email)) {
-        errors.invalidEmail = 'Your email format is not valid'
+    const validEmail = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
+    if (email === undefined || email < 9 && !validEmail.test(email) ) {
+        errors.email = 'Please enter valid email format'
       }
   
       const foundEmail = users.find(user => user.email === email);
 
-      if (phone === undefined || phone < 10) {
-        errors.phone = "phone number field should not be empty"
+      if (phone === undefined || phone < 10 && !/^[0-9]+$/.test(phone)) {
+        errors.phone = "Please enter valid phone number"
     }
     
-    const validPhoneNo = /^[0-9]+$/;
-    if (!validPhoneNo.test(phone)) {
-      errors.invalidPhone = "phone number field accepts only number digits"
-    }
-
-    password = password.trim();
     if (password === undefined || password < 4) {
       errors.password = 'Password cannot be empty'
     }
