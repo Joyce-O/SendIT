@@ -32,9 +32,6 @@ class UserController {
 }
 
 static fetchSpecificUser(request, response) {
-  
-  //isExistUser is the specific user found and is needed to be sent back as part of the message
-  //Taking from user validator
   const { isExistUser } = request.body;
 
   return response.status(200)

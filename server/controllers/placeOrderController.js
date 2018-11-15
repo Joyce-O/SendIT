@@ -20,7 +20,6 @@ class placeOrderHandler {
 
         } = request.body;
 
-        //If delicate return 100 else non-delicate 50
         const parcelTypeCost = (delicate) => {
             return (delicate === "delicate") ? 100 : 50;
         }
@@ -51,6 +50,7 @@ class placeOrderHandler {
         placeOrder.push(sendOrder);
         return response.status(201)
             .json({
+                succes: true,
                 message: "Your delivery order is booked successfully",
                 sendOrder
             });
@@ -92,7 +92,6 @@ class placeOrderHandler {
     
     static cancelOrder(request, response) {
         let { parcelStatus, isExistOrder } = request.body;
-        // let isExistOrder = request.body;
         parcelStatus = "Cancelled";
         isExistOrder.status = parcelStatus;
 
