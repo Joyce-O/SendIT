@@ -10,7 +10,7 @@ import {
 
 const placeOrderRouter = express.Router();
 
-placeOrderRouter.post('/placeOrder', orderValidator, orders);
+placeOrderRouter.post('/parcels', orderValidator, orders);
 placeOrderRouter.get('/parcels', fetchAllOrders);
 placeOrderRouter.get('/parcels/:parcelId', getAnOrderValidator, fetchSpecificOrders);
 placeOrderRouter.get('/users/:userId/parcels', getOrderValidator, fetchUserOrderHistory); 

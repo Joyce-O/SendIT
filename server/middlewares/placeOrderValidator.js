@@ -16,46 +16,51 @@ class placeOrderValidator {
             parcelType
         } = request.body;
 
-        const errors = {};
+        let errors = {};
 
-        if (!senderName || senderName < 3 && !/[a-z]+$/i.test(senderName)) {
-            error.name = "Please enter valid name"
+        if (!senderName || senderName.length < 3 && !/[a-z]+$/i.test(senderName)) {
+            errors.senderName = "Please enter valid name"
         }
 
-        if (!senderPhone || senderPhone < 10 && ! /^[0-9]+$/.test(senderPhone)) {
-            errors.phone = "Please enter valid phone number"
+        if (!senderPhone || senderPhone.length < 10 && ! /^[0-9]+$/.test(senderPhone)) {
+            errors.senderPhone = "Please enter valid phone number"
         }
         
         const validEmailChar = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
-        if (!email || email < 10 && !validEmailChar.test(email)) {
+        if (!email || email.length < 10 && !validEmailChar.test(email)) {
             errors.email = "Please enter valid email"
         }
 
         const validateWeight = /^(0|\d{1,3})([.]\d{1})?(\w[kg])$/;
-        if (!weight || parseFloat(weight) <= 0 && !validateWeight.test(weight)) {
+        if (!weight && !validateWeight.test(weight)) {
             errors.weight = "Weight should be in formats '0.0kg' or '00.0kg' or '000.0kg'"
         }
 
-        if (!parcelContent || parcelContent <= 3 && !/^[a-z]+$/i.test(parcelContent)) {
+        if (!parcelContent || parcelContent.length <= 3 && !/^[a-z]+$/i.test(parcelContent)) {
 
             errors.parcelContent = "Please enter valid parcel content description"
         }
 
-        if (!quantity || quantity <= 0 && !/^\d+$/.test(quantity)) {
+        if (!quantity || quantity.length <= 0 && !/^\d+$/.test(quantity)) {
             errors.quantity = "Please enter valid quantity value"
         }
 
         const validParcelType = /(?:$|^| )(non-delicate|delicate)(?:$|^| )/;
-        if (!parcelType || parcelType < 8 && !validParcelType.test(parcelType)) {
+        if (!parcelType || parcelType.length < 8 && !validParcelType.test(parcelType)) {
             errors.parcelType = "Please enter valid parcel type"
         }
 
-        return response.status(400)
+        
+        if(JSON.stringify(errors) !== '{}'){
+       return response.status(400)
             .json({
                 success: false,
-                message: errors
+                message: "Please make sure to input correct values",
+                 errors
             });
-        next();
+        }
+            
+        next();  
 
     }
     static getOrderValidator(request, response, next) {

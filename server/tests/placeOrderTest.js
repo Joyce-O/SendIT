@@ -22,7 +22,7 @@ describe('Tests for Homepage and invalid url endpoints', () => {
                 .get('/api/v1')
                 .end((error, response) => {
                     expect(response).to.have.status(200);
-                    expect(response.body.message).to.equal('Welcome to MailXpress, your package is safe with us');
+                    expect(response.body.message).to.equal('Welcome to SendIT, your package is safe with us');
                     done();
                 });
         });
