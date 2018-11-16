@@ -118,12 +118,28 @@ class placeOrderValidator {
         request.body.isExistOrder = isExistOrder;
         next();
     }
+    static deleteOrderValidator(request, response, next) {
+        const { parcelId } = request.params;
+
+        const orderExist = placeOrder.find(placeOrder => placeOrder.trackingID === (parcelId));
+        if (!orderExist) {
+            return response.status(404)
+                .json({
+                    success: false,
+                    message: 'Sorry! Order does not exist'
+                });
+        }
+
+
+        request.body.orderExist = orderExist;
+        next();
+    }
 }
 
 const {
-    orderValidator, getOrderValidator, getAnOrderValidator, updateOrderValidator
+    orderValidator, getOrderValidator, getAnOrderValidator, updateOrderValidator, deleteOrderValidator
 } = placeOrderValidator
 
 export {
-    orderValidator, getOrderValidator, getAnOrderValidator, updateOrderValidator
+    orderValidator, getOrderValidator, getAnOrderValidator, updateOrderValidator,deleteOrderValidator
 };

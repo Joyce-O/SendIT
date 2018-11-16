@@ -104,13 +104,25 @@ class placeOrderHandler {
 
     }
 
+    static deleteOrder(request, response) {
+        let { orderExist } = request.body;
+        orderExist = undefined;
+
+        return response.status(200)
+            .json({
+                succes: true,
+                message: 'Your order is deleted!'
+            });
+
+    }
+
 }
 
 const {
-    orders, fetchAllOrders, fetchSpecificOrders, fetchUserOrderHistory, cancelOrder
+    orders, fetchAllOrders, fetchSpecificOrders, fetchUserOrderHistory, cancelOrder, deleteOrder
 } = placeOrderHandler
 
 export {
-    orders, fetchAllOrders, fetchSpecificOrders, fetchUserOrderHistory, cancelOrder
+    orders, fetchAllOrders, fetchSpecificOrders, fetchUserOrderHistory, cancelOrder, deleteOrder
 };
 
