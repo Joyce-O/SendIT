@@ -10,30 +10,34 @@ class UserValidator {
     const errors = {};
   
     const validNameChar = /^[a-z ]+$/i;
-    if (!fullName|| fullName <= 3 && !validNameChar.test(fullName) ) {
+    if (!fullName|| fullName.length <= 3 && !validNameChar.test(fullName) ) {
       errors.fullName = 'Please enter valid name characters'
     }
 
     const validEmailChar = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
-    if (!email || email < 9 && !validEmailChar.test(email) ) {
+    if (!email || email.length < 9 && !validEmailChar.test(email) ) {
         errors.email = 'Please enter valid email format'
       }
   
       const foundEmail = users.find(user => user.email === email);
 
-      if (!phone || phone < 10 && !/^[0-9]+$/.test(phone)) {
+      if (!phone || phone.length < 10 && !/^[0-9]+$/.test(phone)) {
         errors.phone = "Please enter valid phone number"
     }
     
-    if (!password || password < 4) {
+    if (!password || password.length < 4) {
       errors.password = 'Password cannot be empty'
     }
   
-    return errors.response.status(400)
-            .json({
-                success: false,
-                message: errors
-            });
+    if(JSON.stringify(errors) !== '{}'){
+      return response.status(400)
+           .json({
+               success: false,
+               message: "Please make sure to input correct values",
+                errors
+           });
+       }
+           
  
     next();
   }
