@@ -15,740 +15,115 @@
 
 <body class="admin-body">
   <article class="dashboard-article">
-    <aside class="dashboard-aside">
-      <a id="toggleNav" href="#">&#8801 Menu</a>
+    <!-- <aside class="dashboard-aside"> -->
+    <!-- <a id="toggleNav" href="#">&#8801 Menu</a>
       <ul id="open">
         <li>
           <a id="admin-logout" href="#">Logout</a>
         </li>
         <!-- <li>
           <a href="#">Canceled Orders</a>
-        </li> -->
+        </li> 
       </ul>
-    </aside>
-    <h6><span id="admin-span">&#9792;</span> Admin</h6>
-    <h3>Delivery Order Summary</h3>
-    <h5>October 2018</h5>
-    <div class="dashboard-accordion">
-      <p>
-        <span>ID: </span>5671GF</p>
-      <p>
-        <span>Date: </span>12/3/2018</p>
-      <p>
-        <p>
-          <span>Parcel content/Qty: </span> 3 Pack of nylon strip
-        </p>
-        <p class="admin-update">Update</p>
-    </div>
-    <div class="dashboard-panel">
-      <div class="item">
-        <div class="item-item">
-          <p>
-            <span>Parcel content/Qty: </span> 3 Pack of nylon strip
-          </p>
-          <p>
-            <span>ID: </span>5671GF</p>
-          <p>
-            <span>Date: </span>12/3/2018</p>
-          <p>
-            <span>Onitsha</span>Present Location</p>
-          <p>
-            <span>Calaber</span>Pickup Location</p>
-          <br>
-          <input type="button" value="Edit">
-          <span>Status </span>
-          <select>
-            <option>Select</option>
-            <option>Pending</option>
-            <option>In transit</option>
-            <option>Waiting for collection</option>
-            <option>Delivered</option>
-          </select>
-        </div>
-        <div class="item-item">
-          <p>
-            <span>Parcel content/Qty: </span> 3 Pack of nylon strip
-          </p>
-          <p>
-            <span>ID: </span>5671GF</p>
-          <p>
-            <span>Date: </span>12/3/2018</p>
-          <input type="button" value="Edit">
-          <span>Present Location: </span>
-          <select>
-            <option>Select</option>
-            <option>Benin</option>
-            <option>Adamawa</option>
-            <option>Minna</option>
-            <option>Abuja</option>
-            <option>Aba</option>
-            <option>Ibadan</option>
-            <option>Enugu</option>
-            <option>Abuja</option>
-          </select>
-          <br>
-          <span>Pickup Location: </span>
-          <p>Calabar</p>
+    </aside> -->
+    <!-- <div class="my-parcel">
+        <div id="my-parcels"> -->
+    <div class="dropdown admin-dropdown" style="float:right;">
+      <span id="avatarName">
+        <img id="avatar" src="img/avater2.jpg" alt="profile name" width="20px">&#711;</span>
 
-          <span>Status </span>
-          <select>
-            <option>Select</option>
-            <option>Pending</option>
-            <option>In transit</option>
-            <option>Waiting for collection</option>
-            <option>Delivered</option>
-          </select>
-        </div>
+      <div class="dropdown-content">
+        <a href="profile.html">profile</a>
+        <a href="index.html">Logout</a>
+        <a href="index.html">User View</a>
       </div>
     </div>
-    <div class="dashboard-accordion">
-      <p>
-        <span>ID: </span>5671GF</p>
-      <p>
-        <span>Date: </span>12/3/2018</p>
-      <p>
-        <p>
-          <span>Parcel content/Qty: </span> 3 Pack of nylon strip
-        </p>
-        <p class="admin-update">Update</p>
-    </div>
-    <div class="dashboard-panel">
-      <div class="item">
-        <div class="item-item">
-          <p>
-            <span>Parcel content/Qty: </span> 3 Pack of nylon strip
-          </p>
-          <p>
-            <span>ID: </span>5671GF</p>
-          <p>
-            <span>Date: </span>12/3/2018</p>
-          <p>
-            <span>Onitsha</span>Present Location</p>
-          <p>
-            <span>Calaber</span>Pickup Location</p>
-          <br>
-          <input type="button" value="Edit">
-          <span>Status </span>
-          <select>
-            <option>Select</option>
-            <option>Pending</option>
-            <option>In transit</option>
-            <option>Waiting for collection</option>
-            <option>Delivered</option>
-          </select>
-        </div>
-        <div class="item-item">
-          <p>
-            <span>Parcel content/Qty: </span> 3 Pack of nylon strip
-          </p>
-          <p>
-            <span>ID: </span>5671GF</p>
-          <p>
-            <span>Date: </span>12/3/2018</p>
-          <input type="button" value="Edit">
-          <span>Present Location: </span>
-          <select>
-            <option>Select</option>
-            <option>Benin</option>
-            <option>Adamawa</option>
-            <option>Minna</option>
-            <option>Abuja</option>
-            <option>Aba</option>
-            <option>Ibadan</option>
-            <option>Enugu</option>
-            <option>Abuja</option>
-          </select>
-          <br>
-          <span>Pickup Location: </span>
-          <p>Calabar</p>
+    <!-- </div>
 
-          <span>Status </span>
-          <select>
-            <option>Select</option>
-            <option>Pending</option>
-            <option>In transit</option>
-            <option>Waiting for collection</option>
-            <option>Delivered</option>
-          </select>
+    </div> -->
+    <h6>
+      <span id="admin-span">&#9792;</span> Admin</h6>
+    <h3>Order Delivery Summary</h3>
+    <!-- <h5>October 2018</h5> -->
+    <div class="dash-acc-div">
+      <div class="dashboard-header">
+        <div class="order-column id">S/N</div>
+        <div class="order-column date">Date</div>
+        <div class="order-column TrackingID">TrackingID</div>
+        <div class="order-column parcel-content">Parcel Content/Qty</div>
+        <div class="order-column edit">Update</div>
+        <!-- <div class="order-column location">Present Location</div>
+        <div class="order-column status">Status</div> -->
+      </div>
+      <div class="dashboard-accordion one">
+        <p class="order-column id">1</p>
+        <p class="order-column date">12/3/2018</p>
+        <p class="order-column TrackingID">5671GF</p> 
+        <p class="order-column parcel-content">3 Packs of nylon strip</p> 
+        <div class="order-column edit">✎</div>
+      </div>
+      <div class="dashboard-panel">
+        <div class="item">
+          <div class="item-item">
+            <p>
+              <span>Parcel content/Qty: </span> 3 Pack of nylon strip
+            </p>
+            <p>
+              <span>ID: </span>5671GF</p>
+            <p>
+              <span>Date: </span>12/3/2018</p>
+            <p>
+              <span>Onitsha</span>Present Location</p>
+            <p>
+              <span>Calaber</span>Pickup Location</p>
+            <br>
+            <input type="button" value="Edit">
+            <span>Status </span>
+            <select>
+              <option>Select</option>
+              <option>Pending</option>
+              <option>In transit</option>
+              <option>Waiting for collection</option>
+              <option>Delivered</option>
+            </select>
+          </div>
+          <div class="item-item">
+            <p>
+              <span>Parcel content/Qty: </span> 3 Pack of nylon strip
+            </p>
+            <p>
+              <span>ID: </span>5671GF</p>
+            <p>
+              <span>Date: </span>12/3/2018</p>
+            <input type="button" value="Edit">
+            <span>Present Location: </span>
+            <select>
+              <option>Select</option>
+              <option>Benin</option>
+              <option>Adamawa</option>
+              <option>Minna</option>
+              <option>Abuja</option>
+              <option>Aba</option>
+              <option>Ibadan</option>
+              <option>Enugu</option>
+              <option>Abuja</option>
+            </select>
+            <br>
+            <span>Pickup Location: </span>
+            <p>Calabar</p>
+
+            <span>Status </span>
+            <select>
+              <option>Select</option>
+              <option>Pending</option>
+              <option>In transit</option>
+              <option>Waiting for collection</option>
+              <option>Delivered</option>
+            </select>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="dashboard-accordion">
-      <p>
-        <span>ID: </span>5671GF</p>
-      <p>
-        <span>Date: </span>12/3/2018</p>
-      <p>
-        <p>
-          <span>Parcel content/Qty: </span> 3 Pack of nylon strip
-        </p>
-        <p class="admin-update">Update</p>
-    </div>
-    <div class="dashboard-panel">
-      <div class="item">
-        <div class="item-item">
-          <p>
-            <span>Parcel content/Qty: </span> 3 Pack of nylon strip
-          </p>
-          <p>
-            <span>ID: </span>5671GF</p>
-          <p>
-            <span>Date: </span>12/3/2018</p>
-          <p>
-            <span>Onitsha</span>Present Location</p>
-          <p>
-            <span>Calaber</span>Pickup Location</p>
-          <br>
-          <input type="button" value="Edit">
-          <span>Status </span>
-          <select>
-            <option>Select</option>
-            <option>Pending</option>
-            <option>In transit</option>
-            <option>Waiting for collection</option>
-            <option>Delivered</option>
-          </select>
-        </div>
-        <div class="item-item">
-          <p>
-            <span>Parcel content/Qty: </span> 3 Pack of nylon strip
-          </p>
-          <p>
-            <span>ID: </span>5671GF</p>
-          <p>
-            <span>Date: </span>12/3/2018</p>
-          <input type="button" value="Edit">
-          <span>Present Location: </span>
-          <select>
-            <option>Select</option>
-            <option>Benin</option>
-            <option>Adamawa</option>
-            <option>Minna</option>
-            <option>Abuja</option>
-            <option>Aba</option>
-            <option>Ibadan</option>
-            <option>Enugu</option>
-            <option>Abuja</option>
-          </select>
-          <br>
-          <span>Pickup Location: </span>
-          <p>Calabar</p>
 
-          <span>Status </span>
-          <select>
-            <option>Select</option>
-            <option>Pending</option>
-            <option>In transit</option>
-            <option>Waiting for collection</option>
-            <option>Delivered</option>
-          </select>
-        </div>
-      </div>
-    </div>
-    <div class="dashboard-accordion">
-      <p>
-        <span>ID: </span>5671GF</p>
-      <p>
-        <span>Date: </span>12/3/2018</p>
-      <p>
-        <p>
-          <span>Parcel content/Qty: </span> 3 Pack of nylon strip
-        </p>
-        <p class="admin-update">Update</p>
-    </div>
-    <div class="dashboard-panel">
-      <div class="item">
-        <div class="item-item">
-          <p>
-            <span>Parcel content/Qty: </span> 3 Pack of nylon strip
-          </p>
-          <p>
-            <span>ID: </span>5671GF</p>
-          <p>
-            <span>Date: </span>12/3/2018</p>
-          <p>
-            <span>Onitsha</span>Present Location</p>
-          <p>
-            <span>Calaber</span>Pickup Location</p>
-          <br>
-          <input type="button" value="Edit">
-          <span>Status </span>
-          <select>
-            <option>Select</option>
-            <option>Pending</option>
-            <option>In transit</option>
-            <option>Waiting for collection</option>
-            <option>Delivered</option>
-          </select>
-        </div>
-        <div class="item-item">
-          <p>
-            <span>Parcel content/Qty: </span> 3 Pack of nylon strip
-          </p>
-          <p>
-            <span>ID: </span>5671GF</p>
-          <p>
-            <span>Date: </span>12/3/2018</p>
-          <input type="button" value="Edit">
-          <span>Present Location: </span>
-          <select>
-            <option>Select</option>
-            <option>Benin</option>
-            <option>Adamawa</option>
-            <option>Minna</option>
-            <option>Abuja</option>
-            <option>Aba</option>
-            <option>Ibadan</option>
-            <option>Enugu</option>
-            <option>Abuja</option>
-          </select>
-          <br>
-          <span>Pickup Location: </span>
-          <p>Calabar</p>
-
-          <span>Status </span>
-          <select>
-            <option>Select</option>
-            <option>Pending</option>
-            <option>In transit</option>
-            <option>Waiting for collection</option>
-            <option>Delivered</option>
-          </select>
-        </div>
-      </div>
-    </div>
-    <div class="dashboard-accordion">
-      <p>
-        <span>ID: </span>5671GF</p>
-      <p>
-        <span>Date: </span>12/3/2018</p>
-      <p>
-        <p>
-          <span>Parcel content/Qty: </span> 3 Pack of nylon strip
-        </p>
-        <p class="admin-update">Update</p>
-    </div>
-    <div class="dashboard-panel">
-      <div class="item">
-        <div class="item-item">
-          <p>
-            <span>Parcel content/Qty: </span> 3 Pack of nylon strip
-          </p>
-          <p>
-            <span>ID: </span>5671GF</p>
-          <p>
-            <span>Date: </span>12/3/2018</p>
-          <p>
-            <span>Onitsha</span>Present Location</p>
-          <p>
-            <span>Calaber</span>Pickup Location</p>
-          <br>
-          <input type="button" value="Edit">
-          <span>Status </span>
-          <select>
-            <option>Select</option>
-            <option>Pending</option>
-            <option>In transit</option>
-            <option>Waiting for collection</option>
-            <option>Delivered</option>
-          </select>
-        </div>
-        <div class="item-item">
-          <p>
-            <span>Parcel content/Qty: </span> 3 Pack of nylon strip
-          </p>
-          <p>
-            <span>ID: </span>5671GF</p>
-          <p>
-            <span>Date: </span>12/3/2018</p>
-          <input type="button" value="Edit">
-          <span>Present Location: </span>
-          <select>
-            <option>Select</option>
-            <option>Benin</option>
-            <option>Adamawa</option>
-            <option>Minna</option>
-            <option>Abuja</option>
-            <option>Aba</option>
-            <option>Ibadan</option>
-            <option>Enugu</option>
-            <option>Abuja</option>
-          </select>
-          <br>
-          <span>Pickup Location: </span>
-          <p>Calabar</p>
-
-          <span>Status </span>
-          <select>
-            <option>Select</option>
-            <option>Pending</option>
-            <option>In transit</option>
-            <option>Waiting for collection</option>
-            <option>Delivered</option>
-          </select>
-        </div>
-      </div>
-    </div>
-    <div class="dashboard-accordion">
-      <p>
-        <span>ID: </span>5671GF</p>
-      <p>
-        <span>Date: </span>12/3/2018</p>
-      <p>
-        <p>
-          <span>Parcel content/Qty: </span> 3 Pack of nylon strip
-        </p>
-        <p class="admin-update">Update</p>
-    </div>
-    <div class="dashboard-panel">
-      <div class="item">
-        <div class="item-item">
-          <p>
-            <span>Parcel content/Qty: </span> 3 Pack of nylon strip
-          </p>
-          <p>
-            <span>ID: </span>5671GF</p>
-          <p>
-            <span>Date: </span>12/3/2018</p>
-          <p>
-            <span>Onitsha</span>Present Location</p>
-          <p>
-            <span>Calaber</span>Pickup Location</p>
-          <br>
-          <input type="button" value="Edit">
-          <span>Status </span>
-          <select>
-            <option>Select</option>
-            <option>Pending</option>
-            <option>In transit</option>
-            <option>Waiting for collection</option>
-            <option>Delivered</option>
-          </select>
-        </div>
-        <div class="item-item">
-          <p>
-            <span>Parcel content/Qty: </span> 3 Pack of nylon strip
-          </p>
-          <p>
-            <span>ID: </span>5671GF</p>
-          <p>
-            <span>Date: </span>12/3/2018</p>
-          <input type="button" value="Edit">
-          <span>Present Location: </span>
-          <select>
-            <option>Select</option>
-            <option>Benin</option>
-            <option>Adamawa</option>
-            <option>Minna</option>
-            <option>Abuja</option>
-            <option>Aba</option>
-            <option>Ibadan</option>
-            <option>Enugu</option>
-            <option>Abuja</option>
-          </select>
-          <br>
-          <span>Pickup Location: </span>
-          <p>Calabar</p>
-
-          <span>Status </span>
-          <select>
-            <option>Select</option>
-            <option>Pending</option>
-            <option>In transit</option>
-            <option>Waiting for collection</option>
-            <option>Delivered</option>
-          </select>
-        </div>
-      </div>
-    </div>
-    <div class="dashboard-accordion">
-      <p>
-        <span>ID: </span>5671GF</p>
-      <p>
-        <span>Date: </span>12/3/2018</p>
-      <p>
-        <p>
-          <span>Parcel content/Qty: </span> 3 Pack of nylon strip
-        </p>
-        <p class="admin-update">Update</p>
-    </div>
-    <div class="dashboard-panel">
-      <div class="item">
-        <div class="item-item">
-          <p>
-            <span>Parcel content/Qty: </span> 3 Pack of nylon strip
-          </p>
-          <p>
-            <span>ID: </span>5671GF</p>
-          <p>
-            <span>Date: </span>12/3/2018</p>
-          <p>
-            <span>Onitsha</span>Present Location</p>
-          <p>
-            <span>Calaber</span>Pickup Location</p>
-          <br>
-          <input type="button" value="Edit">
-          <span>Status </span>
-          <select>
-            <option>Select</option>
-            <option>Pending</option>
-            <option>In transit</option>
-            <option>Waiting for collection</option>
-            <option>Delivered</option>
-          </select>
-        </div>
-        <div class="item-item">
-          <p>
-            <span>Parcel content/Qty: </span> 3 Pack of nylon strip
-          </p>
-          <p>
-            <span>ID: </span>5671GF</p>
-          <p>
-            <span>Date: </span>12/3/2018</p>
-          <input type="button" value="Edit">
-          <span>Present Location: </span>
-          <select>
-            <option>Select</option>
-            <option>Benin</option>
-            <option>Adamawa</option>
-            <option>Minna</option>
-            <option>Abuja</option>
-            <option>Aba</option>
-            <option>Ibadan</option>
-            <option>Enugu</option>
-            <option>Abuja</option>
-          </select>
-          <br>
-          <span>Pickup Location: </span>
-          <p>Calabar</p>
-
-          <span>Status </span>
-          <select>
-            <option>Select</option>
-            <option>Pending</option>
-            <option>In transit</option>
-            <option>Waiting for collection</option>
-            <option>Delivered</option>
-          </select>
-        </div>
-      </div>
-    </div>
-    <div class="dashboard-accordion">
-      <p>
-        <span>ID: </span>5671GF</p>
-      <p>
-        <span>Date: </span>12/3/2018</p>
-      <p>
-        <p>
-          <span>Parcel content/Qty: </span> 3 Pack of nylon strip
-        </p>
-        <p class="admin-update">Update</p>
-    </div>
-    <div class="dashboard-panel">
-      <div class="item">
-        <div class="item-item">
-          <p>
-            <span>Parcel content/Qty: </span> 3 Pack of nylon strip
-          </p>
-          <p>
-            <span>ID: </span>5671GF</p>
-          <p>
-            <span>Date: </span>12/3/2018</p>
-          <p>
-            <span>Onitsha</span>Present Location</p>
-          <p>
-            <span>Calaber</span>Pickup Location</p>
-          <br>
-          <input type="button" value="Edit">
-          <span>Status </span>
-          <select>
-            <option>Select</option>
-            <option>Pending</option>
-            <option>In transit</option>
-            <option>Waiting for collection</option>
-            <option>Delivered</option>
-          </select>
-        </div>
-        <div class="item-item">
-          <p>
-            <span>Parcel content/Qty: </span> 3 Pack of nylon strip
-          </p>
-          <p>
-            <span>ID: </span>5671GF</p>
-          <p>
-            <span>Date: </span>12/3/2018</p>
-          <input type="button" value="Edit">
-          <span>Present Location: </span>
-          <select>
-            <option>Select</option>
-            <option>Benin</option>
-            <option>Adamawa</option>
-            <option>Minna</option>
-            <option>Abuja</option>
-            <option>Aba</option>
-            <option>Ibadan</option>
-            <option>Enugu</option>
-            <option>Abuja</option>
-          </select>
-          <br>
-          <span>Pickup Location: </span>
-          <p>Calabar</p>
-
-          <span>Status </span>
-          <select>
-            <option>Select</option>
-            <option>Pending</option>
-            <option>In transit</option>
-            <option>Waiting for collection</option>
-            <option>Delivered</option>
-          </select>
-        </div>
-      </div>
-    </div>
-    <div class="dashboard-accordion">
-      <p>
-        <span>ID: </span>5671GF</p>
-      <p>
-        <span>Date: </span>12/3/2018</p>
-      <p>
-        <p>
-          <span>Parcel content/Qty: </span> 3 Pack of nylon strip
-        </p>
-        <p class="admin-update">Update</p>
-    </div>
-    <div class="dashboard-panel">
-      <div class="item">
-        <div class="item-item">
-          <p>
-            <span>Parcel content/Qty: </span> 3 Pack of nylon strip
-          </p>
-          <p>
-            <span>ID: </span>5671GF</p>
-          <p>
-            <span>Date: </span>12/3/2018</p>
-          <p>
-            <span>Onitsha</span>Present Location</p>
-          <p>
-            <span>Calaber</span>Pickup Location</p>
-          <br>
-          <input type="button" value="Edit">
-          <span>Status </span>
-          <select>
-            <option>Select</option>
-            <option>Pending</option>
-            <option>In transit</option>
-            <option>Waiting for collection</option>
-            <option>Delivered</option>
-          </select>
-        </div>
-        <div class="item-item">
-          <p>
-            <span>Parcel content/Qty: </span> 3 Pack of nylon strip
-          </p>
-          <p>
-            <span>ID: </span>5671GF</p>
-          <p>
-            <span>Date: </span>12/3/2018</p>
-          <input type="button" value="Edit">
-          <span>Present Location: </span>
-          <select>
-            <option>Select</option>
-            <option>Benin</option>
-            <option>Adamawa</option>
-            <option>Minna</option>
-            <option>Abuja</option>
-            <option>Aba</option>
-            <option>Ibadan</option>
-            <option>Enugu</option>
-            <option>Abuja</option>
-          </select>
-          <br>
-          <span>Pickup Location: </span>
-          <p>Calabar</p>
-
-          <span>Status </span>
-          <select>
-            <option>Select</option>
-            <option>Pending</option>
-            <option>In transit</option>
-            <option>Waiting for collection</option>
-            <option>Delivered</option>
-          </select>
-        </div>
-      </div>
-    </div>
-    <div class="dashboard-accordion">
-      <p>
-        <span>ID: </span>5671GF</p>
-      <p>
-        <span>Date: </span>12/3/2018</p>
-      <p>
-        <p>
-          <span>Parcel content/Qty: </span> 3 Pack of nylon strip
-        </p>
-        <p class="admin-update">Update</p>
-    </div>
-    <div class="dashboard-panel">
-      <div class="item">
-        <div class="item-item">
-          <p>
-            <span>Parcel content/Qty: </span> 3 Pack of nylon strip
-          </p>
-          <p>
-            <span>ID: </span>5671GF</p>
-          <p>
-            <span>Date: </span>12/3/2018</p>
-          <p>
-            <span>Onitsha</span>Present Location</p>
-          <p>
-            <span>Calaber</span>Pickup Location</p>
-          <br>
-          <input type="button" value="Edit">
-          <span>Status </span>
-          <select>
-            <option>Select</option>
-            <option>Pending</option>
-            <option>In transit</option>
-            <option>Waiting for collection</option>
-            <option>Delivered</option>
-          </select>
-        </div>
-        <div class="item-item">
-          <p>
-            <span>Parcel content/Qty: </span> 3 Pack of nylon strip
-          </p>
-          <p>
-            <span>ID: </span>5671GF</p>
-          <p>
-            <span>Date: </span>12/3/2018</p>
-          <input type="button" value="Edit">
-          <span>Present Location: </span>
-          <select>
-            <option>Select</option>
-            <option>Benin</option>
-            <option>Adamawa</option>
-            <option>Minna</option>
-            <option>Abuja</option>
-            <option>Aba</option>
-            <option>Ibadan</option>
-            <option>Enugu</option>
-            <option>Abuja</option>
-          </select>
-          <br>
-          <span>Pickup Location: </span>
-          <p>Calabar</p>
-
-          <span>Status </span>
-          <select>
-            <option>Select</option>
-            <option>Pending</option>
-            <option>In transit</option>
-            <option>Waiting for collection</option>
-            <option>Delivered</option>
-          </select>
-        </div>
-      </div>
-    </div>
     </div>
   </article>
   <script src="js/place_order.js"></script>
