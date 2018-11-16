@@ -33,16 +33,6 @@ body {
     flex: 1 1 100%;
 
 }
-/* #top-head {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    background: antiquewhite;
-}
-/* All the descendants of top-head 
-.top-head > * {
-    flex: 1 1 100%;
-} */
 
 #top-img {
     height: 80px;
@@ -161,10 +151,6 @@ input {
 
 }
 
-/* #my-parcels:hover, #signin:hover, #top-img:hover {
-    box-shadow: 3px 5px 5px 5px gray;
-} */
-
 .cart img {
     width: 20px;
     height: 22px;
@@ -194,16 +180,6 @@ li {
     padding-bottom: 5px;
 }
 
-/* #open li a {
-    flex: 1 1 100%;
-    text-decoration: none;
-    padding-right: 5px;
-    /* margin: 5px; 
-    font-size: 20px;
-    color: white;
-    margin-left: 60px;
-    list-style: none;
-} */
 
 /* PARCEL-SUBMIT */
  #search-header {
@@ -670,7 +646,7 @@ letter-spacing: 0.1em;
  li {
     text-align: center;
     font-size: .9em;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .plan > * {
@@ -977,11 +953,6 @@ letter-spacing: 0.1em;
     font-weight: bold;
     float: right;
     margin-left: 5px;
-}
-
-.active:after {
-    /* content: "\2212"; */
-    /* content: '\25b2'; */
 }
 
 .dashboard-panel {
