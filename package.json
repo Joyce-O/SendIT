@@ -1,7 +1,7 @@
 {
-  "name": "mailxpress",
+  "name": "SendIT",
   "version": "1.0.0",
-  "description": "MailXpress is a courier service that helps users deliver parcels to different destinations. MailXpress provides courier quotes based on weight categories.",
+  "description": "SendIT is a courier service that helps users deliver parcels to different destinations. MailXpress provides courier quotes based on weight categories.",
   "main": "app.js",
   "scripts": {
     "start": "nodemon --exec babel-node -- app.js",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Joyce-O/MailXpress.git"
+    "url": "git+https://github.com/Joyce-O/SendIT.git"
   },
   "keywords": [
     "courier"
@@ -19,9 +19,9 @@
   "author": "Joyce",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Joyce-O/MailXpress/issues"
+    "url": "https://github.com/Joyce-O/SendIT/issues"
   },
-  "homepage": "https://github.com/Joyce-O/MailXpress#readme",
+  "homepage": "https://github.com/Joyce-O/SendIT#readme",
   "dependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
