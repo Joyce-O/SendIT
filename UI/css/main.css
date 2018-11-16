@@ -963,6 +963,9 @@ letter-spacing: 0.1em;
     background-color: brown;
     border-radius: 5px;
 }
+.accon-dropdown a{
+    font-size: 1em;
+}
 .active, .dashboard-accordion:hover {
     background-color: #ccc;
 }
@@ -992,13 +995,50 @@ letter-spacing: 0.1em;
 
 .item {
     display: flex;
-    justify-content: space-around;
+    margin-left: 50px;
+    margin-top: 20px;
 }
 .item-item{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: stretch;
     height: auto;
+    font-size: 1.2em;
+}
+.item-item p {
+    color: rgb(95, 94, 94);
+}
+
+.item-item span {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+.item-item select {
+    padding: 5px;
+    font-size: 1em;
+}
+.item-address {
+    margin-left: 60px;
+}
+.select-span {
+    display: block;
+margin-bottom: 5px;
+}
+.select-cancel {
+ color: red;
+}
+.select-deliver {
+ color: green;
+}
+.select-moving {
+ color: goldenrod;
+}
+.select-pending {
+    color: dodgerblue;
+}
+.update-h5 {
+    color: rgb(136, 228, 136);
+    font-size: 1.2em;
 }
 
 .footer {
