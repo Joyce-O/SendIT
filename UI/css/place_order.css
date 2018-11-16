@@ -52,9 +52,6 @@
 
 }
 
-/*Place order div*/
-
-/* flexbox starts here */
 /* THE ACCORDION */
 .container {
     width: 100%
@@ -500,6 +497,7 @@ aside h3 {
     background: green;
     color: white;
     border-radius: 5px;
+    margin-bottom: 10px;
 }
 .aside-diva #add-parcel:hover {
     background: rgba(153, 205, 50, 0.87);

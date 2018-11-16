@@ -125,6 +125,7 @@ input {
     margin-top: 5px;
     background: transparent;
     width: max-content;
+    display: inline-block;
     padding: 5px;
     cursor: pointer;
     color: white;
@@ -720,6 +721,7 @@ letter-spacing: 0.1em;
 }
 
 /*Modal*/
+
 #modal2 {
     z-index: 2;
     display: none;
@@ -733,6 +735,26 @@ letter-spacing: 0.1em;
     color: #fff;
 
 }
+
+#signup2 {
+    margin-top: 5px;
+    background: green;
+    width: max-content;
+    padding: 7px;
+    padding-top: 3px;
+    cursor: pointer;
+    color: white;
+    border-radius: 3px;
+    text-align: center;
+    font-size: .9em;
+    font-weight: bolder;
+}
+#signup2:hover, #login:hover {
+    background: rgba(153, 205, 50, 0.87);
+
+}
+
+
   
 #auth-btn {
     display: block;
@@ -785,6 +807,7 @@ letter-spacing: 0.1em;
       
 #auth-form2 form label {
     display: block;
+    color: white;
     float: left;
     padding: 5px;
 }
@@ -795,30 +818,41 @@ letter-spacing: 0.1em;
     outline: none;
     border: none;
     margin-bottom: 13px;
+    font-size: 1.2em;
     padding: 10px;
     box-sizing: border-box;
 }
 
 #auth-form2 #login-open {
+    display: inline-block;
     outline: none;
     cursor: pointer;
     width: 60px;
     margin-left: 0px;
+    text-decoration: underline;
     padding: 5px;
     background: transparent;
     color: lightskyblue;
     font-size: 1.2em;
 } 
 
-#auth-form2 form input[type=submit] {
+#auth-form2 form input[type=submit], #submit-modal {
     background: green;
     color: #fff;
+    text-align: center;
     cursor: pointer;
     width: 40%;
 }
   
-#auth-form2 form input[type=submit]:hover {
+#auth-form2 form input[type=submit]:hover, #submit-modal:hover {
     background: rgba(153, 205, 50, 0.87);
+}
+#submit-modal {
+    display: block;
+    text-align: center;
+    align-self: center;
+    margin-left: 120px;
+    border-radius: 5px;
 }
   
 #close-signup {
