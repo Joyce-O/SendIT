@@ -53,12 +53,19 @@ describe('Test for Parcel Order Endpoints', () => {
             chai.request(app)
                 .post('/api/v1/parcels')
                 .send(invalidName)
+                done()
                 .send(invalidPhone)
+                done()
                 .send(invalidEmail)
+                done()
                 .send(invalidWeight)
+                done()
                 .send(invalidParcelCon)
+                done()
                 .send(invalidQty)
+                done()
                 .send(invalidparcelType)
+                done()
                 .end((error, response) => {
                     expect(response).to.have.status(400);
                     expect(response.body.message).to.equal('Please make sure to input correct values');
