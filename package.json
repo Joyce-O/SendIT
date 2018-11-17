@@ -26,14 +26,17 @@
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",
+    "bcrypt": "^3.0.2",
     "body-parser": "^1.18.3",
     "chai": "^4.2.0",
     "chai-http": "^4.2.0",
     "coveralls": "^3.0.2",
     "express": "^4.16.4",
+    "jsonwebtoken": "^8.4.0",
     "mocha": "^5.2.0",
     "nodemon": "^1.18.4",
     "nyc": "^13.1.0",
+    "pg": "^7.6.1",
     "uuid": "^3.3.2"
   },
   "devDependencies": {
