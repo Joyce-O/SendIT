@@ -107,5 +107,17 @@ describe('Test for Parcel Order Endpoints', () => {
                     done();
                 });
         });
+        
+    });
+    describe('Test for Cancel a Parcel Order Endpoint', () => {
+        it('Should return 200 for success', (done) => {
+            chai.request(app)
+                .put('/api/v1/parcels/219b1e64-afe5-5e71-ac0b-8b6a4c605a01/cancel')
+                .end((error, response) => {
+                    expect(response).to.have.status(200);
+                    expect(response.body.message).to.equal('Your order is Cancelled!');
+                    done();
+                });
+        });
     });
 });
