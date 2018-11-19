@@ -339,7 +339,7 @@ input.search-go:hover {
     border-radius: 2px;
     box-shadow:none;
     border: none;
-    outline: none;
+    /* outline: none; */
     border: none;
     margin-bottom: 15px;
     padding: 10px;
@@ -479,7 +479,7 @@ input.search-go:hover {
 #form2 input:focus + label {
     transform: translate(0, 0) scale(1.5);
     color: white;
-    cursor: pointer;
+    margin-bottom: 7px;
 }
 #option {
       color: green;
@@ -518,7 +518,7 @@ input.search-go:hover {
       opacity: .7;
       font-weight: bolder;
       color: white;
-      margin-top: 0px;
+      margin-top: 3px;
       letter-spacing: .1em;
 }
 #personnel {
@@ -875,7 +875,7 @@ letter-spacing: 0.1em;
 /* Admin dashoboard */
 .admin-body {
     max-width: 100%;
-    margin: 20px;
+    /* margin: 20px; */
     background: white;
 }
 .dash-acc-div {
@@ -894,9 +894,10 @@ letter-spacing: 0.1em;
 }
 #admin-span {
     color: black;
+    margin-left: 5px;
     margin-bottom: 0px;
     text-align: center;
-    font-size: 1em;
+    font-size: 1.2em;
 }
 .dashboard-article h6 {
     color: darkslateblue;
@@ -942,19 +943,13 @@ letter-spacing: 0.1em;
 }
 .dashboard-accordion, .dashboard-header {
     color: #444;
-    cursor: pointer;
     justify-content: space-between;
     display: flex;
     padding: 18px;
     width: 80%;
-    /* margin-top: 20px; */
-    /* margin-left: 20px; */
     border: 1px solid brown ;
-    /* color: darkblue; */
-    font-family: cursive;
-    font-weight: bold;
-    /* text-align: left; */
-    font-size: 15px;
+    font-size: 1.2em;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     transition: 0.4s;
     border-radius: 4px;
 }
@@ -1015,7 +1010,7 @@ letter-spacing: 0.1em;
 }
 
 .item-item span {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: Arial, sans-serif;
 
 }
 .item-item select {

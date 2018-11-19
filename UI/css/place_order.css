@@ -437,7 +437,7 @@ aside h3 {
     padding: 16px;
     font-size: 16px;
     border: none;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 .dropdown {
@@ -524,7 +524,7 @@ max-height: auto;
     text-align: center;
     font-size: 1.2em;
     font-weight: 300;
-    font-family: cursive;
+    font-family: 'Times New Roman', Times, serif;
     justify-content: center;
     align-items: center;
   }
@@ -548,7 +548,6 @@ max-height: auto;
   }
   
   .TrackingID {
-    cursor: pointer;
     color: purple;
     /* font-weight: bold; */
   }
@@ -566,6 +565,7 @@ max-height: auto;
   }
   .edit {
     color: green;
+    cursor: pointer;
   }
   .order-even {
       background: rgb(212, 210, 210);

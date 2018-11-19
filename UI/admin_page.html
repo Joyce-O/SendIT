@@ -14,23 +14,53 @@
 </head>
 
 <body class="admin-body">
-  <article class="dashboard-article">
-   
-    <div class="dropdown admin-dropdown" style="float:right;">
-      <span id="avatarName">
-        <img id="avatar" src="img/avater2.jpg" alt="profile name" width="20px">&#711;</span>
+  <header>
 
-      <div class="dropdown-content accon-dropdown">
-        <a href="profile.html">profile</a>
-        <a href="index.html">Logout</a>
-        <!-- <a href="index.html">User View</a> -->
+    <div id="sub-head">
+      <nav class="flex-nav">
+        <ul id="open">
+          <li>
+            <a class="sendit-logo" href="index.html">Send
+              <span id="span-logo">&#921;&#932;</span>
+            </a>
+          </li>
+          <li>
+            <a class="our-services" href="#">Our Services</a>
+          </li>
+          <li>
+            <a class="our-services" href="#">Help</a>
+          </li>
+      </nav>
+      <div id="search-header">
+        <form id="search-form" method="get" action="#">
+
+          <span id="track">Track A Parcel
+            <input type="text" placeholder="" class="search-go" name="q" size="21" maxlength="120">
+            <input type="button" value="Go" class="button-go">
+          </span>
+        </form>
+        <div class="search-clear"></div>
       </div>
-    </div>
-    <!-- </div>
+      <div class="my-parcel">
+        <div id="my-parcels">
+          <div class="dropdown" style="float:right;">
+            <span id="avatarName">
+              <img id="avatar" src="img/avater2.jpg" alt="profile name" width="20px">&#711;</span>
 
-    </div> -->
-    <h6>
-      <span id="admin-span">&#9792;</span> Admin</h6>
+            <div class="dropdown-content">
+              <a href="profile.html">profile</a>
+              <a href="index.html">Logout</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+  </header>
+
+  <article class="dashboard-article">
+
+    <h6><span id="admin-span">&#9792;</span> Admin</h6>
     <h3>Order Delivery Summary</h3>
     <!-- <h5>October 2018</h5> -->
     <div class="dash-acc-div">
@@ -76,10 +106,10 @@
 
           </div>
           <div class="item-item item-address">
-              <p>
-                <span>Name: </span>
-                 Mr JohnBull Akumaka
-                </p>
+            <p>
+              <span>Name: </span>
+              Mr JohnBull Akumaka
+            </p>
             <h5 class="update-h5">Update Parcel</h5>
             <span class="select-span">Present Location:</span>
             <select>
@@ -140,74 +170,10 @@
 
           </div>
           <div class="item-item item-address">
-              <p>
-                <span>Name: </span>
-                   Mrs Eula Blessing
-                  </p>
-            <h5 class="update-h5">Update Parcel</h5>
-            <span class="select-span">Present Location:</span>
-            <select>
-              <option>Select</option>
-              <option>Benin</option>
-              <option>Adamawa</option>
-              <option>Minna</option>
-              <option>Abuja</option>
-              <option>Aba</option>
-              <option>Ibadan</option>
-              <option>Enugu</option>
-              <option>Abuja</option>
-            </select>
-
-            <span class="select-span">Status </span>
-            <select>
-              <option>Select</option>
-              <option class="select-pending">Pending</option>
-              <option class="select-moving">In transit</option>
-              <option class="select-moving">Waiting for collection</option>
-              <option class="select-deliver">Delivered</option>
-              <option class="select-cancel">Canceled</option>
-            </select>
-
-          </div>
-        </div>
-      </div>
-      <div class="dashboard-accordion one">
-        <p class="order-column id">1</p>
-        <p class="order-column date">12/3/2018</p>
-        <p class="order-column TrackingID">5671GF</p>
-        <p class="order-column parcel-content">3 Packs of nylon strip</p>
-        <div class="order-column edit">✎</div>
-      </div>
-      <div class="dashboard-panel">
-        <div class="item">
-          <div class="item-item">
             <p>
-              <span>Parcel content: </span> Pack of nylon strip
+              <span>Name: </span>
+              Mrs Eula Blessing
             </p>
-            <p>
-              <span>Tracking ID: </span>5671GF...</p>
-            <p>
-              <span>Date: </span>12/3/2018</p>
-            <p>
-              <span>Price: </span>
-               ₦500
-            </p>
-            <p>
-              <span>Pickup Address: </span>
-              120 Mark Street Obalende Lagos Nigeria
-            </p>
-            <p>
-              <span>Desination Address: </span>
-              22 Burka Street Kano Nigeria
-            </p>
-
-
-          </div>
-          <div class="item-item item-address">
-              <p>
-                <span>Name: </span>
-                Mr Ebube Eruka
-                </p>
             <h5 class="update-h5">Update Parcel</h5>
             <span class="select-span">Present Location:</span>
             <select>
@@ -268,10 +234,10 @@
 
           </div>
           <div class="item-item item-address">
-              <p>
-                  <span>Name: </span>
-                   Collins Uwam
-                  </p>
+            <p>
+              <span>Name: </span>
+              Mr Ebube Eruka
+            </p>
             <h5 class="update-h5">Update Parcel</h5>
             <span class="select-span">Present Location:</span>
             <select>
@@ -299,8 +265,74 @@
           </div>
         </div>
       </div>
+      <div class="dashboard-accordion one">
+        <p class="order-column id">1</p>
+        <p class="order-column date">12/3/2018</p>
+        <p class="order-column TrackingID">5671GF</p>
+        <p class="order-column parcel-content">3 Packs of nylon strip</p>
+        <div class="order-column edit">✎</div>
+      </div>
+      <div class="dashboard-panel">
+        <div class="item">
+          <div class="item-item">
+            <p>
+              <span>Parcel content: </span> Pack of nylon strip
+            </p>
+            <p>
+              <span>Tracking ID: </span>5671GF...</p>
+            <p>
+              <span>Date: </span>12/3/2018</p>
+            <p>
+              <span>Price: </span>
+              ₦500
+            </p>
+            <p>
+              <span>Pickup Address: </span>
+              120 Mark Street Obalende Lagos Nigeria
+            </p>
+            <p>
+              <span>Desination Address: </span>
+              22 Burka Street Kano Nigeria
+            </p>
+
+
+          </div>
+          <div class="item-item item-address">
+            <p>
+              <span>Name: </span>
+              Collins Uwam
+            </p>
+            <h5 class="update-h5">Update Parcel</h5>
+            <span class="select-span">Present Location:</span>
+            <select>
+              <option>Select</option>
+              <option>Benin</option>
+              <option>Adamawa</option>
+              <option>Minna</option>
+              <option>Abuja</option>
+              <option>Aba</option>
+              <option>Ibadan</option>
+              <option>Enugu</option>
+              <option>Abuja</option>
+            </select>
+
+            <span class="select-span">Status </span>
+            <select>
+              <option>Select</option>
+              <option class="select-pending">Pending</option>
+              <option class="select-moving">In transit</option>
+              <option class="select-moving">Waiting for collection</option>
+              <option class="select-deliver">Delivered</option>
+              <option class="select-cancel">Canceled</option>
+            </select>
+
+          </div>
+        </div>
+      </div>
+
 
     </div>
+    
   </article>
   <script src="js/main.js"></script>
 </body>
