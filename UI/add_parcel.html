@@ -36,7 +36,7 @@
                     <form id="search-form" method="get" action="#">
 
                         <span id="track">Track A Parcel
-                            <input type="text" placeholder="" class="search-go" name="q" size="21" maxlength="120">
+                            <input type="text" placeholder="" required class="search-go" name="q" size="21" maxlength="120">
                             <input type="button" value="Go" class="button-go">
                         </span>
                     </form>
@@ -64,23 +64,23 @@
             <form3 action="admin-food-items.html">
                     <legend>Add a Parcel</legend>
                 <label for="receiver-name">Receiver Name</label>
-                <input type="text" placeholder="Receiver name">
+                <input type="text" placeholder="Receiver name" required>
                 <label for="description">Content Description</label>
-                <input type="text" placeholder="Describe content">
+                <input type="text" placeholder="Describe content" required>
                 <div class="sub-input">
                     <div class="weight">
                         <label for="weight">Weight</label>
-                        <input type="text" placeholder="weight">
+                        <input type="text" placeholder="weight" required>
                     </div>
                     <div class="quantity">
                         <label for="quantity">Quantity</label>
-                        <input type="number" placeholder="Available quantity">
+                        <input type="number" placeholder="Available quantity" required>
                     </div>
                 </div>
                 <label for="parcel-type">Parcel Type</label>
-                <input type="text" placeholder="parcel type">
+                <input type="text" placeholder="parcel type" required>
                 <label for="email">Email</label>
-                <input type="email" placeholder="email">
+                <input type="email" placeholder="email" required>
                 <label for="address"> Pickup Address: </label>
                 <input type="text" name="address" class="address" id="address" placeholder="Pickup Address" required>
                 <label for="phone">Destination Phone: </label>

@@ -34,7 +34,7 @@
                     <form id="search-form" method="get" action="#">
 
                         <span id="track">Track A Parcel
-                            <input type="text" placeholder="" class="search-go" name="q" size="21" maxlength="120">
+                            <input type="text" placeholder="" required class="search-go" name="q" size="21" maxlength="120">
                             <input type="button" value="Go" class="button-go">
                         </span>
                     </form>
@@ -42,7 +42,7 @@
                 </div>
                 <div class= "my-parcel">
                     <div id="my-parcels">
-                       <a class="register" id="signup" href="login.html">Sign In</a>
+                       <!-- <input type="button" value="Sign In" class="register" id="signin"> -->
                    </div>
                </div>
 
@@ -63,7 +63,8 @@
                             <input type="email" name="email" id="email1" required placeholder="example@mail.com">
                             <label for="password">Password</label>
                             <input type="password" id="password1" name="password" required placeholder="Input your password">
-                            <a id="log" href="place_order.html">Login</a>
+                            <input type="submit" value="Submit" id="log">
+                            <!-- <a id="log" href="place_order.html">Login</a> -->
                         </form>
                         <p>
                           <span id="signup-modal">Forgot Password?</span>
@@ -109,7 +110,8 @@
                                 <input type="phone" name="phone" class="phone" id="phone" required placeholder="Phone (+234090.....)">
                                 <label for="password">Password: </label>
                                 <input type="password" class="password" id="password" name="password" required placeholder="Create password">
-                                <a id="submit-modal" href="place_order.html">Submit</a>
+                                <input type="submit" value="Submit">
+                                <!-- <a id="submit-modal" href="place_order.html">Submit</a> -->
                             </form>
                             <div id="login-open-p">
                                 <p>Existing Customer?

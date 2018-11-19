@@ -339,7 +339,7 @@ input.search-go:hover {
     border-radius: 2px;
     box-shadow:none;
     border: none;
-    outline: none;
+    /* outline: none; */
     border: none;
     margin-bottom: 15px;
     padding: 10px;
@@ -479,7 +479,7 @@ input.search-go:hover {
 #form2 input:focus + label {
     transform: translate(0, 0) scale(1.5);
     color: white;
-    cursor: pointer;
+    margin-bottom: 7px;
 }
 #option {
       color: green;
@@ -518,7 +518,7 @@ input.search-go:hover {
       opacity: .7;
       font-weight: bolder;
       color: white;
-      margin-top: 0px;
+      margin-top: 3px;
       letter-spacing: .1em;
 }
 #personnel {
