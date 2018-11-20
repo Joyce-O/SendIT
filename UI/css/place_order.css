@@ -371,15 +371,6 @@ aside h3 {
 .float-flex {
     display: flex;
 }
-#google-map {
-    /* display: flex; */
-    display: none;
-    background-color: grey;
-    height: 500px;  /* The height is 400 pixels */
-    width: 60%;  /* The width is the width of the web page */
-    justify-content: center;
-    align-items: center;
-}
 @media screen and (max-width: 500px) { 
   div{width:70%;} 
 }
@@ -632,6 +623,16 @@ max-height: auto;
 .add-parcel-wr {
     background: rgba(235, 234, 234, 0.144);
 }
+#google-map2 {
+    display: none;
+    background: grey;
+    position: absolute;
+    z-index: 2;
+    margin: 250px;
+    margin-top: 0px;
+    width: 60%;
+    height: 500Px;
+}
 
 .add-parcel-item {
     display: flex;
@@ -639,10 +640,13 @@ max-height: auto;
     margin: 50px auto;
     border: #cccccc 1px solid;
     padding: 10px;
+    z-index: 1;
     border-radius: 10px;
     position: relative;
     max-width: 600px;
   }
+ 
+
    .add-parcel-item legend {
        text-align: center;
        font-size: 1.5em;
@@ -696,6 +700,12 @@ max-height: auto;
       text-align: end;
       margin-left: 10px;
   }
-  
-
+/*   
+/*GOOGLE MAP*/
+/* #google-map2 { */
+    /* background-color: grey; */
+    /* height: 400px;  The height is 400 pixels */
+    /* width: 60%;  */
+    /* z-index: 2; The width is the width of the web page */
+/* }  */
 

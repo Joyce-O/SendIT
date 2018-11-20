@@ -60,6 +60,7 @@
         </header>
 
       <div id="add-parcel-wrap">
+        <center><div id="google-map2"></div></center>
         <div class="add-parcel-item">
             <form3 action="admin-food-items.html">
                     <legend>Add a Parcel</legend>
@@ -81,18 +82,23 @@
                 <input type="text" placeholder="parcel type" required>
                 <label for="email">Email</label>
                 <input type="email" placeholder="email" required>
-                <label for="address"> Pickup Address: </label>
-                <input type="text" name="address" class="address" id="address" placeholder="Pickup Address" required>
                 <label for="phone">Destination Phone: </label>
                 <input type="phone" name="phone" class="phone" id="phone" required placeholder="Phone (+234090.....)">
+                <label for="address"> Pickup Address: </label>
+                <input type="text" name="address" class="address" id="pickup" placeholder="Pickup Address" required>
                 <label for="destination">Destination Address: </label>
-                <input type="text" class="address" id="address" name="address" required placeholder="Add destination">
+                <input type="text" class="address" id="destination" name="address" required placeholder="Add destination">
                 <input type="submit" value="Submit">
             </form>
 
         </div>
     </div>
    </div>
+   <script src="js/google_map.js"></script>
+   <script defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzxWs5mI9SiYypzy3jl_UOXddZqDnkfNk&callback=initMap"></script>
+</script>
+
         
 </body>
 
