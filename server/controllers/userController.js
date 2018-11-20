@@ -1,52 +1,30 @@
-import users from '../inMemoryData/users';
+import createUser from '../db/sqlQueries';
+import bcrypt from 'bcrypt';
+import pool from '../db/connection';
 
-class UserController {
-
-  static userSignUp(request, response) {
-    const newUser = {
-      id: users.length + 1,
-      fullName: request.body.fullName,
-      email: request.body.email,
-      phone: request.body.phone,
-      address: request.body.address,
-      password: request.body.password,
-    };
-    users.push(newUser);
-    return response.status(201)
-      .json({
-        newUser,
-        success: true,
-        message: 'Signup was successful',
-      });
-  }
-
-  static getAllUsers(request, response) {
-    const allUsers = users.reverse();
-
-    return response.status(200)
-        .json({
+class UserHandler {
+  static userSignup(request, response) {
+    const { name, email, phone, address } = request.body;
+    const values = [
+      name,
+      email,
+      phone,
+      bcrypt.hashSync(request.body.password, 10),
+      address
+    ];
+    pool.query(createUser, values)
+      .then((result) => {
+        return response.status(201)
+          .json({
             success: true,
-            message: 'All users',
-            allUsers
-        });
+            message: 'Sign up is successful',
+            values
+          });
+      })
+      .catch(error => console.log(`Incomplete values ${error}`));
+  }
 }
 
-static fetchSpecificUser(request, response) {
-  const { isExistUser } = request.body;
+const { userSignup } = UserHandler;
 
-  return response.status(200)
-      .json({
-          success: true,
-          message: 'Fetched order successfull!',
-          isExistUser
-      });
-}
-
-}
-const {
-  userSignUp, getAllUsers, fetchSpecificUser
-} = UserController;
-
-export {
-  userSignUp, getAllUsers, fetchSpecificUser
-};
+export default userSignup;

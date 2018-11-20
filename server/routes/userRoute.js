@@ -1,20 +1,9 @@
 import express from 'express';
-
-import {
-    userSignUp, getAllUsers, fetchSpecificUser
-  } from '../controllers/userController';
-
-  import {
-    signupValidator, getAUserValidator
-  } from '../middlewares/userValidator';
-  
- 
+import userSignup from '../controllers/userController';
 
 
-const userRouter = express.Router();
+ const userRouter = express.Router();
 
-userRouter.post('/users', signupValidator, userSignUp);
-userRouter.get('/users',  getAllUsers);
-userRouter.get('/users/:userId', getAUserValidator, fetchSpecificUser);
+ userRouter.post('/auth/signup', userSignup);
 
-export default userRouter;
+ export default userRouter;
