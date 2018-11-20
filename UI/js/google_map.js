@@ -1,38 +1,52 @@
-// Initialize and add the map
-function initMap() {
-    // The location of Uluru
-    var uluru = {lat: -25.344, lng: 131.036};
-    // The map, centered at Uluru
-    var map = new google.maps.Map(
-        document.querySelector('#map'), {zoom: 4, center: uluru});
-    // The marker, positioned at Uluru
-    var marker = new google.maps.Marker({position: uluru, map: map});
-  }
-///Google API key for map for javascript API
-// AIzaSyBzxWs5mI9SiYypzy3jl_UOXddZqDnkfNk
-//RESTRICTED NAME
-// Map API KEY
+let pickup = document.getElementById('pickup');
+let destination = document.getElementById('destination');
+let googleMap = document.getElementById('google-map2');
 
-// This API key can be used in this project and with any API that supports it. To use this key in your application, pass it with the key=API_KEY parameter.
+const toggleMap = (event) => {
+    if (event.target === pickup || event.target === destination && googleMap.style.display === 'none') {
+        googleMap.style.display = 'block'; 
+    } else {
+        googleMap.style.display = 'none'; 
+    }
+  };
+  pickup.addEventListener('click', toggleMap);
+  destination.addEventListener('click', toggleMap);
 
-// Creation date	
-// Nov 11, 2018, 6:30:37 PM
-// Created by	
-// obijoyce@gmail.com (you)
-  
+function initMap()  {
+    // Map Options
+const options = {
+    zoom: 8,
+    center:{lat:6.465422, lng:3.406448}
+}
+// New Map
+let map = new google.maps.Map(googleMap, options);
+let icon = {
+    url: './img/pickup.png', // url
+    scaledSize: new google.maps.Size(40, 40), // scaled size
+    origin: new google.maps.Point(0,0), // origin
+    anchor: new google.maps.Point(0, 0) // anchor
+};
 
-// 2
-// Google Distance Matrix
-// AIzaSyCW40oxWuEacXk1GF9ViC04yUXKKejc56I
-// RESTRICTED NAME
-// MatrixMap
+addMaker({lat:6.601838, lng:3.351486}, icon);
+// Add marker
+function addMaker(coords, icon) {
+    var marker = new google.maps.Marker({
+        position:coords,
+        map:map,
+        icon: icon
+        // "http://i64.tinypic.com/5cg3gp.png width='10px'"  //Pickup
+        // http://i63.tinypic.com/8yyuqf.png  Destination
+    });
+    let infoWindow = new google.maps.InfoWindow({
+        content:`<h1>Pickup</h1>`
+    });
+    marker.addEventListner('click', function(){
+ infoWindow.open(map, marker);
+    });
+}
+}
 
-// //
-// MailXpress
-// Project name
- 
-// mailxpress-222217
-// Project ID
- 
-// 857682987159
-// Project nu
+
+
+
+
