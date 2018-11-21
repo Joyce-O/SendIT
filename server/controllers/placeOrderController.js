@@ -20,7 +20,7 @@ class OrderHandler {
       return weight * perKg;
    }
 
-    const values = [user_id,trackingID, sentTo, from || request.authData.payload.address,to, weight, price, parcelContent, currentLocation, status, duration, distance];
+    const values = [user_id, trackingID, sentTo, from || request.authData.payload.address,to, weight, price, parcelContent, currentLocation, status, duration, distance];
     pool.query(createOrder, values)
       .then(() => response.status(201)
         .json({

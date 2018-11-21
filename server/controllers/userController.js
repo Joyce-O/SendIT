@@ -1,6 +1,6 @@
 import { createUser, queryUsersByEmail } from '../db/sqlQueries';
 import bcrypt, { compareSync } from 'bcrypt';
-import {generateToken} from '../middlewares/authentication';
+import { generateToken } from '../middlewares/authentication';
 import pool from '../db/connection';
 
 class UserHandler {
@@ -15,7 +15,6 @@ class UserHandler {
     ];
     pool.query(createUser, values)
       .then((data) => {
-        console.log(data.rows);
         const authUser = data.rows[0];
         const username = authUser.email.split('@')[0];
         const token = generateToken(authUser);
@@ -23,10 +22,14 @@ class UserHandler {
           .json({
             success: true,
             message: 'Sign up is successful',
-            yourToken: token
+           token: token
           });
       })
-      .catch(error => console.log(`Incomplete values ${error}`));
+      .catch(error => response.status(500)
+        .json({
+          success: false,
+          message: error.message
+        }));
   }
 
   static userLogin(request, response) {
@@ -44,7 +47,7 @@ class UserHandler {
               .json({
                 success: true,
                 message: `Glad to have you back ${username}`,
-                yourToken: token
+                token: token
               });
           }
 
