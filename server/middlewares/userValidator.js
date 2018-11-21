@@ -1,71 +1,118 @@
-import users from '../inMemoryData/users';
+import pool from '../db/connection';
+import { queryUsersByEmail, queryUsersByPhone } from '../db/sqlQueries';
 
 class UserValidator {
 
   static signupValidator(request, response, next) {
     let {
-      fullName, email, phone, address, password
+      name, email, phone, password, address
     } = request.body;
 
     const errors = {};
-  
+    let emailExist = "";
+    let phoneExist = "";
+
     const validNameChar = /^[a-z ]+$/i;
-    if (!fullName|| fullName.length <= 3 && !validNameChar.test(fullName) ) {
-      errors.fullName = 'Please enter valid name characters'
+    if (!name || name.length <= 3 && !validNameChar.test(name)) {
+      errors.name = 'Please enter valid name characters'
     }
 
     const validEmailChar = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
-    if (!email || email.length < 9 && !validEmailChar.test(email) ) {
-        errors.email = 'Please enter valid email format'
-      }
-  
-      const foundEmail = users.find(user => user.email === email);
+    if (!email || email.length < 9 && !validEmailChar.test(email)) {
+      errors.email = 'Please enter valid email format'
+    }
 
-      if (!phone || phone.length < 10 && !/^[0-9]+$/.test(phone)) {
-        errors.phone = "Please enter valid phone number"
-    }
-    
-    if (!password || password.length < 4) {
-      errors.password = 'Password cannot be empty'
-    }
-  
-    if(JSON.stringify(errors) !== '{}'){
-      return response.status(400)
-           .json({
-               success: false,
-               message: "Please make sure to input correct values",
-                errors
-           });
-       }
-           
- 
-    next();
+    pool.query(queryUsersByEmail, [email])
+      .then((data) => {
+        if (data.rowCount !== 0) {
+          errors.emailExist = "Email already exist, please Signup with a new email"
+        }
+
+        if (!phone || phone.length < 10 && !/^[0-9]+$/.test(phone)) {
+          errors.phone = "Please enter valid phone number"
+        }
+        pool.query(queryUsersByPhone, [phone])
+          .then((result) => {
+            if (result.rowCount !== 0) {
+              errors.phoneExist = "Phone number already exist, please Signup with a new phone number"
+            }
+
+            if (!password || password.length < 4) {
+              errors.password = 'Password cannot be empty'
+            }
+            if (!address || address.length < 10 && !/^[a-z0-9]+$/i.test(address)) {
+              errors.phone = "Address should be 10 to 100 alphanumeric characters"
+            }
+
+            if (JSON.stringify(errors) !== '{}') {
+              return response.status(400)
+                .json({
+                  success: false,
+                  message: "Please make sure to input correct values",
+                  errors
+                });
+            }
+            request.body.name = name;
+            request.body.email = email;
+            request.body.phone = phone;
+            request.body.password = password;
+            request.body.address = address;
+            next();
+          });
+      })
+      .catch(error => response.status(500)
+        .json({
+          success: false,
+          message: error.message
+        }));
   }
 
-  static getAUserValidator(request, response, next) {
-    let {userId} = request.params;
+  static loginUserValidator(request, response, next) {
+    let { email, password } = request.body;
+    let emailExist = "";
+    const errors = {};
 
-    const isExistUser = users.find(users => users.id === Number(userId));
-    console.log(isExistUser);
-    if (!(isExistUser)) {
-        return response.status(404)
-            .json({
-                success: false,
-                message: 'Sorry! User does not exist'
-            });
+    const validEmailChar = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
+    if (!email || email.length < 9 && !validEmailChar.test(email)) {
+      errors.email = 'Please enter valid email format'
     }
 
-    request.body.isExistUser = isExistUser;
+    pool.query(queryUsersByEmail, [email])
+      .then((result) => {
+        if (result.rowCount === 0) {
+          errors.emailExist = "Email not found. Please signup"
+        }
 
-    next();
-}
+
+        if (!password || password.length < 4) {
+          errors.password = 'Password cannot be empty'
+        }
+
+        if (JSON.stringify(errors) !== '{}') {
+          return response.status(400)
+            .json({
+              success: false,
+              message: "Please make sure to input correct email and password",
+              errors
+            });
+        }
+
+        request.body.email = email;
+        request.body.password = password;
+        next();
+      })
+      .catch(error => response.status(500)
+        .json({
+          message: error.message
+        }));
+  }
 
 }
 
 const {
-  signupValidator, getAUserValidator
+  signupValidator, loginUserValidator
 } = UserValidator;
-  
+
 export {
-  signupValidator, getAUserValidator
+  signupValidator, loginUserValidator
 };
