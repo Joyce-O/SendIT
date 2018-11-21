@@ -1,5 +1,6 @@
-import {createUser, queryUsersByEmail} from '../db/sqlQueries';
+import { createUser, queryUsersByEmail } from '../db/sqlQueries';
 import bcrypt, { compareSync } from 'bcrypt';
+import {generateToken} from '../middlewares/authentication';
 import pool from '../db/connection';
 
 class UserHandler {
@@ -13,12 +14,16 @@ class UserHandler {
       address
     ];
     pool.query(createUser, values)
-      .then((result) => {
+      .then((data) => {
+        console.log(data.rows);
+        const authUser = data.rows[0];
+        const username = authUser.email.split('@')[0];
+        const token = generateToken(authUser);
         return response.status(201)
           .json({
             success: true,
             message: 'Sign up is successful',
-            values
+            yourToken: token
           });
       })
       .catch(error => console.log(`Incomplete values ${error}`));
@@ -32,13 +37,17 @@ class UserHandler {
         if (result.rowCount !== 0) {
           const comparePassword = compareSync(request.body.password, result.rows[0].password);
           if (comparePassword) {
-            const username = emailValue[0].split('@')[0];
+            const authUser = result.rows[0];
+            const username = variable[0].split('@')[0];
+            const token = generateToken(authUser);
             return response.status(200)
               .json({
                 success: true,
-                message: `Glad to have you back ${username}`
+                message: `Glad to have you back ${username}`,
+                yourToken: token
               });
           }
+
           errors.password = "Make sure your password is correct"
         }
         if (result.rowCount === 0) {
@@ -56,8 +65,7 @@ class UserHandler {
       .catch((error) => {
         response.json({
           success: false,
-          // message: "Origin of error"
-          message: error.message,
+          message: error.message
         });
       });
   }

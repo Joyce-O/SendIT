@@ -1,128 +1,40 @@
-import uuidv5 from 'uuid/v5';
-import users from '../inMemoryData/users';
-import placeOrder from '../inMemoryData/placeOrder';
+import pool from '../db/connection';
+import { createOrder } from '../db/sqlQueries';
+import shortid from 'shortid';
+import ordersTable from '../db/tablesSetup/orderTable';
 
-class placeOrderHandler {
-    static orders(request, response) {
-        const {
-            email,
-            weight,
-            parcelContent,
-            price,
-            quantity,
-            pickupAddress,
-            parcelType,
-            senderPhone,
-            senderName,
-            receiverName,
-            destinationAddress,
-            receiverPhone
 
-        } = request.body;
+class OrderHandler {
+  static parcelOrders(request, response) {
+    const { sentTo, from, to, parcelContent } = request.body;
+    const user_id = request.authData.payload.id;
+    const trackingID = shortid.generate();
+    const currentLocation = 'Lagos';
+    const status = 'pending';
+    let weight = parseFloat(request.body.weight);
+    let distance = 100;
+    let duration = "1 day";
+    weight = Math.round(weight);
+    const price = (weight) => {
+     let perKg = 500;
+      return weight * perKg;
+   }
 
-        const parcelTypeCost = (delicate) => {
-            return (delicate === "delicate") ? 100 : 50;
-        }
-        const presentLocation = "Jos";
-        const total = (quantity * price) + parcelTypeCost(parcelType);
-        const status = 'pending';
-        const id = placeOrder.length;
-        const trackingID = uuidv5(`${senderName}${new Date()}${id}`, uuidv5.URL)
-        const sendOrder = {
-            email,
-            weight,
-            parcelContent,
-            price,
-            quantity,
-            pickupAddress,
-            parcelType,
-            senderPhone,
-            senderName,
-            receiverName,
-            destinationAddress,
-            receiverPhone,
-            status,
-            total,
-            presentLocation,
-            trackingID
-        };
-
-        placeOrder.push(sendOrder);
-        return response.status(201)
-            .json({
-                succes: true,
-                message: "Your delivery order is booked successfully",
-                sendOrder
-            });
-    }
-
-    static fetchAllOrders(request, response) {
-        const allParcelsOrdered = placeOrder.reverse();
-           return response.status(200)
-            .json({
-                succes: true,
-                message: 'All parcel delivery orders',
-                allParcelsOrdered
-            });
-    }
-
-    static fetchSpecificOrders(request, response) {
-        const { isExistOrder } = request.body;
-        return response.status(200)
-            .json({
-                succes: true,
-                message: 'Fetched order successfull!',
-                isExistOrder
-            });
-    }
-
-    static fetchUserOrderHistory(request, response) {
-        const { userId } = request.params;
-        let userEmail = users.find(users => users.id === Number(userId));
-
-        userEmail = userEmail.email;
-        let userOrders = placeOrder.filter((placeOrder) => placeOrder.email === userEmail);
-        return response.status(200)
-            .json({
-                succes: true,
-                message: 'Fetched order!',
-                userOrders
-            });
-    }
-    
-    static cancelOrder(request, response) {
-        let { parcelStatus, isExistOrder } = request.body;
-        parcelStatus = "Cancelled";
-        isExistOrder.status = parcelStatus;
-
-        return response.status(200)
-            .json({
-                succes: true,
-                message: 'Your order is Cancelled!',
-                isExistOrder
-            });
-
-    }
-
-    static deleteOrder(request, response) {
-        let { orderExist } = request.body;
-        orderExist = undefined;
-
-        return response.status(200)
-            .json({
-                succes: true,
-                message: 'Your order is deleted!'
-            });
-
-    }
-
+    const values = [user_id,trackingID, sentTo, from || request.authData.payload.address,to, weight, price, parcelContent, currentLocation, status, duration, distance];
+    pool.query(createOrder, values)
+      .then(() => response.status(201)
+        .json({
+          success: true,
+          message: 'Your order was placed successfully',
+        }))
+      .catch(error => response.status(500)
+        .json({
+          success: false,
+          message: error.message
+        }));
+  }
 }
 
-const {
-    orders, fetchAllOrders, fetchSpecificOrders, fetchUserOrderHistory, cancelOrder, deleteOrder
-} = placeOrderHandler
+// const { parelOrders } = OrderHandler;
 
-export {
-    orders, fetchAllOrders, fetchSpecificOrders, fetchUserOrderHistory, cancelOrder, deleteOrder
-};
-
+export default OrderHandler;
