@@ -1,5 +1,6 @@
 import { createUser, queryUsersByEmail } from '../db/sqlQueries';
 import bcrypt, { compareSync } from 'bcrypt';
+
 import { generateToken } from '../middlewares/authentication';
 import pool from '../db/connection';
 
