@@ -63,6 +63,34 @@ class placeOrderValidator {
         }
         next();
     }
+
+    static updateOrderValidator(request, response, next) {
+        const { parcelId } = request.params;
+        pool.query(queryOrdersById, [parcelId])
+          .then((data) => {
+            if (data.rowCount === 0) {
+              return response.status(404)
+                .json({
+                  success: false,
+                  message: 'This parcel order does not exist'
+                });
+            }
+            if (data.rows[0].status === "Delivered"|| data.rows[0].status === 'Cancelled') {
+              return response.status(406)
+                .json({
+                  success: false,
+                  message: 'This parcel order cannot be cancelled at this time'
+                });
+            }
+            next();
+          })
+          .catch(error => response.status(500)
+            .json({
+              success: false,
+              message: error.message
+            }));
+      }
+    
 }
 
 // const {orderValidator} = placeOrderValidator;
