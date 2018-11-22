@@ -12,8 +12,10 @@ orders.status from orders left join users on orders.user_id = users.user_id orde
 const selectUserOrderList = `select orders.user_id, orders.sentOn, orders.TrackingID, orders.sentTo, orders.destination, orders.parcelContent, users.email, orders.status
 join users on orders.user_id = users.user_id  where user_id=$1`;
 
+const updateOrderStatus = 'update orders set status = $1 where id = $2 returning *';
+
 
 
 export {
-    createUser, queryUsersByEmail, queryUsersByPhone, createOrder, selectAllOrders, selectUserOrderList
+    createUser, queryUsersByEmail, queryUsersByPhone, createOrder, selectAllOrders, selectUserOrderList, updateOrderStatus
 };

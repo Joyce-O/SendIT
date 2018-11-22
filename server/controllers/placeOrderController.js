@@ -76,6 +76,21 @@ class OrderHandler {
           message: error.message
         }));
   }
+  static cancelOrder(request, response) {
+    const { parcelId } = request.params;
+    pool.query(updateOrderStatus, ['Cancelled', parcelId])
+      .then((result) => {
+        return response.status(200)
+          .json({
+            message: 'Order Cancelled'
+          });
+      })
+      .catch(error => response.status(500)
+        .json({
+          success: false,
+          message: error.message
+        }));
+  }
 }
 
 // const { parelOrders } = OrderHandler;
