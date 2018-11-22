@@ -1,20 +1,13 @@
 import express from 'express';
-import {
-    orders, fetchAllOrders, fetchSpecificOrders, fetchUserOrderHistory, cancelOrder, deleteOrder 
-  } from '../controllers/placeOrderController';
 
-import {
-    orderValidator, getOrderValidator, getAnOrderValidator, updateOrderValidator, deleteOrderValidator
-  } from '../middlewares/placeOrderValidator';
-  
+import {verifyToken} from '../middlewares/authentication'
+// import orderValidator from '../middlewares/placeOrderValidator'
+import placeOrderValidator from '../middlewares/placeOrderValidator';
+import orderHandler from '../controllers/placeOrderController'
+
 
 const placeOrderRouter = express.Router();
 
-placeOrderRouter.post('/parcels', orderValidator, orders);
-placeOrderRouter.get('/parcels', fetchAllOrders);
-placeOrderRouter.get('/parcels/:parcelId', getAnOrderValidator, fetchSpecificOrders);
-placeOrderRouter.get('/users/:userId/parcels', getOrderValidator, fetchUserOrderHistory); 
-placeOrderRouter.put('/parcels/:parcelId/cancel', updateOrderValidator, cancelOrder );
-placeOrderRouter.delete('/parcels/:parcelId/delete', deleteOrderValidator,deleteOrder);
+placeOrderRouter.post('/parcels', verifyToken, placeOrderValidator.orderValidator, orderHandler.parcelOrders);
 
 export default placeOrderRouter;

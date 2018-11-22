@@ -102,6 +102,7 @@ class UserValidator {
       })
       .catch(error => response.status(500)
         .json({
+          success: false,
           message: error.message
         }));
   }

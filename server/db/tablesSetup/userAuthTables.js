@@ -16,10 +16,13 @@ const createUsersTable = `DROP TABLE IF EXISTS users CASCADE;
 class UserTableHandler {
   static usersTable() {
     const create = pool.query(createUsersTable)
-      .then(result => console.log(result[0].command, result[1].command))
-      .catch(error => console.log(error));
-    return create;
-  }
+      .then(result =>  result)
+      .catch(error => response.status(500)
+      .json({
+        success: false,
+        message: error.message
+      }));
+      }
 }
 
 const { usersTable } = UserTableHandler;
