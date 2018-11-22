@@ -10,7 +10,8 @@ addons:
 services:
   - postgresql
 before_script:
-- psql -c 'create database senditdb_test;' -U postgres
+- psql -c "CREATE USER 'jojo' with password 'jojopas';" -U postgres
+- psql -c 'CREATE DATABASE senditdb_test;' -U postgres
 - npm install
 script:
 - npm test
