@@ -1,7 +1,7 @@
 import express from 'express';
 
 import {verifyToken} from '../middlewares/authentication'
-import orderValidator from '../middlewares/placeOrderValidator'
+// import orderValidator from '../middlewares/placeOrderValidator'
 import placeOrderValidator from '../middlewares/placeOrderValidator';
 import orderHandler from '../controllers/placeOrderController'
 

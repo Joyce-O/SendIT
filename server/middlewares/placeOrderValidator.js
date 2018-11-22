@@ -2,8 +2,8 @@ class placeOrderValidator {
     static orderValidator(request, response, next) {
         let {
             sentTo,
-            from,
-            to,
+            pickup,
+            destination,
             weight,
             parcelContent
         } = request.body;
@@ -14,11 +14,11 @@ class placeOrderValidator {
             errors.sentTo = "Please enter valid name"
         }
 
-        if (!from || from.length < 10 && !/^[a-z0-9]+$/i.test(from)) {
-            errors.from = "Please enter valid pickup address"
+        if (!pickup || pickup.length < 10 && !/^[a-z0-9]+$/i.test(pickup)) {
+            errors.pickup = "Please enter valid pickup address"
         }
-        if (!to || to.length < 10 && !/^[a-z0-9]+$/i.test(to)) {
-            errors.to = "Please enter a valid destination"
+        if (!destination || destination.length < 10 && !/^[a-z0-9]+$/i.test(destination)) {
+            errors.destination = "Please enter a valid destination"
         }
 
         const validateWeight = /^(0|\d{1,3})([.]\d{1})?(\w[kg])$/;
@@ -42,8 +42,8 @@ class placeOrderValidator {
         }
 
         request.body.sentTo = sentTo;
-        request.body.from = from;
-        request.body.to = to;
+        request.body.pickup = pickup;
+        request.body.destination = destination;
         request.body.weight = weight;
         request.body.parcelContent = parcelContent;
 

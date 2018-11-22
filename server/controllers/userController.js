@@ -41,7 +41,7 @@ class UserHandler {
           const comparePassword = compareSync(request.body.password, result.rows[0].password);
           if (comparePassword) {
             const authUser = result.rows[0];
-            const username = variable[0].split('@')[0];
+            const username = emailValue[0].split('@')[0];
             const token = generateToken(authUser);
             return response.status(200)
               .json({
