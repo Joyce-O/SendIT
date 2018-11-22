@@ -8,9 +8,39 @@ SendIT is a courier service that helps users deliver parcels to different destin
 <br/><b> Hosted API on Heroku: </b> https://joyce-o-mailxpress.herokuapp.com/api/v1
  <br/>
 
+ 
+## Installation
+1. Clone this repository:
+```
+https://github.com/Joyce-O/SendIT.git
+```
+2. cd into the repository:
+```
+cd SendIT
+```
+3. Open the repository in terminal and Install dependencies by running:
+```
+npm install
+```
+4. Run "npm start" to start the app
+
+5. Use Postman to test all endpoints
+
+6. Run "npm test" to test all endpoints
+
+
+## Technologies
+
+ES6: See [here](https://en.wikipedia.org/wiki/ECMAScript) for details.
+
+NodeJS: An asynchronous event driven JavaScript runtime, designed to build scalable network applications. Visit [here](https://nodejs.org/en/) for details.
+
+Airbnb JavaScript style guide was adopted as a coding convention, see [here](https://github.com/airbnb/javascript) for details.
+
+ExressJS: This is the web application framework for Node.js Visit [here](https://expressjs.com) for details.
+
 
 ## API Endpoints
-
 <table>
 
 <tr><th>HTTP VERB</th><th>API ENDPOINT</th><th>FUNCTION</th>
@@ -44,33 +74,3 @@ SendIT is a courier service that helps users deliver parcels to different destin
 <td>GET</td> <td>api/v1/users/:userId/parcels</td>  <td>fetch all parcel delivery orders by a specific user</td>
 </tr>
 
-
-## Installation
-1. Clone this repository:
-```
-https://github.com/Joyce-O/SendIT.git
-```
-2. cd into the repository:
-```
-cd SendIT
-```
-3. Open the repository in terminal and Install dependencies by running:
-```
-npm install
-```
-4. Run "npm start" to start the app
-
-5. Use Postman to test all endpoints
-
-6. Run "npm test" to test all endpoints
-
-
-## Technologies
-
-ES6: See [here](https://en.wikipedia.org/wiki/ECMAScript) for details.
-
-NodeJS: An asynchronous event driven JavaScript runtime, designed to build scalable network applications. Visit [here](https://nodejs.org/en/) for details.
-
-Airbnb JavaScript style guide was adopted as a coding convention, see [here](https://github.com/airbnb/javascript) for details.
-
-ExressJS: This is the web application framework for Node.js Visit [here](https://expressjs.com) for details.

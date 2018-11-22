@@ -75,8 +75,15 @@ const invalidparcelType = {
   quantity: "2",
   parcelType: "cate"
 }
+const passedUser = {
+  name: 'Joyce Ob',
+  email: 'joyce@gmail.com',
+  phone: '09038802833',
+  password: 'passpass',
+  address: '12 Adeyemi street Lagos'
+};
 
 
 export {
-  successfulOrder, invalidName, invalidPhone, invalidEmail, invalidWeight, invalidParcelCon, invalidQty, invalidparcelType 
+  successfulOrder, invalidName, invalidPhone, invalidEmail, invalidWeight, invalidParcelCon, invalidQty, invalidparcelType, passedUser 
 };

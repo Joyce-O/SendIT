@@ -1,14 +1,17 @@
-import usersTable from './userAuthTables';
-import ordersTable from './orderTable'
-import createAdmin from './adminUser'
+import express from 'express';
+
+import {verifyToken, parmitAdmin} from '../middlewares/authentication';
+import placeOrderValidator from '../middlewares/placeOrderValidator';
+import orderHandler from '../controllers/placeOrderController';
 
 
-usersTable()
-.then(() => createAdmin()
-    .then(() => ordersTable()))
-    .catch(error => response.status(500)
-    .json({
-      success: false,
-      message: error.message
-    }));
-    
+const placeOrderRouter = express.Router();
+
+placeOrderRouter.post('/parcels', verifyToken, placeOrderValidator.orderValidator, orderHandler.parcelOrders);
+
+placeOrderRouter.get('/parcels', verifyToken, parmitAdmin, orderHandler.getAllOrders);
+
+placeOrderRouter.get('/users/:userId/parcels', verifyToken, placeOrderValidator.getOrderListValidator, orderHandler.getUserOrder);
+placeOrderRouter.put('/parcels/:parcelId/cancel', verifyToken, parmitAdmin, placeOrderValidator.getOrderListValidator, placeOrderValidator.updateOrderValidator, orderHandler.cancelOrder);
+
+export default placeOrderRouter;
