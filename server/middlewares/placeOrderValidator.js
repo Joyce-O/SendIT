@@ -50,6 +50,19 @@ class placeOrderValidator {
         next();
 
     }
+
+
+    static getOrderListValidator(request, response, next) {
+        const { user_id } = request.params;
+        if (!Number(user_id) || user_id <= 0) {
+            return response.status(400)
+                .json({
+                    success: false,
+                    message: 'Invalid user id'
+                });
+        }
+        next();
+    }
 }
 
 // const {orderValidator} = placeOrderValidator;

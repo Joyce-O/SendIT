@@ -9,9 +9,11 @@ const createOrder = 'insert into orders (user_id, trackingID, sentTo, pickup, de
 const selectAllOrders = `select orders.id, orders.sentTo, orders.TrackingID, orders.parcelContent, orders.weight,orders.pickup,orders.destination, orders.currentLocation, orders.price, orders.sentOn, users.phone, orders.user_id, users.email,
 orders.status from orders left join users on orders.user_id = users.user_id order by id desc`;
 
+const selectUserOrderList = `select orders.user_id, orders.sentOn, orders.TrackingID, orders.sentTo, orders.destination, orders.parcelContent, users.email, orders.status
+join users on orders.user_id = users.user_id  where user_id=$1`;
 
 
 
 export {
-    createUser, queryUsersByEmail, queryUsersByPhone, createOrder, selectAllOrders
+    createUser, queryUsersByEmail, queryUsersByPhone, createOrder, selectAllOrders, selectUserOrderList
 };
