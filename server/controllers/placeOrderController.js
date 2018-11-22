@@ -35,6 +35,30 @@ class OrderHandler {
         }));
   }
 
+
+  static getUserOrder(request, response) {
+    const { user_id } = request.params;
+    const userInfo = request.authData.payload;
+    if (userInfo.user_id === user_id) {
+      pool.query(selectUserOrderlist, [user_id])
+        .then(result => response.status(200)
+          .json({
+            message: 'Order list is successfully fetched',
+            result
+          }))
+        .catch(error => response.status(500)
+          .json({
+            success: false,
+            message: error.message
+          }));
+    }
+    return response.status(401)
+      .json({
+        success: false,
+        message: 'Unauthorized access'
+      });
+    }
+
   static getAllOrders(request, response) {
     pool.query(selectAllOrders)
       .then((result) => {
