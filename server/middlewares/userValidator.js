@@ -77,12 +77,7 @@ class UserValidator {
       errors.email = 'Please enter valid email format'
     }
 
-    pool.query(queryUsersByEmail, [email])
-      .then((result) => {
-        if (result.rowCount === 0) {
-          errors.emailExist = "Email not found. Please signup"
-        }
-
+  
         if (!password || password.length < 4) {
           errors.password = 'Password cannot be empty'
         }
