@@ -16,14 +16,14 @@ const authForm = document.getElementById('auth-form2');
 
 
 const modalForm = (event) => {
-  if (event.target.id === 'signup2' || event.target.id === 'signup') {
+  if (event.target.id === 'signup2') {
     modal.style.display = 'block';
     authForm.style.display = 'block';
 
   }
 };
 document.querySelector('#signup2').addEventListener('click', modalForm);
-document.querySelector('#signup').addEventListener('click', modalForm);
+// document.querySelector('#signup').addEventListener('click', modalForm);
 // const signupMain = document.querySelector('#signup');
 // signup.addEventListener('click', modalForm);
 window.onclick = (event) => {
