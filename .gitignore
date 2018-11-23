@@ -8,5 +8,6 @@ weight.js
 .eslintrc.json
 .babelrc
 .nyc_output/
+g
 coverage/
 
