@@ -4,9 +4,7 @@
 # Description
 SendIT is a courier service that helps users deliver parcels to different destinations. SendIT provides courier quotes based on weight categories.
 
-<br/><b>[View Live]</b> (https://joyce-o.github.io/SendIT/UI/index.html)
-<br/><b> Hosted API on Heroku: </b> https://joyce-o-mailxpress.herokuapp.com/api/v1
- <br/>
+[View Live](https://joyce-o.github.io/SendIT/UI/index.html)
 
  
 ## Installation
